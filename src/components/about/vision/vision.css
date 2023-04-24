@@ -1,0 +1,31 @@
+.widthh {
+  max-width: 1225px;
+}
+
+.rights {
+  width: 100%;
+}
+
+.leftss {
+  width: 57%;
+}
+
+.subcontainer-img {
+  display: inline-block;
+  width: 60px;
+  margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+  .lefts {
+    width: 115%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .leftss {
+    width: 95%;
+    padding: 20px;
+  }
+}

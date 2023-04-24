@@ -1,0 +1,28 @@
+@font-face {
+  font-family: graphikthin;
+  src: url(./GraphikThin.woff);
+}
+
+/* */
+@font-face {
+  font-family: graphik;
+  src: url(./Graphik-Regular-Trial.woff);
+}
+@font-face {
+  font-family: graphik2;
+  src: url(./graphik.woff);
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+  scrollbar-width: none;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
+body {
+  font-family: graphikthin;
+  background-color: #090909;
+  overflow-x: hidden;
+}

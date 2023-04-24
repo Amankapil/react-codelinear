@@ -1,0 +1,157 @@
+.work_hero {
+  width: 100%;
+  height: 1080px;
+}
+.container-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  position: absolute;
+  width: 78.7%;
+  height: 176px;
+  left: 10.65%;
+  top: 389.5px;
+}
+.worksection{
+  height: 750px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  padding-top: 100px;
+}
+.worksection1{
+  height: 650px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  /* overflow: hidden; */
+  padding-top: 100px;
+}
+.workunfolds{
+  height: auto;
+}
+#work_heading {
+  width: 57.12%;
+  height: 176px;
+  font-weight: 600;
+  font-size: 75px;
+  line-height: 88px;
+  text-align: center;
+  letter-spacing: 0em;
+  text-transform: capitalize;
+  color: #d8d6d6;
+}
+.client-container {
+  width: 80%;
+  margin-left: 10%;
+  position: relative;
+  height: 300px;
+}
+@media screen and (max-width: 1541px) and (min-width: 1440px) {
+  .work_hero {
+    height: 800px;
+  }
+  .container-1 {
+    top: 309.5px;
+    width: 100%;
+    left: 0;
+  }
+  #work_heading {
+    width: 63%;
+    font-size: 58px;
+    line-height: 68px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .container-1{
+    width: 100%;
+    left: 0;
+  }
+  #work_heading{
+    width: 750px;
+  }
+  .client-container {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 1090px) {
+  .worksection{
+    padding-top: 250px;
+  }
+  .work_hero {
+    height: 700px;
+  }
+}
+@media screen and (max-width: 768px) {
+  #work_heading {
+    text-align: left;
+    width: 90%;
+    font-size: 60px;
+    line-height: 65px;
+  }
+  .work_hero {
+    width: 100%;
+    height: 650px;
+  }
+  .worksection{
+    height: auto;
+    overflow: visible;
+    padding-top: 0;
+  }
+  .client-container {
+    height: 230px;
+  }
+  #work_heading {
+    font-size: 50px;
+    line-height: 60px;
+    letter-spacing: -0.01em;
+    height: auto;
+  }
+  .container-1{
+    height: auto;
+  }
+}
+@media screen and (max-width: 428px) {
+  #work_heading {
+    font-size: 35px;
+    line-height: 40px;
+    height: auto;
+  }
+  .container-1{
+    top: 300px;
+    height: auto;
+  }
+  .work_hero {
+    width: 100%;
+    height: 580px;
+  }
+}
+
+
+.custom-cursor {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.custom-cursor-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-cursor-text {
+  color: white;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}

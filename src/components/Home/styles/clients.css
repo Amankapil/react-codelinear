@@ -1,0 +1,57 @@
+.heading {
+  font-size: 80px;
+}
+.head h2 {
+  font-family: "Graphik";
+}
+.mySwiper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.cass {
+  transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.cass:hover {
+  transform: scale(1.3);
+  height: 100%;
+}
+.cardh {
+  width: 400px;
+  height: 100%;
+}
+.homeidea {
+  max-width: 90rem;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .heading {
+    font-size: 40px;
+  }
+  .cardh {
+    width: 370px;
+  }
+}
+.comment {
+  width: 54%;
+}
+
+.box-pera {
+  width: 90%;
+}
+
+.logoss {
+  width: 15%;
+  margin: 28px;
+  height: 25px;
+  opacity: 0.5;
+}
+.logoss:hover {
+  opacity: 1;
+}
+.cardb {
+  width: 300px;
+}
+@media (max-width: 1200px) {
+  .cardb {
+  }
+}
