@@ -21,8 +21,9 @@ export default function Work() {
     <main className="aboutpage" ref={(el) => (fade = el)}>
       <Navbar />
       <Workhero />
-      {/* <Card /> */}
-      <Card2 />
+      <Card />
+      
+      {/* <Card2 /> */}
       <Footer />
     </main>
   );

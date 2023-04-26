@@ -31,7 +31,7 @@ function Login() {
             alert(
               "logged in successfully please enter ok to visit the dash board page "
             );
-            navigate("/admin");
+            window.location.reload();
           } else if (response.status === 404) {
             alert(response.data.message);
           }
@@ -66,7 +66,7 @@ function Login() {
           />
         </label>
         <br />
-        {error && <div className="error">{error}</div>}
+        {/* {error && <div className="error">{error}</div>} */}
         <button type="submit">Login</button>
       </form>
     </div>

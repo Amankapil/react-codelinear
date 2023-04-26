@@ -52,8 +52,8 @@ export default function Dash() {
   };
   const handleLogouttt = async () => {
     localStorage.removeItem("username");
-    navigate("/dash");
-    window.refresh();
+    // navigate("/admin");
+    window.location.reload();
   };
 
   const [homeHero, sethomeHero] = useState("");
