@@ -19,6 +19,7 @@ function Login() {
   };
 
   const handleSubmit = async (event) => {
+    localStorage.setItem("username", username, "password", password);
     event.preventDefault();
     try {
       const response = await axios
@@ -30,7 +31,7 @@ function Login() {
             alert(
               "logged in successfully please enter ok to visit the dash board page "
             );
-            navigate("/dash");
+            navigate("/admin");
           } else if (response.status === 404) {
             alert(response.data.message);
           }

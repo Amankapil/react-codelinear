@@ -28,11 +28,15 @@ import PD from "./components/productDevelopment/productdevelopment";
 import AnimatedCursor from "react-animated-cursor";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dash from "./components/Dashboard/dash";
+import Login from "./components/Dashboard/Login";
 
 function App() {
   window.scroll({
     behavior: "smooth",
   });
+
+  const user = localStorage.getItem("username");
+  console.log(user); // output: John
   return (
     <div>
       <AnimatedCursor
@@ -51,7 +55,9 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/admin" element={<Dash />} />
+          {/* <Route exact path="/login" element={<Login />} /> */}
+
+          <Route exact path="/admin" element={user ? <Dash /> : <Login />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/work" element={<Work />} />
           <Route exact path="/career" element={<Career />} />

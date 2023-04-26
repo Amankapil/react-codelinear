@@ -17,17 +17,17 @@ import Cunsulting from "./innerpagess/Consulting";
 import UserExper from "./innerpagess/UserExper";
 import Productdev from "./innerpagess/Productdev";
 import DigitalMarketing from "./innerpagess/DigitalMarketing";
+import Image from "./WorkTab/Image";
+import Mango from "./Allimages/Mango";
 
 export default function Dash() {
-  // const navigate = useNavigate("/home");
   const [editMode, setEditMode] = useState(false);
   const [editModeAbout, setEditModeAbout] = useState(false);
   const [editModeServices, seteditModeServices] = useState(false);
   const [array, setarray] = useState("");
   const [Aboutarray, setAboutarray] = useState();
   const [Servicesarray, setServicesarray] = useState();
-  // const [pera, setPera] = useState();
-  const [guiding_pera, setguiding_pera] = useState();
+  const navigate = useNavigate("");
 
   const handleEditClick = () => {
     if (editMode === false) {
@@ -50,7 +50,11 @@ export default function Dash() {
       seteditModeServices(false);
     }
   };
-  const handleLogouttt = async () => {};
+  const handleLogouttt = async () => {
+    localStorage.removeItem("username");
+    navigate("/dash");
+    window.refresh();
+  };
 
   const [homeHero, sethomeHero] = useState("");
   const [homeAbout, setAboutHero] = useState("");
@@ -63,8 +67,6 @@ export default function Dash() {
 
   const [content, setContent] = useState("");
   const [error, setError] = useState("");
-
-  const navigate = useNavigate("/home");
 
   const handleUsernameChange = (event) => {
     sethomeHero(event.target.value);
@@ -189,6 +191,7 @@ export default function Dash() {
 
           <Tab className="dashboard-left-item">Blog</Tab>
           <Tab className="dashboard-left-item">service inner</Tab>
+          <Tab className="dashboard-left-item">images Container</Tab>
         </TabList>
 
         <TabPanel>
@@ -267,13 +270,6 @@ export default function Dash() {
                           value={homeAbout}
                           onChange={handleaboutChange}
                         />
-                        {/* <input
-                          className="text-black w-full bg-back border-2 border-red-400"
-                          placeholder={Aboutarray}
-                          type="text w-[70%]"
-                          value={homeAboutPera}
-                          onChange={handleaboutChange}
-                        /> */}
 
                         <br />
                         <br />
@@ -437,6 +433,7 @@ export default function Dash() {
             <h1 className="title">Work Page</h1>
             <div className="section">
               <WrokHero />
+              <Image />
             </div>
             <div className="section">
               <h2 className="sub-title">About Section</h2>
@@ -472,31 +469,6 @@ export default function Dash() {
         <TabPanel>
           <div className="main">
             <h1 className="title">Blog Page</h1>
-            {/* <div className="section">
-              <h2 className="sub-title">Hero Section</h2>
-              <h3 className="change-h1">Lorem ipsum dolor sit amet.</h3>
-            </div>
-            <div className="section">
-              <h2 className="sub-title">Buttons Section</h2>
-              <h3 className="change-h1">Lorem</h3>
-              <h3 className="change-h1">Lorem</h3>
-              <h3 className="change-h1">Lorem</h3>
-              <h3 className="change-h1">Lorem</h3>
-              <h3 className="change-h1">Lorem</h3>
-              <h3 className="change-h1">Lorem</h3>
-            </div> */}
-            {/* <div className="section">
-              <h2 className="sub-title">Blog Section</h2>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-              <h3 className="change-h1">Lorem, ipsum dolor.</h3>
-            </div> */}
             <h1 className="title">Blog Inner Page</h1>
             <div className="section">
               <h2 className="sub-title">Hero Section</h2>
@@ -561,6 +533,20 @@ export default function Dash() {
             </div>
             <div className="section">
               <DigitalMarketing />
+            </div>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="main">
+            <div className="flex">
+              <div>
+                <h1>homeHero</h1>
+                <Image />
+              </div>
+              <div>
+                <h1>Mango</h1>
+                <Mango />
+              </div>
             </div>
           </div>
         </TabPanel>

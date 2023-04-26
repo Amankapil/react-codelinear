@@ -27,8 +27,12 @@ const WrokHero = () => {
       seteditModeServices(false);
     }
   };
+  // const [selectedFile, setSelectedFile] = useState(null);
 
   const handleSubmitServices = async (event) => {
+    const formData = new FormData();
+    formData.append("image", work_hero);
+
     event.preventDefault();
     try {
       const response = await axios
@@ -78,7 +82,7 @@ const WrokHero = () => {
                     <input
                       className="text-black w-full bg-back border-2 border-red-400"
                       placeholder={Servicesarray}
-                      type="text w-[70%]"
+                      type="text"
                       value={work_hero}
                       onChange={(e) => {
                         setework_hero(e.target.value);
