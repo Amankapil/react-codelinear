@@ -22,9 +22,10 @@ export default function Work() {
       <Navbar />
       <Workhero />
       <Card />
-      
-      {/* <Card2 /> */}
-      <Footer />
+      {/* <Card2 /  > */}
+      <section className="z-0 ">
+        <Footer />
+      </section>
     </main>
   );
 }

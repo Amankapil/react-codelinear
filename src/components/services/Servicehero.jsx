@@ -26,11 +26,11 @@ export default function Serviceshero() {
     <>
       <section id="hero_services">
         <div className="vision w-full mb-52  flex justify-center h-full relative  items-center">
-          <div className="wthh max-md:flex-col  max-sm:ml-0   ml20 max-2xl:ml-24 max-xl:ml-20  max-md:ml-5 max-md:p-0  w-9/10 flex relative">
+          <div className="wthh max-md:flex-col  max-sm:ml-0   ml0 max-2xl:ml-0 max-xl:ml-0  max-md:ml-5 max-md:p-0  w-9/10 flex relative">
            
-            <div className=" mt max-xl:ml-12 max-sm:ml-2 flex w-full  max-sm:flex-col">
+            <div className=" mt max-xl:ml-12 max-sm:ml-2 flex w-full max-md:ml-0  max-sm:flex-col">
               <h1
-                className="text-6xl w-full max-2xl:w-[100%] max-sm:w-[100%] mt6 ml-4 max-2xl:ml-0 max-xl:mb-5 max-md:text-3xl font-extrabold text-white"
+                className="text-6xl mt6 ml-4 max-2xl:ml-0 max-xl:mb-5 max-md:text-3xl font-extrabold text-white"
                 style={{
                   color: "#d8d6d6",
                 }}
@@ -47,7 +47,7 @@ export default function Serviceshero() {
                   disableOnInteraction: false,
                 }}
                 modules={[Autoplay]}
-                className="mySwi -ml-5 max-2xl:-ml-4   w-[100%] h-40 max-sm:h-20 max-sm:-ml-5"
+                className="mySwi -ml-5 max-2xl:-ml-4   width-class h-40 max-sm:h-20 max-sm:-ml-5"
               >
                 <SwiperSlide className="">
                   <h1

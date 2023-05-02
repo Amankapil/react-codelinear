@@ -15,14 +15,14 @@
   width: 100%;
   position: absolute;
 }
-.scroll{
+.scroll {
   width: 90%;
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 10px;
 }
-.linecontainer{
+.linecontainer {
   width: 30px;
   height: 1.3px;
   background-color: #d8d6d6;
@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
 }
-.ball{
+.ball {
   width: 10px;
   height: 10px;
   border-radius: 100%;
@@ -367,6 +367,9 @@
   position: relative;
   bottom: 27px;
 }
+.width-class {
+  width: 650px;
+}
 @media screen and (max-width: 1800px) {
   .rolling-words {
     position: absolute;
@@ -643,6 +646,9 @@
   #hero_services {
     height: 100vh;
   }
+  .width-class {
+    width: 600px;
+  }
   .services_hero-text {
     top: 256px;
   }
@@ -668,8 +674,8 @@
   .wedo-para {
     width: 100%;
     height: auto;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 15px;
+    line-height: 25px;
   }
   .accordian-container {
     gap: 62px;
@@ -693,8 +699,8 @@
   }
   .accordian-para {
     width: 100%;
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 15px;
+    line-height: 25px;
   }
   .ser-h1,
   .other-ser-h1 {
@@ -743,11 +749,11 @@
   }
   .m-desc {
     width: 320px;
-    font-size: 16px;
+    font-size: 15px;
     height: 154px;
     display: flex;
     align-items: center;
-    line-height: 23px;
+    line-height: 25px;
   }
   .m-title {
     width: 300px;
@@ -766,8 +772,8 @@
     font-size: 20px;
     line-height: 28px;
     width: 100%;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 15px;
+    line-height: 25px;
   }
   .accordian-para {
     height: auto;
@@ -788,10 +794,10 @@
   }
 }
 @media screen and (max-width: 1140px) {
-  .wedo{
+  .wedo {
     height: 1000px;
   }
-  .wedo-container{
+  .wedo-container {
     left: 7%;
   }
 }
@@ -805,10 +811,10 @@
   .dm {
     width: 34.36%;
   }
-  .wedo{
+  .wedo {
     margin-bottom: 0;
   }
-  .wedo-container{
+  .wedo-container {
     position: relative;
     top: 0;
     width: 40%;
@@ -844,6 +850,9 @@
   .ser-h1,
   .other-ser-h1 {
     font-size: 55px;
+  }
+  .width-class {
+    width: 500px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -968,6 +977,11 @@
     top: -18px;
   }
 }
+@media screen and (max-width: 767px) {
+  .width-class {
+    width: 320px;
+  }
+}
 @media screen and (max-width: 628px) {
   .leading {
     font-size: 40px;
@@ -992,7 +1006,7 @@
     top: 100px;
     height: 40px;
   }
-  .leading{
+  .leading {
     height: auto;
   }
   .words {
@@ -1034,11 +1048,11 @@
     line-height: 40px;
     left: 4%;
   }
-  #hero_services{
+  #hero_services {
     width: 100%;
     overflow: hidden;
   }
-  .wedo-container{
+  .wedo-container {
     width: 90%;
   }
   .ser-txt {

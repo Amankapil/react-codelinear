@@ -14,6 +14,7 @@ export default function Blog() {
     const tl = gsap.timeline({
       defaults: { duration: 0.5 },
     });
+    tl.fromTo(fade, { opacity: "0" }, { opacity: "0" });
     tl.fromTo(fade, { opacity: "0" }, { opacity: "1" });
   }, []);
   return (

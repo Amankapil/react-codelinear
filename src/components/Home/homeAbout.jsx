@@ -11,7 +11,7 @@ import React, { useState, useEffect, useRef } from "react";
 import arrow from "../services/images/downarrow.svg";
 import { gsap } from "gsap";
 
-const HomeAbout = () => {
+const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
   const [array, setarray] = useState();
 
   let arrowswipe = useRef(null);
@@ -51,12 +51,21 @@ const HomeAbout = () => {
   // }, []);
   return (
     <>
-      <section id="about" className=" agency mt-8 max-sm:mt-0">
-        <div id="rectangle" className="max-xl:none"></div>
+      <section id="about" className=" agency mt-16 max-sm:mt-0">
+        <div
+          style={{ backgroundColor: isDarkMode ? "#fff" : "#090909" }}
+          id="rectangle"
+          className="max-xl:none"
+        ></div>
         <div id="abtcnt">
           <div className="header1">
-            <h1 id="abth1">We Help Our Clients Define And Shape The Future.</h1>
-            <p id="abtdmycnt">
+            <h1 style={{ color: isDarkMode ? "#000" : "#d8d6d6" }} id="abth1">
+              We Help Our Clients Define And Shape The Future.
+            </h1>
+            <p
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              id="abtdmycnt"
+            >
               We are a design-led development firm operating at the intersection
               of human touch, data-driven analytics and cutting-edge technology.
             </p>
@@ -79,9 +88,17 @@ const HomeAbout = () => {
               />
             </div>
           </div>
-          <Link to={"/work"} className="allwork">
-            <p className="workbt_content">all works</p>
+          <Link to={"/work"} className="allwork CTAButton">
+            <p
+              style={{ color: isDarkMode ? "#000000" : "#848484" }}
+              className="workbt_content"
+            >
+              All Works
+            </p>
           </Link>
+          {/* <Link to={"/work"} id="aboutbtn">
+            <p className="aboutbtn_content">all works</p>
+          </Link> */}
         </div>
         {Widht > 428 ? (
           <>
@@ -89,28 +106,56 @@ const HomeAbout = () => {
               <div className="bg-mini-1">
                 <div id="img2"></div>
                 <div id="imgs2">
-                  <h1>MANGO</h1>
-                  <p id="imgs2p">shopify platform design + development</p>
+                  <h1 style={{ color: isDarkMode ? "#00000090" : "#d8d6d6" }}>
+                    MANGO
+                  </h1>
+                  <p
+                    style={{ color: isDarkMode ? "#00000090" : "#848484" }}
+                    id="imgs2p"
+                  >
+                    shopify platform design + development
+                  </p>
                 </div>
               </div>
               <div className="bg-mini-4">
                 <div id="imgs4">
-                  <h1>Lyra Health</h1>
-                  <p id="imgs4p">bigcommerce platform design + development</p>
+                  <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
+                    Lyra Health
+                  </h1>
+                  <p
+                    style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                    id="imgs4p"
+                  >
+                    bigcommerce platform design + development
+                  </p>
                 </div>
                 <div id="img4"></div>
               </div>
               <div className="bg-mini-2">
                 <div id="imgs"></div>
                 <div id="imgs1">
-                  <h1>COWBOY</h1>
-                  <p id="imgs1p">shopify platform design + development</p>
+                  <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
+                    COWBOY
+                  </h1>
+                  <p
+                    style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                    id="imgs1p"
+                  >
+                    shopify platform design + development
+                  </p>
                 </div>
               </div>
               <div className="bg-mini-3">
                 <div id="imgs3">
-                  <h1>WILLAIM ABRAHAM</h1>
-                  <p id="imgs3p">shopify platform design + development</p>
+                  <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
+                    WILLAIM ABRAHAM
+                  </h1>
+                  <p
+                    style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                    id="imgs3p"
+                  >
+                    shopify platform design + development
+                  </p>
                 </div>
                 <div id="img3"></div>
               </div>

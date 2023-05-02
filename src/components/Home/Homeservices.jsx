@@ -1,34 +1,64 @@
 import { Link } from "react-router-dom";
-import AnimatedCursor from "react-animated-cursor";
 
-export default function Hero(){
-    return(
-      <section id="service">
+export default function Hero({ isDarkMode }) {
+  return (
+    <section id="service">
       <div className="service_main">
         <div className="service_main-content">
-          <h1 id="srvcnt">Our Services</h1>
-          <p id="srvp">
+          <h1 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }} id="srvcnt">
+            Our Services
+          </h1>
+          <p style={{ color: isDarkMode ? "#00000099" : "#848484" }} id="srvp">
             Lead the new technological era with our extensive services.
           </p>
-          <Link to={"/services"} id="svcbtn">
-            <p className="svcbtn_content">explore more</p>
+          {/* <Link to={"/services"} id="svcbtn">
+            <p
+              style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+              className="svcbtn_content"
+            >
+              explore more
+            </p>
+          </Link> */}
+
+          <Link to={"/services"} id="aboutbtn">
+            <p
+              style={{ color: isDarkMode ? "#000000" : "#848484" }}
+              className="aboutbtn_content"
+            >
+              Explore More
+            </p>
           </Link>
         </div>
-        <div id="buttons">
-          <Link to={"/consultingandstrategy"} className="btnlinks">
+        <div
+          style={{ color: isDarkMode ? "#000000" : "#848484" }}
+          id={isDarkMode ? "buttons" : "buttonss"}
+        >
+          <Link
+            to={"/consultingandstrategy"}
+            className={isDarkMode ? "btnlinkslight" : "btnlinks"}
+          >
             Consulting And Strategy
           </Link>
-          <Link to={"/userexperience"} className="btnlinks">
+          <Link
+            to={"/userexperience"}
+            className={isDarkMode ? "btnlinkslight" : "btnlinks"}
+          >
             User Experience
           </Link>
-          <Link to={"/productdevelopment"} className="btnlinks">
+          <Link
+            to={"/productdevelopment"}
+            className={isDarkMode ? "btnlinkslight" : "btnlinks"}
+          >
             Product Development
           </Link>
-          <Link to={"/digitalmarketing"} className="btnlinks">
+          <Link
+            to={"/digitalmarketing"}
+            className={isDarkMode ? "btnlinkslight" : "btnlinks"}
+          >
             Digital Marketing
           </Link>
         </div>
       </div>
     </section>
-    );
+  );
 }

@@ -1,5 +1,5 @@
-import facebook from "../navigationBar/images/ic_baseline-facebook.svg";
-import instagram from "../navigationBar/images/mdi_instagram.svg";
+import facebook from "../navigationBar/images/mdi_instagram.svg";
+import instagram from "../navigationBar/images/mdi_twitter.svg";
 import linkedin from "../navigationBar/images/mdi_linkedin.svg";
 import Vectorr from "./images/Vectorr.svg";
 import Codelinear from "../codelinear/codelinear";
@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 import { gsap, Bounce } from "gsap";
 import { useRef, useEffect } from "react";
 
-export default function Lowerfooter() {
+export default function Lowerfooter({ isDarkMode }) {
   let footeranimation = useRef(null);
   let footeranimationwidth = useRef(null);
-  let footerScroll = useRef(null)
+  let footerScroll = useRef(null);
 
   const Effect = () => {
     window.scrollTo(0, 0);
@@ -51,31 +51,61 @@ export default function Lowerfooter() {
       <div id="lower-footer">
         <div className="footer-column">
           <div className="column">
-            <Link to={"/about"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/about"}
+              className="footerlink"
+              onClick={Effect}
+            >
               About
             </Link>
-            <Link to={"/services"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/services"}
+              className="footerlink"
+              onClick={Effect}
+            >
               Services
             </Link>
           </div>
           <div className="column">
-            <Link to={"/work"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/work"}
+              className="footerlink"
+              onClick={Effect}
+            >
               Work
             </Link>
-            <Link to={"/career"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/career"}
+              className="footerlink"
+              onClick={Effect}
+            >
               Careers
             </Link>
           </div>
           <div className="column">
-            <Link to={"/blog"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/blog"}
+              className="footerlink"
+              onClick={Effect}
+            >
               Ideas
             </Link>
-            <Link to={"/let's_talk"} className="footerlink" onClick={Effect}>
+            <Link
+              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              to={"/let's_talk"}
+              className="footerlink"
+              onClick={Effect}
+            >
               Let's Talk
             </Link>
           </div>
         </div>
-        <div id="contact">
+        <div  style={{ color: isDarkMode ? "#000000" : "#959595" }}  id="contact">
           <p>
             info
             <span
@@ -102,20 +132,24 @@ export default function Lowerfooter() {
               loading="lazy"
             />
           </Link>
-          <img
-            src={facebook}
-            alt=""
-            srcset=""
-            className="icon"
-            loading="lazy"
-          />
-          <img
-            src={instagram}
-            alt=""
-            srcset=""
-            className="icon"
-            loading="lazy"
-          />
+          <Link target="blank" to="https://www.instagram.com/codelinear_">
+            <img
+              src={facebook}
+              alt=""
+              srcset=""
+              className="icon"
+              loading="lazy"
+            />
+          </Link>
+          <Link target="blank" to="https://twitter.com/Codelinear_">
+            <img
+              src={instagram}
+              alt=""
+              srcset=""
+              className="icon"
+              loading="lazy"
+            />
+          </Link>
           <Link target="blank" to="https://medium.com/@codelinear_">
             <img
               src={Vectorr}

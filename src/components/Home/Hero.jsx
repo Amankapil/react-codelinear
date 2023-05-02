@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export default function Hero() {
+export default function Hero({ isDarkMode, toggleDarkMode }) {
   const [array, setarray] = useState();
   const [content, setContent] = useState();
 
@@ -16,7 +16,10 @@ export default function Hero() {
   // }, []);
   return (
     <>
-      <section id="hero">
+      <section
+        style={{ backgroundColor: isDarkMode ? "white" : "#000" }}
+        id="hero"
+      >
         <div className="bgi">
           <video
             className="bgv"
@@ -29,13 +32,21 @@ export default function Hero() {
           ></video>
         </div>
         <section id="content">
-{/* <<<<<<< HEAD */}
-          <h1 id="header">Propelling The World By Design</h1>
-{/* ======= */}
-          {/* <h1 id="header">Propeling The World By Design</h1> */}
-{/* >>>>>>> e54453664bb103af8dba99ffc8f91c4869b50f38 */}
+          <h1
+            class="max-2xl:text-7xl"
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            id="header"
+          >
+            Propelling The World By Design
+          </h1>
+
           <Link to={"/about"} id="aboutbtn">
-            <p className="aboutbtn_content">about us</p>
+            <p
+              style={{ color: isDarkMode ? "#000000" : "#848484" }}
+              className="aboutbtn_content"
+            >
+              About Us
+            </p>
           </Link>
         </section>
       </section>

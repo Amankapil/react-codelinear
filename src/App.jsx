@@ -29,16 +29,20 @@ import AnimatedCursor from "react-animated-cursor";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dash from "./components/Dashboard/dash";
 import Login from "./components/Dashboard/Login";
+import { useState } from "react";
 
 function App() {
   window.scroll({
     behavior: "smooth",
   });
 
-  const user = localStorage.getItem("username");
-  console.log(user); // output: John
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
   return (
-    <div>
+    <div style={{ backgroundColor: isDarkMode ? "#FFFFFF" : "#090909" }}>
       <AnimatedCursor
         innerSize={8}
         outerSize={0}
@@ -54,21 +58,101 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          {/* <Route exact path="/login" element={<Login />} /> */}
-
-          <Route exact path="/admin" element={user ? <Dash /> : <Login />} />
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/work" element={<Work />} />
-          <Route exact path="/career" element={<Career />} />
-          <Route exact path="/blog" element={<Blog />} />
-          <Route exact path="/services" element={<Services />} />
-          <Route exact path="/consultingandstrategy" element={<Consulting />} />
-          <Route exact path="/userexperience" element={<UX />} />
-          <Route exact path="/productdevelopment" element={<PD />} />
-          <Route exact path="/digitalmarketing" element={<DM />} />
-          <Route exact path="/let's_talk" element={<Talk />} />
-          <Route exact path="/empathy-in-UX" element={<Empathy />} />
+          <Route
+            exact
+            path="/"
+            element={
+              <Home isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route exact path="/admin" element={<Dash />} />
+          <Route exact path="/login" element={<Login />} />
+          <Route
+            exact
+            path="/about"
+            element={
+              <About isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/work"
+            element={
+              <Work isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/career"
+            element={
+              <Career isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/blog"
+            element={
+              <Blog isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/services"
+            element={
+              <Services
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/consultingandstrategy"
+            element={
+              <Consulting
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/userexperience"
+            element={
+              <UX isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/productdevelopment"
+            element={
+              <PD isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/digitalmarketing"
+            element={
+              <DM isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/let's_talk"
+            element={
+              <Talk isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/empathy-in-UX"
+            element={
+              <Empathy
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            }
+          />
           <Route
             exact
             path="/digital-marketing-trends-2023"

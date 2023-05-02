@@ -10,7 +10,7 @@ import Testimonials from "./Testmonials";
 import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
 
-export default function Home() {
+export default function Home({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   const [scrollY, setScrollY] = useState(0);
@@ -27,7 +27,7 @@ export default function Home() {
 
   useEffect(() => {
     const tl = gsap.timeline({
-      defaults: { duration: 0.5 },
+      defaults: { duration: 0.75 },
     });
     tl.fromTo(fade, { opacity: "0" }, { opacity: "0" });
     tl.fromTo(fade, { opacity: "0" }, { opacity: "1" });
@@ -36,17 +36,19 @@ export default function Home() {
   return (
     <>
       <header className="App-header" style={{ top: scrollY }}>
-        <Navbar />
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </header>
       <main ref={(el) => (fade = el)} className="home">
-        <Hero />
-        <HomeAbout />
-        <HomeServices />
-        <Testimonials />
-        <BlogHome />
+        <Hero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        {/* <div className="mt-10"> */}
+        <HomeAbout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        {/* </div> */}
+        <HomeServices isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Testimonials isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <BlogHome isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </main>
       <footer className="App-footer" style={{ bottom: -scrollY }}>
-        <Footer />
+        <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </footer>
     </>
   );

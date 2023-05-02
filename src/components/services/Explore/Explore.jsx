@@ -39,7 +39,7 @@ const Explore = () => {
                 Explore Our Services
               </h1>
             </div>
-            <div className="cards tett p-10  w-[100%] max-lg:p-0">
+            <div className="cards tett p-10  w-full max-lg:p-0">
               <Swiper
                 slidesPerView={2}
                 slidesPerGroup={1}
@@ -422,7 +422,7 @@ const Explore = () => {
                 <div className="ball" ref={(el) => (arrowswipe = el)}></div>
               </div>
             </div>
-            <div className="cards tett p-10  w-[100%] max-lg:p-0">
+            <div className="cards tett p-10  w-ful max-lg:p-0">
               <Swiper
                 slidesPerView={2}
                 slidesPerGroup={1}

@@ -5,9 +5,7 @@ import { useState } from "react";
 
 // Hostinger / Hosting	syedsaif018@gmail.com 	Codelinear@CLSS123
 
-
-
-export default function Crew() {
+export default function Crew({ isDarkMode }) {
   // const [array, setarray] = useState();
   // const [content, setContent] = useState();
 
@@ -32,7 +30,12 @@ export default function Crew() {
           them.
         </p>
         <Link to={"/career"} className="career-crew-btn">
-          <p className="career-crew-content">career</p>
+          <p
+            style={{ color: isDarkMode ? "#000000" : "#848484" }}
+            className="career-crew-content"
+          >
+            career
+          </p>
         </Link>
       </div>
       <div className="crewcontainer">

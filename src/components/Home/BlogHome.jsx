@@ -16,7 +16,7 @@ import image7 from "../Blog/Images/Frame 46.svg";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const BlogHome = () => {
+const BlogHome = ({ isDarkMode }) => {
   const url = useLocation();
 
   const [Widht, setWidth] = useState(window.innerWidth);
@@ -28,7 +28,11 @@ const BlogHome = () => {
     return (
       <>
         <div id="blog">
-          <div id="blog_heading" className="-ml20">
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            id="blog_heading"
+            className="-ml20"
+          >
             We Pen Down Our Brightest Ideas
           </div>
           <div
@@ -90,10 +94,10 @@ const BlogHome = () => {
                   </div>
                   <div className="head mt-5">
                     <h2
-                      className="sub-heading text-center text-stone-100"
+                      className="sub-heading text-center "
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
                         fontWeight: "600",
                       }}
                     >
@@ -105,7 +109,8 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        // color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       Building an MVP that attracts investors enough to fund it
@@ -132,7 +137,7 @@ const BlogHome = () => {
                       className="sub-heading text-center text-stone-100"
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
                         fontWeight: "600",
                       }}
                     >
@@ -144,7 +149,7 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       We have compiled a list of digital marketing trends that
@@ -171,7 +176,8 @@ const BlogHome = () => {
                       className="sub-heading text-center text-stone-100"
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
+
                         fontWeight: "600",
                       }}
                     >
@@ -183,7 +189,7 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       Empathy is a foundational principle in the concept of
@@ -210,7 +216,8 @@ const BlogHome = () => {
                       className="sub-heading text-center text-stone-100"
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
+
                         fontWeight: "600",
                       }}
                     >
@@ -222,7 +229,7 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       While Shopify offers a no-coding and user-friendly
@@ -234,14 +241,14 @@ const BlogHome = () => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                  <Link to={"/no-code-revolution"}>
-                    <img
-                      src={image5}
-                      alt=""
-                      style={{
-                        borderRadius: "11.4px",
-                      }}
-                    />
+                    <Link to={"/no-code-revolution"}>
+                      <img
+                        src={image5}
+                        alt=""
+                        style={{
+                          borderRadius: "11.4px",
+                        }}
+                      />
                     </Link>
                   </div>
                   <div className="head mt-5">
@@ -249,7 +256,8 @@ const BlogHome = () => {
                       className="sub-heading text-center text-stone-100"
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
+
                         fontWeight: "600",
                       }}
                     >
@@ -261,7 +269,7 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       Building an MVP that attracts investors enough to fund it
@@ -273,14 +281,14 @@ const BlogHome = () => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                  <Link to={"/design"}>
-                    <img
-                      src={image4}
-                      alt=""
-                      style={{
-                        borderRadius: "11.4px",
-                      }}
-                    />
+                    <Link to={"/design"}>
+                      <img
+                        src={image4}
+                        alt=""
+                        style={{
+                          borderRadius: "11.4px",
+                        }}
+                      />
                     </Link>
                   </div>
                   <div className="head mt-5">
@@ -288,7 +296,7 @@ const BlogHome = () => {
                       className="sub-heading text-center text-stone-100"
                       style={{
                         fontFamily: "graphikthin",
-                        color: "#d8d6d6",
+                        color: isDarkMode ? "#000000" : "#d8d6d6",
                         fontWeight: "600",
                       }}
                     >
@@ -300,7 +308,7 @@ const BlogHome = () => {
                       className="flex coloo para w-full box-pera text-stone-100 items-center justify-center text-center"
                       style={{
                         fontFamily: "graphik",
-                        color: "#848484",
+                        color: isDarkMode ? "#00000099" : "#848484",
                       }}
                     >
                       A design system is a guide or a standard structure with
@@ -311,9 +319,13 @@ const BlogHome = () => {
               </SwiperSlide>
             </Swiper>
             <div className=" flex justify-center items-center -mt-2 -ml-0">
-              <button className="exp_btn ">
-                <Link to="/blog" className="exp_btn-content">
-                  explore more
+              <button className="exp_btn">
+                <Link
+                  style={{ color: isDarkMode ? "#000000" : "#848484" }}
+                  to="/blog"
+                  className="exp_btn-content"
+                >
+                  Explore More
                 </Link>
               </button>
             </div>
@@ -327,13 +339,16 @@ const BlogHome = () => {
         <>
           <div id="blg">
             <div className="flex justify-center flex-col items-center w-full">
-              <h1 className="heading mt-20 text-center font-bold max-md:p-10 max-sm:p-5">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="heading mt-20 text-center font-bold max-md:p-10 max-sm:p-5"
+              >
                 Take A Peek At Our <br /> Case Study
               </h1>
               <p
                 className="w-96 text-center para mt-8 max-md:px-5 max-sm:w-full"
                 style={{
-                  color: "#848484",
+                  color: isDarkMode ? "#00000099" : "#848484",
                   fontFamily: "graphik",
                 }}
               >
@@ -387,16 +402,16 @@ const BlogHome = () => {
                 className=" swiper-container mySwiper h-[35rem] mt-20 max-md:mt-0 px-8 w-[100%] -ml20 max-2xl:ml-0 maxxl:w-[100%]"
               >
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
-                  <div className="cardh    mx-4 items-center">
+                  <div className="cardh mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/minimum-viable-product"}>
-                      <img
-                        src={image7}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/minimum-viable-product"}>
+                        <img
+                          src={image7}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -404,7 +419,8 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
+
                           fontWeight: "600",
                         }}
                       >
@@ -416,7 +432,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         Building an MVP that attracts investors enough to fund
@@ -428,14 +444,14 @@ const BlogHome = () => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/digital-marketing-trends-2023"}>
-                      <img
-                        src={image3}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/digital-marketing-trends-2023"}>
+                        <img
+                          src={image3}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -443,7 +459,8 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
+
                           fontWeight: "600",
                         }}
                       >
@@ -455,7 +472,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         We have compiled a list of digital marketing trends that
@@ -467,14 +484,14 @@ const BlogHome = () => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/empathy-in-UX"}>
-                      <img
-                        src={image2}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/empathy-in-UX"}>
+                        <img
+                          src={image2}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -482,7 +499,8 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
+
                           fontWeight: "600",
                         }}
                       >
@@ -494,7 +512,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         Empathy is a foundational principle in the concept of
@@ -506,14 +524,14 @@ const BlogHome = () => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/shopify-vs-magento"}>
-                      <img
-                        src={image6}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/shopify-vs-magento"}>
+                        <img
+                          src={image6}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -521,7 +539,8 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
+
                           fontWeight: "600",
                         }}
                       >
@@ -533,7 +552,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         While Shopify offers a no-coding and user-friendly
@@ -545,14 +564,14 @@ const BlogHome = () => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/no-code-revolution"}>
-                      <img
-                        src={image5}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/no-code-revolution"}>
+                        <img
+                          src={image5}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -560,7 +579,7 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
                           fontWeight: "600",
                         }}
                       >
@@ -572,7 +591,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         Building an MVP that attracts investors enough to fund
@@ -584,14 +603,14 @@ const BlogHome = () => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/design"}>
-                      <img
-                        src={image4}
-                        alt=""
-                        style={{
-                          borderRadius: "11.4px",
-                        }}
-                      />
+                      <Link to={"/design"}>
+                        <img
+                          src={image4}
+                          alt=""
+                          style={{
+                            borderRadius: "11.4px",
+                          }}
+                        />
                       </Link>
                     </div>
                     <div className="head mt-5">
@@ -599,7 +618,8 @@ const BlogHome = () => {
                         className="sub-heading text-center text-stone-100"
                         style={{
                           fontFamily: "graphikthin",
-                          color: "#d8d6d6",
+                          color: isDarkMode ? "#000000" : "#d8d6d6",
+
                           fontWeight: "600",
                         }}
                       >
@@ -611,7 +631,7 @@ const BlogHome = () => {
                         className="flex para coloo w-full box-pera text-stone-100 items-center justify-center text-center"
                         style={{
                           fontFamily: "graphik",
-                          color: "#848484",
+                          color: isDarkMode ? "#00000099" : "#848484",
                         }}
                       >
                         A design system is a guide or a standard structure with

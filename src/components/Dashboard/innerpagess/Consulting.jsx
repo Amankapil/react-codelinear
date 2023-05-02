@@ -9,11 +9,15 @@ const Cunsulting = () => {
   const [editMode, setEditMode] = useState(false);
   const [vision_pera, setvision_pera] = useState(false);
   const [editModeServices, seteditModeServices] = useState(false);
+
   const [guiding_pera, setguiding_pera] = useState("");
+
   const [array, setarray] = useState("");
   const [Aboutarray, setAboutarray] = useState();
   const [Servicesarray, setServicesarray] = useState();
+
   const [heading, setheading] = useState("");
+
   const [error, setError] = useState("");
 
   const handleEditClickServices = () => {

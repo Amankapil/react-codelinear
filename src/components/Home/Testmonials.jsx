@@ -4,7 +4,7 @@ import Client from "./client";
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 
-export default function Hero() {
+export default function Hero({ isDarkMode }) {
   let testimonial = useRef(null);
 
   useEffect(() => {
@@ -30,40 +30,98 @@ export default function Hero() {
     <section id="testimonials">
       <div className="test-main-container">
         <div id="container-2">
-          <h1 id="container-2_header">
+          <h1
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            id="container-2_header"
+          >
             We Are Defined By How Our Clients Perceive Us.
           </h1>
           <div id="container">
             <div className="test-content" ref={(el) => (testimonial = el)}>
-              <p id="container-h3">
+              <p
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                id="container-h3"
+              >
                 They're a full-stack performance marketing team with relevant
                 experience despite being in completely different places.
-                <h2 id="container_h2">Sarah Wicker</h2>
-                <p id="pm">product manager, steelcase</p>
+                <h2
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="container_h2"
+                >
+                  Sarah Wicker
+                </h2>
+                <p
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="pm"
+                >
+                  product manager, steelcase
+                </p>
               </p>
-              <p id="container-h3">
+              <p
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                id="container-h3"
+              >
                 The best thing about Codelinear is the professionalism and
                 enthusiasm to do their best for us.
                 <h2 id="container_h2">Cj Jenkins</h2>
                 <p id="pm">product manager, moveworks</p>
               </p>
-              <p id="container-h3">
+              <p
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                id="container-h3"
+              >
                 Most thinks that agency is expensive, but for me, it's a good
                 move and worth while investment.
-                <h2 id="container_h2">Alex Bouaziz</h2>
-                <p id="pm">co-founder and ceo, deel</p>
+                <h2
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="container_h2"
+                >
+                  Alex Bouaziz
+                </h2>
+                <p
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="pm"
+                >
+                  co-founder and ceo, deel
+                </p>
               </p>
-              <p id="container-h3">
+              <p
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                id="container-h3"
+              >
                 They were able to see the bigger picture and identify
                 improvement opportunity across our platform.
-                <h2 id="container_h2">Megan Larsen</h2>
-                <p id="pm">founder and director, sodashi</p>
+                <h2
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="container_h2"
+                >
+                  Megan Larsen
+                </h2>
+                <p
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="pm"
+                >
+                  founder and director, sodashi
+                </p>
               </p>
-              <p id="container-h3">
+              <p
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                id="container-h3"
+              >
                 You can really easily see the care that they have for our
                 product and our relationship.
-                <h2 id="container_h2">Margaret Hathaway</h2>
-                <p id="pm">vice president, hinge health</p>
+                <h2
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="container_h2"
+                >
+                  Margaret Hathaway
+                </h2>
+                <p
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="pm"
+                >
+                  vice president, hinge health
+                </p>
               </p>
             </div>
           </div>
