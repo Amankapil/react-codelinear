@@ -288,9 +288,10 @@
   align-items: center;
 }
 .close-line{
-  width: 100%;
+  width: 60%;
+  color: #ffcd05;
   height: 2px;
-  background-color: #d8d6d6;
+  background-color: #ffcd05;
 }
 .job-loc {
   font-family: graphik;

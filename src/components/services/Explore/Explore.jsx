@@ -69,13 +69,13 @@ const Explore = () => {
                   },
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper w-[115%] -ml-28 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
+                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
-                <SwiperSlide>
-                  <Link to="/userexperience" className="px20  cursor-grab">
-                    <div className="card1 mx-4 max-md:mx-0 hideee relative cursor-grab">
+                <SwiperSlide className="flex justify-center items-center">
+                  <Link to="/userexperience" className="px20 cursor-grab">
+                    <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           User Experience
                         </p>
@@ -83,11 +83,11 @@ const Explore = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <Link to="/productdevelopment" className="px20  cursor-grab">
-                    <div className="card1 mx48 max-md:mx-0 hideee relative  cursor-grab">
+                <SwiperSlide className="flex justify-center items-center">
+                  <Link to="/productdevelopment" className="px20 cursor-grab">
+                    <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Product Development
                         </p>
@@ -95,11 +95,11 @@ const Explore = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide>
-                  <Link to="/digitalmarketing" className="px20  cursor-grab">
-                    <div className="card1 ml48 max-md:mx-0 hideee relative  cursor-grab">
+                <SwiperSlide className="flex justify-center items-center">
+                  <Link to="/digitalmarketing" className="px20 cursor-grab">
+                    <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Digital Marketing
                         </p>
@@ -159,17 +159,17 @@ const Explore = () => {
                   },
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper w-[110%] -ml-28 max-lg:w-[100%] max-lg:ml-0  cursor-grab"
+                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
                 <SwiperSlide className="flex justify-center items-center">
                   <Link
                     to="/consultingandstrategy"
-                    className="px20 cursor-grab"
+                    className="px20 cursor-grab z-10"
                   >
-                    <div className="card1 mx-4 max-md:mx-0 hideee relative cursor-grab">
-                      <div className="img1 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                    <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
+                      <div className="img1 z-10 ml-10  ma\  -top-0"></div>
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
+                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
                           Consulting And Strategy
                         </p>
                       </div>
@@ -181,7 +181,7 @@ const Explore = () => {
                   <Link to="/productdevelopment" className="px20 cursor-grab">
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Product Development
                         </p>
@@ -193,7 +193,7 @@ const Explore = () => {
                   <Link to="/digitalmarketing" className="px20 cursor-grab">
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Digital Marketing
                         </p>
@@ -253,28 +253,28 @@ const Explore = () => {
                   },
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper w-[110%] -ml-28 max-lg:w-[100%] max-lg:ml-0  cursor-grab"
+                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link
                     to="/consultingandstrategy"
-                    className="px20  cursor-grab"
+                    className="px20 cursor-grab z-10"
                   >
-                    <div className="card1 mx-4 max-md:mx-0 hideee relative cursor-grab">
-                      <div className="img1 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                    <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
+                      <div className="img1 z-10 ml-10  ma\  -top-0"></div>
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
+                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
                           Consulting And Strategy
                         </p>
                       </div>
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link to="/userexperience" className="px20 cursor-grab">
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           User Experience
                         </p>
@@ -283,11 +283,11 @@ const Explore = () => {
                   </Link>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link to="/digitalmarketing" className="px20 cursor-grab">
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Digital Marketing
                         </p>
@@ -347,28 +347,28 @@ const Explore = () => {
                   },
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper w-[110%] -ml-28 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
+                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link
                     to="/consultingandstrategy"
-                    className="px20 cursor-grab"
+                    className="px20 cursor-grab z-10"
                   >
-                    <div className="card1 mx-4 max-md:mx-0 hideee relative cursor-grab">
-                      <div className="img1 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                    <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
+                      <div className="img1 z-10 ml-10  ma\  -top-0"></div>
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
+                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
                           Consulting And Strategy
                         </p>
                       </div>
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link to="/userexperience" className="px20 cursor-grab">
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           User Experience
                         </p>
@@ -376,11 +376,11 @@ const Explore = () => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide>
+                <SwiperSlide className="flex justify-center items-center">
                   <Link to="/productdevelopment" className="px20 cursor-grab">
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
-                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end colo  max-lg:opacity-100">
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
                           Product Development
                         </p>
@@ -461,8 +461,7 @@ const Explore = () => {
                   >
                     <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img1 z-10 ml-10  ma\  -top-0"></div>
-                      <div className="opaci name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
-                        {/* <h1>hiiii</h1> */}
+                      <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
                         <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
                           Consulting And Strategy
                         </p>

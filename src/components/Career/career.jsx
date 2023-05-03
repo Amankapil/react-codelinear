@@ -8,7 +8,6 @@ import Positions from "./Position";
 import Whyus from "./Whyus";
 import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
-import AnimatedCursor from "react-animated-cursor";
 
 
 export default function Career() {

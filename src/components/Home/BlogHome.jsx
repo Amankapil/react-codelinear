@@ -398,8 +398,9 @@ const BlogHome = ({ isDarkMode }) => {
                     spaceBetween: 30,
                   },
                 }}
+                pagination={true}
                 modules={[Autoplay, Pagination, Navigation]}
-                className=" swiper-container mySwiper h-[35rem] mt-20 max-md:mt-0 px-8 w-[100%] -ml20 max-2xl:ml-0 maxxl:w-[100%]"
+                className=" swiper-container mySwiper h-[32rem] mt-20 max-md:mt-0 px-8 w-[100%] -ml20 max-2xl:ml-0 maxxl:w-[100%]"
               >
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh mx-4 items-center">

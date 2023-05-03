@@ -54,7 +54,7 @@ const Parent = () => {
             </div>
             <div className="vertical-animation-container">
               <h1 className="vertical-animation-h1">
-                Product Strategy and Roadmapping{" "}
+                Product Strategy and Roadmapping
               </h1>
 
               <p className="vertical-animation-para">
@@ -93,19 +93,22 @@ const Parent = () => {
           ref={child2Ref}
           onScroll={handleChild2Scroll}
         >
-          <div className="flex" style={{ width: "2000px", height: "100%" }}>
-            {/* <div className="horizontal-animation-container"> */}
+          <div className="flex" style={{ width: "2500px", height: "100%" }}>
             <li className="horizontal-animation-para">Market Research</li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">Stakeholder Workshops</li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
-              Product Strategy and Roadmapping
+              {" "}
+              Product Strategy and Roadmapping{" "}
             </li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
-              Technology Consulting and Platform Planning{" "}
+              Technology Consulting and Platform Planning
             </li>
+            {/* <li className="horizontal-animation-para"></li> */}
             <li className="horizontal-animation-para">GTM Strategy</li>
           </div>
-          {/* </div> */}
         </div>
       </div>
     );
@@ -194,16 +197,21 @@ const Parent = () => {
           ref={child2Ref}
           onScroll={handleChild2Scroll}
         >
-          <div className="flex" style={{ width: "2000px", height: "100%" }}>
+          <div className="flex" style={{ width: "2500px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
-            <li className="horizontal-animation-para">Market Research</li>
             <li className="horizontal-animation-para">UX Audit</li>
-            <li className="horizontal-animation-para ml-5">UX Research</li>
+            <li className="horizontal-animation-para "></li>
+
+            <li className="horizontal-animation-para ">UX Research</li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">UI UX Consulting</li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">
               User Experience Design
             </li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">User Interface Design</li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">Digital Branding</li>
           </div>
 
@@ -226,6 +234,15 @@ const Parent = () => {
           onScroll={handleChild1Scroll}
         >
           <div style={{ height: "1500px" }}>
+            <div className="vertical-animation-container">
+              <h1 className="vertical-animation-h1">Website Development</h1>
+              <p className="vertical-animation-para">
+                A user's first interaction with your company is through your
+                website. We develop and maintain websites to enhance your
+                business image and credibility by providing your users with a
+                seamless experience across each point of contact.
+              </p>
+            </div>
             <div className="vertical-animation-container">
               <h1 className="vertical-animation-h1">Web App Development</h1>
               <p className="vertical-animation-para">
@@ -294,20 +311,26 @@ const Parent = () => {
           ref={child2Ref}
           onScroll={handleChild2Scroll}
         >
-          <div className="flex" style={{ width: "2000px", height: "100%" }}>
+          <div className="flex" style={{ width: "3000px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
             <li className="horizontal-animation-para">Website Development</li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">Web App Development</li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
               E-Commerce Development
             </li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">MVP Development</li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
               Native App Development
             </li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
               Hybrid App Development
             </li>
+            <li className="horizontal-animation-para"></li>
             <li className="horizontal-animation-para">
               Enterprise App Development
             </li>
@@ -380,8 +403,11 @@ const Parent = () => {
           <div className="flex" style={{ width: "2000px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
             <li className="horizontal-animation-para">SEO</li>
-            <li className="horizontal-animation-para ml-1">Social Media</li>
+            <li className="horizontal-animation-para "></li>
+            <li className="horizontal-animation-para ">Social Media</li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">Paid Search</li>
+            <li className="horizontal-animation-para "></li>
             <li className="horizontal-animation-para">Paid Social </li>
           </div>
           {/* </div> */}
