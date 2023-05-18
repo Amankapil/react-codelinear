@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useLocation } from "react-router-dom";
 
-const Parent = () => {
+const Parent = ({ isDarkMode, toggleDarkMode }) => {
   const url = useLocation();
 
   const child1Ref = useRef(null);
@@ -34,8 +34,16 @@ const Parent = () => {
         >
           <div className="snapwala" style={{ height: "1500px" }}>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Market Research</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Market Research
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 As technology is propelling the world into a new realm of
                 disruptions, our strategic market research enables you to
                 identify the viability of the product by directly taking
@@ -44,8 +52,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Stakeholder Workshops</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Stakeholder Workshops
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 In order to create a sense of shared purpose and build momentum,
                 we take a step ahead and organise stakeholder workshops to gain
                 an edge over current scenarios and strategically develop an
@@ -53,11 +69,17 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
                 Product Strategy and Roadmapping
               </h1>
 
-              <p className="vertical-animation-para">
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 We align your product vision with strategy to differentiate you
                 in a market and drive your business goals.We envision the future
                 state of the product and develop a conscious roadmap to
@@ -65,10 +87,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
                 Technology Consulting and Platform Planning
               </h1>
-              <p className="vertical-animation-para">
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Technology is becoming ubiquitous, and so is its impact. We
                 assess your entire tech infrastructure, identify gaps, mitigate
                 associated threats, and devise strategies that enable you to
@@ -77,8 +105,16 @@ const Parent = () => {
             </div>
 
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">GTM Strategy </h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                GTM Strategy{" "}
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Our Go-To-Market Strategy entails extensive research into the
                 market condition. We devise comprehensive launch and marketing
                 strategies for you to position yourself in the market by
@@ -94,20 +130,41 @@ const Parent = () => {
           onScroll={handleChild2Scroll}
         >
           <div className="flex" style={{ width: "2500px", height: "100%" }}>
-            <li className="horizontal-animation-para">Market Research</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Market Research
+            </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">Stakeholder Workshops</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Stakeholder Workshops
+            </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               {" "}
               Product Strategy and Roadmapping{" "}
             </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               Technology Consulting and Platform Planning
             </li>
             {/* <li className="horizontal-animation-para"></li> */}
-            <li className="horizontal-animation-para">GTM Strategy</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              GTM Strategy
+            </li>
           </div>
         </div>
       </div>
@@ -128,8 +185,16 @@ const Parent = () => {
         >
           <div style={{ height: "1500px" }}>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Ux Audit</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Ux Audit
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 "Evaluation is Creation." A UX audit is a critical evaluation of
                 the website's or application's interface, which enables us to
                 gain valuable insights into user behaviour and formulate a
@@ -138,8 +203,16 @@ const Parent = () => {
             </div>
 
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">UX Research</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                UX Research
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 A holistic understanding of the target audience is the key
                 driver of growth. Our UX research team strives to provide
                 qualitative as well as quantitative insights into end-user
@@ -148,9 +221,17 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">UI UX Consulting </h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                UI UX Consulting{" "}
+              </h1>
 
-              <p className="vertical-animation-para">
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 It is critical to have a digital presence that conveys your
                 brand values while also seamlessly interacting with users. We
                 take charge of everything from brainstorming designs to
@@ -159,8 +240,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">User Experience Design</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                User Experience Design
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 User Experience is at the core of everything we build at
                 Codelinear. Our UX team deligently researches user behaviour and
                 strategically builds prototypes and wireframes that provide the
@@ -169,8 +258,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">User Interface Design</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                User Interface Design
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 In the era of plummeting user attention span, an engaging user
                 interface ensures better customer retention and conversion
                 rates. Our UI Team creates high-fidelity interfaces that
@@ -179,8 +276,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Digital Branding</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Digital Branding
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Given how the digital storm is transforming business processes
                 and consumer behaviour, a digital brand image enables you to
                 communicate with your audience. We blend creativity with
@@ -199,20 +304,48 @@ const Parent = () => {
         >
           <div className="flex" style={{ width: "2500px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
-            <li className="horizontal-animation-para">UX Audit</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              UX Audit
+            </li>
             <li className="horizontal-animation-para "></li>
 
-            <li className="horizontal-animation-para ">UX Research</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para "
+            >
+              UX Research
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">UI UX Consulting</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              UI UX Consulting
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               User Experience Design
             </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">User Interface Design</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              User Interface Design
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">Digital Branding</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Digital Branding
+            </li>
           </div>
 
           {/* </div> */}
@@ -235,8 +368,16 @@ const Parent = () => {
         >
           <div style={{ height: "1500px" }}>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Website Development</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Website Development
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 A user's first interaction with your company is through your
                 website. We develop and maintain websites to enhance your
                 business image and credibility by providing your users with a
@@ -244,8 +385,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Web App Development</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Web App Development
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 A holistic understanding of the target audience is the key
                 driver of growth. Our UX research team strives to provide
                 qualitative as well as quantitative insights into end-user
@@ -254,9 +403,17 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">E-Commerce Development </h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                E-Commerce Development{" "}
+              </h1>
 
-              <p className="vertical-animation-para">
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 "Evaluation is Creation." A UX audit is a critical evaluation of
                 the website's or application's interface, which enables us to
                 gain valuable insights into user behaviour and formulate a
@@ -264,8 +421,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">MVP Development</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                MVP Development
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Minimum Viable Product enables you to launch your product in the
                 market and gain valuable feedback for further development. We
                 empower ideas by building MVPs that strategically capture the
@@ -273,8 +438,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Native App Development</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Native App Development
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Technology is altering the way the world is perceived. We build
                 applications that distinguish your app from more than a million
                 in the market. Our team of developers utilise their expertise to
@@ -284,8 +457,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Hybrid App Development</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Hybrid App Development
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Our Go-To-Market Strategy entails extensive research into the
                 market condition. We devise comprehensive launch and marketing
                 strategies for you to position yourself in the market by
@@ -293,10 +474,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">
-                Enterprise App Development{" "}
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Enterprise App Development
               </h1>
-              <p className="vertical-animation-para">
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Our Go-To-Market Strategy entails extensive research into the
                 market condition. We devise comprehensive launch and marketing
                 strategies for you to position yourself in the market by
@@ -313,25 +500,52 @@ const Parent = () => {
         >
           <div className="flex" style={{ width: "3000px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
-            <li className="horizontal-animation-para">Website Development</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Website Development
+            </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">Web App Development</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Web App Development
+            </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               E-Commerce Development
             </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">MVP Development</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              MVP Development
+            </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               Native App Development
             </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               Hybrid App Development
             </li>
             <li className="horizontal-animation-para"></li>
-            <li className="horizontal-animation-para">
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
               Enterprise App Development
             </li>
           </div>
@@ -355,8 +569,16 @@ const Parent = () => {
         >
           <div style={{ height: "1500px" }}>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">SEO</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                SEO
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 A user's first interaction with your company is through your
                 website. We develop and maintain websites to enhance your
                 business image and credibility by providing your users with a
@@ -365,8 +587,16 @@ const Parent = () => {
             </div>
 
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Social Media</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Social Media
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 A holistic understanding of the target audience is the key
                 driver of growth. Our UX research team strives to provide
                 qualitative as well as quantitative insights into end-user
@@ -375,8 +605,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Paid Search </h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Paid Search{" "}
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 "Evaluation is Creation." A UX audit is a critical evaluation of
                 the website's or application's interface, which enables us to
                 gain valuable insights into user behaviour and formulate a
@@ -384,8 +622,16 @@ const Parent = () => {
               </p>
             </div>
             <div className="vertical-animation-container">
-              <h1 className="vertical-animation-h1">Paid Social</h1>
-              <p className="vertical-animation-para">
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="vertical-animation-h1"
+              >
+                Paid Social
+              </h1>
+              <p
+                style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                className="vertical-animation-para"
+              >
                 Minimum Viable Product enables you to launch your product in the
                 market and gain valuable feedback for further development. We
                 empower ideas by building MVPs that strategically capture the
@@ -402,13 +648,33 @@ const Parent = () => {
         >
           <div className="flex" style={{ width: "2000px", height: "100%" }}>
             {/* <div className="horizontal-animation-container"> */}
-            <li className="horizontal-animation-para">SEO</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              SEO
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para ">Social Media</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para "
+            >
+              Social Media
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">Paid Search</li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Paid Search
+            </li>
             <li className="horizontal-animation-para "></li>
-            <li className="horizontal-animation-para">Paid Social </li>
+            <li
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="horizontal-animation-para"
+            >
+              Paid Social{" "}
+            </li>
           </div>
           {/* </div> */}
         </div>

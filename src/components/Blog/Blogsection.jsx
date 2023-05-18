@@ -4,21 +4,21 @@ import image3 from "./Images/Frame 46.svg";
 import image4 from "./Images/Frame 472.svg";
 import image5 from "./Images/Frame 45.svg";
 import image6 from "./Images/Frame 47.svg";
-import discovery from "./Images/Frame 48.png";
-import story from "./Images/Frame 49.png";
-import brand from "./Images/Frame 50.png";
-import SEO from "./Images/Frame 51.png";
-import UX from "./Images/Frame 52 (1).png";
-import gestalt from "./Images/Frame 53.png";
-import BVG from "./Images/Frame 54.png";
-import listen from "./Images/Frame 56.png";
-import reactimg from "./Images/Frame 4.png";
+import discovery from "./Images/Frame 48.svg";
+import story from "./Images/Frame 49.svg";
+import brand from "./Images/Frame 50.svg";
+import SEO from "./Images/Frame 51.svg";
+import UX from "./Images/Frame 52 (1).svg";
+import gestalt from "./Images/Frame 53.svg";
+import BVG from "./Images/Frame 54.svg";
+import listen from "./Images/Frame 56.svg";
+import reactimg from "./Images/Frame 4.svg";
 import { useRef } from "react";
 import gsap from "gsap";
 
 import { Link } from "react-router-dom";
 
-export default function Blogsection() {
+export default function Blogsection({ isDarkMode, toggleDarkMode }) {
   let empathy = useRef(null);
   let db = useRef(null);
   let digitalmarketing = useRef(null);
@@ -211,36 +211,69 @@ export default function Blogsection() {
     <>
       <section className="blog-content-section">
         <div className="blog-btns">
-          <p className="blog-btn-content" onClick={onClickSort2}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort2}
+          >
             Branding
           </p>
-          <p className="blog-btn-content" onClick={onClickSort3}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort3}
+          >
             UI/UX Design
           </p>
-          <p className="blog-btn-content" onClick={onClickSort4}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort4}
+          >
             SEO
           </p>
-          <p className="blog-btn-content" onClick={onClickSort5}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort5}
+          >
             Social Media
           </p>
-          <p className="blog-btn-content" onClick={onClickSort6}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort6}
+          >
             Product Development
           </p>
-          <p className="blog-btn-content" onClick={onClickSort7}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort7}
+          >
             Digital Marketing
           </p>
-          <p className="blog-btn-content" onClick={onClickSort8}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort8}
+          >
             eCommerce
           </p>
-          <p className="blog-btn-content" onClick={onClickSort9}>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="blog-btn-content"
+            onClick={onClickSort9}
+          >
             No Code
           </p>
           <p
-            className="blog-btn-content"
-            ref={(el) => (all = el)}
             style={{
+              color: isDarkMode ? "#00000099" : "#848484",
               visibility: "hidden",
             }}
+            className="blog-btn-content"
+            ref={(el) => (all = el)}
             onClick={onClickSort1}
           >
             All
@@ -252,7 +285,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (db = el)}>
             <img src={brand} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Disruptive Branding</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Disruptive Branding
+              </h1>
             </div>
           </div>
         </Link>
@@ -260,7 +298,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (dw = el)}>
             <img src={discovery} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Discovery Workshop</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Discovery Workshop
+              </h1>
             </div>
           </div>
         </Link>
@@ -268,7 +311,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (gp = el)}>
             <img src={gestalt} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Gestalt Psychology</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Gestalt Psychology
+              </h1>
             </div>
           </div>
         </Link>
@@ -276,7 +324,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (Bg = el)}>
             <img src={BVG} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Bing Vs Google</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Bing Vs Google
+              </h1>
             </div>
           </div>
         </Link>
@@ -284,7 +337,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (NSEO = el)}>
             <img src={SEO} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">The Changing Nature Of SEO</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                The Changing Nature Of SEO
+              </h1>
             </div>
           </div>
         </Link>
@@ -292,7 +350,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (Cust = el)}>
             <img src={listen} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">When To Listen To your customer</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                When To Listen To your customer
+              </h1>
             </div>
           </div>
         </Link>
@@ -300,7 +363,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (UXi = el)}>
             <img src={UX} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">UX Desing Benefits SMEs</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                UX Desing Benefits SMEs
+              </h1>
             </div>
           </div>
         </Link>
@@ -308,7 +376,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (STM = el)}>
             <img src={story} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Storytelling in Marketing</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Storytelling in Marketing
+              </h1>
             </div>
           </div>
         </Link>
@@ -316,7 +389,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (RVF = el)}>
             <img src={reactimg} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">React Native Vs Flutter</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                React Native Vs Flutter
+              </h1>
             </div>
           </div>
         </Link>
@@ -324,7 +402,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (design = el)}>
             <img src={image4} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Design System</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Design System
+              </h1>
             </div>
           </div>
         </Link>
@@ -332,7 +415,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (SVM = el)}>
             <img src={image6} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Shopify Vs Magento</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Shopify Vs Magento
+              </h1>
             </div>
           </div>
         </Link>
@@ -340,7 +428,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (NCR = el)}>
             <img src={image5} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">No Code Revolution</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                No Code Revolution
+              </h1>
             </div>
           </div>
         </Link>
@@ -348,7 +441,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (MVP = el)}>
             <img src={image3} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Minimum Viable Product</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Minimum Viable Product
+              </h1>
             </div>
           </div>
         </Link>
@@ -359,7 +457,12 @@ export default function Blogsection() {
           >
             <img src={image2} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Digital Marketing Trends 2023</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Digital Marketing Trends 2023
+              </h1>
             </div>
           </div>
         </Link>
@@ -367,7 +470,12 @@ export default function Blogsection() {
           <div className="blog-containers" ref={(el) => (empathy = el)}>
             <img src={image1} alt="" className="blog-imgs" />
             <div className="blog-container-content">
-              <h1 className="blog-heading">Empathy In UX</h1>
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="blog-heading"
+              >
+                Empathy In UX
+              </h1>
             </div>
           </div>
         </Link>

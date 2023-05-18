@@ -8,12 +8,12 @@ export default function Hero({ isDarkMode, toggleDarkMode }) {
   const [array, setarray] = useState();
   const [content, setContent] = useState();
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/code/").then((response) => {
-  //     setarray(response.data.homeHero);
-  //     // console.log(response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get("http://194.163.40.249:5000/code").then((response) => {
+      setarray(response.data.homeHero);
+      // console.log(response.data);
+    });
+  }, []);
   return (
     <>
       <section
@@ -37,16 +37,12 @@ export default function Hero({ isDarkMode, toggleDarkMode }) {
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="header"
           >
-            Propelling The World By Design
+            {/* Propelling The World, By Design */}
+            {array}
           </h1>
 
           <Link to={"/about"} id="aboutbtn">
-            <p
-              style={{ color: isDarkMode ? "#000000" : "#848484" }}
-              className="aboutbtn_content"
-            >
-              About Us
-            </p>
+            <p className={isDarkMode ? "dark" : "aboutbtn_content"}>About Us</p>
           </Link>
         </section>
       </section>

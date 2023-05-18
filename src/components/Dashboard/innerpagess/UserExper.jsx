@@ -32,7 +32,7 @@ const UserExper = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:5000/code/adduserexper", {
+        .post("http://194.163.40.249:5000/code/adduserexper", {
           heading,
         })
         .then((response) => {
@@ -50,7 +50,7 @@ const UserExper = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/code/userexper").then((response) => {
+    axios.get("http://194.163.40.249:5000/code/userexper").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.heading);
 

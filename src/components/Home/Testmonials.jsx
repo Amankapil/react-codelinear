@@ -1,11 +1,22 @@
 import left_arrow from "./images/Frame 7.png";
 import right_arrow from "./images/Frame 8.png";
 import Client from "./client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
+import axios from "axios";
 
 export default function Hero({ isDarkMode }) {
   let testimonial = useRef(null);
+  const [array, setarray] = useState();
+
+  useEffect(() => {
+    axios
+      .get("http://194.163.40.249:5000/code/homeServices")
+      .then((response) => {
+        setarray(response.data.homeServices);
+        // console.log(response.data);
+      });
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -34,7 +45,8 @@ export default function Hero({ isDarkMode }) {
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="container-2_header"
           >
-            We Are Defined By How Our Clients Perceive Us.
+            {/* We Are Defined By How Our Clients Perceive Us. */}
+            {array}
           </h1>
           <div id="container">
             <div className="test-content" ref={(el) => (testimonial = el)}>
@@ -63,7 +75,12 @@ export default function Hero({ isDarkMode }) {
               >
                 The best thing about Codelinear is the professionalism and
                 enthusiasm to do their best for us.
-                <h2 id="container_h2">Cj Jenkins</h2>
+                <h2
+                  style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+                  id="container_h2"
+                >
+                  Cj Jenkins
+                </h2>
                 <p id="pm">product manager, moveworks</p>
               </p>
               <p

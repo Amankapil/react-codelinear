@@ -7,7 +7,7 @@ import Card2 from "./card/Card2";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-export default function Work() {
+export default function Work({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -19,12 +19,12 @@ export default function Work() {
 
   return (
     <main className="aboutpage" ref={(el) => (fade = el)}>
-      <Navbar />
-      <Workhero />
-      <Card />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Workhero isDarkMode={isDarkMode} />
+      <Card isDarkMode={isDarkMode} />
       {/* <Card2 /  > */}
       <section className="z-0 ">
-        <Footer />
+        <Footer isDarkMode={isDarkMode} />
       </section>
     </main>
   );

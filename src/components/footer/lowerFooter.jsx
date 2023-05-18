@@ -1,7 +1,12 @@
-import facebook from "../navigationBar/images/mdi_instagram.svg";
-import instagram from "../navigationBar/images/mdi_twitter.svg";
-import linkedin from "../navigationBar/images/mdi_linkedin.svg";
+import InstagramIcon from "@mui/icons-material/Instagram";
+// import instagram from "../navigationBar/images/mdi_twitter.svg";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import Vectorr from "./images/Vectorr.svg";
+import Insta from "./images/mdi_instagram.svg";
+import Linked from "./images/mdi_linkedin.svg";
+import Twet from "./images/mdi_twitter.svg";
+import Medi from "./images/carbon_logo-medium.svg";
 import Codelinear from "../codelinear/codelinear";
 
 import { Link } from "react-router-dom";
@@ -43,7 +48,7 @@ export default function Lowerfooter({ isDarkMode }) {
       <div className="lower-footer-container">
         <div className="aligncenter" ref={(el) => (footeranimationwidth = el)}>
           <div className="footer-bounce" ref={(el) => (footeranimation = el)}>
-            <Codelinear />
+            <Codelinear isDarkMode={isDarkMode} />
           </div>
         </div>
         <p className="copyright">© Codelinear 2023. All Rights Reserved.</p>
@@ -52,17 +57,17 @@ export default function Lowerfooter({ isDarkMode }) {
         <div className="footer-column">
           <div className="column">
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
+              // style={{ color: isDarkMode ? "#000000" : "#959595" }}
               to={"/about"}
-              className="footerlink"
               onClick={Effect}
             >
               About
             </Link>
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/services"}
-              className="footerlink"
+              // className="footerlink"
               onClick={Effect}
             >
               Services
@@ -70,17 +75,17 @@ export default function Lowerfooter({ isDarkMode }) {
           </div>
           <div className="column">
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/work"}
-              className="footerlink"
+              // className="footerlink"
               onClick={Effect}
             >
               Work
             </Link>
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/career"}
-              className="footerlink"
+              // className="footerlink"
               onClick={Effect}
             >
               Careers
@@ -88,24 +93,24 @@ export default function Lowerfooter({ isDarkMode }) {
           </div>
           <div className="column">
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/blog"}
-              className="footerlink"
+              // className="footerlink"
               onClick={Effect}
             >
               Ideas
             </Link>
             <Link
-              style={{ color: isDarkMode ? "#000000" : "#959595" }}
+              className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/let's_talk"}
-              className="footerlink"
+              // className="footerlink"
               onClick={Effect}
             >
               Let's Talk
             </Link>
           </div>
         </div>
-        <div  style={{ color: isDarkMode ? "#000000" : "#959595" }}  id="contact">
+        <div style={{ color: isDarkMode ? "#000000" : "#959595" }} id="contact">
           <p>
             info
             <span
@@ -124,40 +129,45 @@ export default function Lowerfooter({ isDarkMode }) {
             target="blank"
             to="https://www.linkedin.com/company/codelinear/mycompany/?viewAsMember=true"
           >
-            <img
-              src={linkedin}
-              alt=""
-              srcset=""
-              className="icon"
-              loading="lazy"
-            />
+            {!isDarkMode ? <LinkedInIcon /> : <img src={Linked} alt="ju" />}
           </Link>
-          <Link target="blank" to="https://www.instagram.com/codelinear_">
-            <img
-              src={facebook}
-              alt=""
-              srcset=""
-              className="icon"
-              loading="lazy"
-            />
+          <Link
+            style={{ color: isDarkMode ? "#000000" : "#959595" }}
+            target="blank"
+            to="https://www.instagram.com/codelinear_"
+          >
+            {!isDarkMode ? <InstagramIcon /> : <img src={Insta} alt="ju" />}
           </Link>
-          <Link target="blank" to="https://twitter.com/Codelinear_">
-            <img
-              src={instagram}
-              alt=""
-              srcset=""
-              className="icon"
-              loading="lazy"
-            />
+          <Link
+            style={{ color: isDarkMode ? "#000000" : "#959595" }}
+            target="blank"
+            to="https://twitter.com/Codelinear_"
+          >
+            {!isDarkMode ? <TwitterIcon /> : <img src={Twet} alt="ju" />}
           </Link>
-          <Link target="blank" to="https://medium.com/@codelinear_">
-            <img
-              src={Vectorr}
-              alt=""
-              srcset=""
-              className="icon"
-              loading="lazy"
-            />
+          <Link
+            style={{ color: isDarkMode ? "#000000" : "#959595" }}
+            target="blank"
+            to="https://medium.com/@codelinear_"
+          >
+            {!isDarkMode ? (
+              <img
+                style={{ backgroundColor: isDarkMode ? "#000000" : "" }}
+                src={Vectorr}
+                alt=""
+                srcset=""
+                className="icon"
+                loading="lazy"
+              />
+            ) : (
+              <img
+                src={Medi}
+                alt=""
+                srcset=""
+                className="icon"
+                loading="lazy"
+              />
+            )}
           </Link>
         </div>
       </div>

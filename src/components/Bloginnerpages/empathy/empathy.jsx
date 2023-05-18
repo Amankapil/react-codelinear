@@ -6,7 +6,7 @@ import Footer from "../../footer/footer";
 import gsap from "gsap";
 import { useRef, useEffect } from "react";
 
-export default function Empathy() {
+export default function Empathy({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline({
@@ -16,12 +16,15 @@ export default function Empathy() {
   }, []);
   return (
     <>
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="empathy-page" ref={(el) => (fade = el)}>
-        <Empathyhero />
-        <Empathysection />
+        <Empathyhero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Empathysection
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </main>
-      <Footer />
+      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </>
   );
 }

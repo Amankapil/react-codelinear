@@ -12,7 +12,8 @@ import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
 import { FreeMode, Pagination } from "swiper";
-const Explore = () => {
+
+const Explore = ({ isDarkMode }) => {
   const url = useLocation();
   let arrowswipe = useRef(null);
 
@@ -32,9 +33,7 @@ const Explore = () => {
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
                 Explore Our Services
               </h1>
@@ -76,7 +75,10 @@ const Explore = () => {
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           User Experience
                         </p>
                       </div>
@@ -88,7 +90,10 @@ const Explore = () => {
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Product Development
                         </p>
                       </div>
@@ -100,7 +105,10 @@ const Explore = () => {
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Digital Marketing
                         </p>
                       </div>
@@ -121,9 +129,7 @@ const Explore = () => {
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
                 {" "}
                 Explore Our Services
@@ -169,7 +175,10 @@ const Explore = () => {
                     <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img1 z-10 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 "
+                        >
                           Consulting And Strategy
                         </p>
                       </div>
@@ -182,7 +191,10 @@ const Explore = () => {
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Product Development
                         </p>
                       </div>
@@ -194,7 +206,10 @@ const Explore = () => {
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Digital Marketing
                         </p>
                       </div>
@@ -215,11 +230,8 @@ const Explore = () => {
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
-                {" "}
                 Explore Our Services
               </h1>
             </div>
@@ -263,7 +275,10 @@ const Explore = () => {
                     <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img1 z-10 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 "
+                        >
                           Consulting And Strategy
                         </p>
                       </div>
@@ -275,7 +290,10 @@ const Explore = () => {
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           User Experience
                         </p>
                       </div>
@@ -288,7 +306,10 @@ const Explore = () => {
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Digital Marketing
                         </p>
                       </div>
@@ -309,11 +330,8 @@ const Explore = () => {
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
-                {" "}
                 Explore Our Services
               </h1>
             </div>
@@ -357,7 +375,10 @@ const Explore = () => {
                     <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img1 z-10 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 "
+                        >
                           Consulting And Strategy
                         </p>
                       </div>
@@ -369,7 +390,10 @@ const Explore = () => {
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           User Experience
                         </p>
                       </div>
@@ -381,7 +405,10 @@ const Explore = () => {
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Product Development
                         </p>
                       </div>
@@ -402,9 +429,7 @@ const Explore = () => {
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
                 Explore Our Services
               </h1>
@@ -462,7 +487,15 @@ const Explore = () => {
                     <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img1 z-10 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50 ">
+                        <p
+                          // style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          // className="name text-2xl max-md:-ml28 max-xl:-mt-60 z-50"
+                          className={
+                            isDarkMode
+                              ? "name text-2xl max-md:-ml28 max-xl:-mt-60 z-50"
+                              : "namelight  text-2xl max-md:-ml28 max-xl:-mt-60 z-50"
+                          }
+                        >
                           Consulting And Strategy
                         </p>
                       </div>
@@ -474,7 +507,10 @@ const Explore = () => {
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           User Experience
                         </p>
                       </div>
@@ -486,7 +522,10 @@ const Explore = () => {
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Product Development
                         </p>
                       </div>
@@ -498,7 +537,10 @@ const Explore = () => {
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
-                        <p className="name text-2xl max-md:-ml28 max-xl:-mt-60">
+                        <p
+                          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                          className="name text-2xl max-md:-ml28 max-xl:-mt-60"
+                        >
                           Digital Marketing
                         </p>
                       </div>

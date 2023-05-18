@@ -38,7 +38,7 @@ const BlogHome = ({ isDarkMode }) => {
           <div
             onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
             onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
-            className="max-w[100%] w-[100%] mt-40 homeidea -ml-[6%] max-2xl:ml-8 max-sm:ml-0 max-sm:mt-5"
+            className="max-w[100%] w-[100%] mt-40 homeidea -ml-[6%] max-2xl:ml-8 max-xl:ml-8 max-sm:ml-0 max-sm:mt-5"
           >
             <Swiper
               ref={swiperRef}
@@ -76,6 +76,8 @@ const BlogHome = ({ isDarkMode }) => {
                   spaceBetween: 30,
                 },
               }}
+              pagination={true}
+              // modules={[Autoplay, Pagination, Navigation]}
               modules={[Autoplay, Pagination, Navigation]}
               className="swiper-container mySwiper h-[30rem] mt-20 pt-20 max-md:mt-0 px-8 w-[100%] -ml20 max-2xl:ml-0 maxxl:w-[100%]"
             >
@@ -318,12 +320,13 @@ const BlogHome = ({ isDarkMode }) => {
                 </div>
               </SwiperSlide>
             </Swiper>
-            <div className=" flex justify-center items-center -mt-2 -ml-0">
-              <button className="exp_btn">
+            <div className=" flex justify-center items-center mt-4 -ml-0">
+              <button className="exp_btn ">
                 <Link
-                  style={{ color: isDarkMode ? "#000000" : "#848484" }}
+                  // style={{ color: isDarkMode ? "#000000" : "#848484" }}
                   to="/blog"
-                  className="exp_btn-content"
+                  // className="exp_btn-content"
+                  className={isDarkMode ? "darkexplore" : "exp_btn-content"}
                 >
                   Explore More
                 </Link>

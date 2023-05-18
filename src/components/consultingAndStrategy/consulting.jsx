@@ -8,7 +8,7 @@ import Animation from "./animation";
 
 import Parent from "./Scrooll";
 
-export default function Consultingandstrategy() {
+export default function Consultingandstrategy({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -19,20 +19,23 @@ export default function Consultingandstrategy() {
   }, []);
   return (
     <main className="service-inner-page" ref={(el) => (fade = el)}>
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <section className="otherservices">
-        <h1 className="inner-service-h1">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="inner-service-h1"
+        >
           Shaping Tomorrow By Capitalising On Today's Disruptions.
         </h1>
       </section>
       <div className="mt-2">
         {/* <Animation /> */}
-        <Parent />
+        <Parent isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </div>
       <div className="slide-container">
-        <Servicesslide />
+        <Servicesslide isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </div>
-      <Footer />
+      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </main>
   );
 }

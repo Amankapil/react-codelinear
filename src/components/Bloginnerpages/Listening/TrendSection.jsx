@@ -1,8 +1,11 @@
-export default function Trendsection() {
+export default function Trendsection({ isDarkMode, toggleDarkMode }) {
   return (
     <section className="empathy-content-container">
       <div className="empathy-content">
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A few years ago, a Fortune 500 company called American Family
           Insurance (AFI) learned that more than half of Americans did not have
           the cash to cover a $400 emergency expense like a hospital trip, or a
@@ -11,7 +14,10 @@ export default function Trendsection() {
           they learned that most people were in need of keeping their savings
           aside to protect against the future.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           In one case, AFI reps and their design agency, IDEO sat with a working
           single mother of four in Tennessee and listened to her challenges
           about constrained budgets. To save money on childcare, and
@@ -20,7 +26,10 @@ export default function Trendsection() {
           AFI realized that she did not need another brand new financial
           management app or tool. She needed extra income cushions.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           After gathering similar feedback from several places across the United
           States, AFI launched Moonrise - a digital platform that allowed
           workers to sign up for shifts with partner organizations through a
@@ -28,7 +37,10 @@ export default function Trendsection() {
           could list open shifts on the platform, and were liable to pay workers
           as soon as the shifts were done. Voila!
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Listening to customers led AFI to launch a whole new business. Within
           a few months of its launch in 2018, Moonrise had over 7,000 people
           applying for shifts, more than 7,000 shifts were fulfilled, and over
@@ -36,13 +48,22 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >
           When should you listen to your customers?
         </h1>
-        <h2 className="empathy-sub-heading">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >
           When you want to establish expectations
         </h2>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A lot of businesses will wait until the product or service launch, and
           then get the first feedback from their customers. In order for your
           product or service to receive open arms from the customers, the
@@ -51,10 +72,16 @@ export default function Trendsection() {
           you are launching your business to meet an actual need that exists in
           the market.
         </p>
-        <h2 className="empathy-sub-heading">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >
           When you want to improve your product
         </h2>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Ongoing customer feedback is an integral part of business growth.
           Listening to customers is a great way to get real-time, actual
           feedback about how your product or service is doing. This is why
@@ -62,8 +89,14 @@ export default function Trendsection() {
           as Amazon, ensure they have customer feedback instantly from the time
           of check-out until the product is delivered.
         </p>
-        <h2 className="empathy-sub-heading">When they are complaining</h2>
-        <p className="empathy-para">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >When they are complaining</h2>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           This should be a no-brainer, and yet many big and small businesses
           make the mistake of ignoring begrudged customers. Of course, not every
           complaint that you receive may be genuine, but many people wish to
@@ -73,8 +106,14 @@ export default function Trendsection() {
           complaints, it is an indicator that your system, or CMS, needs
           improvement in filtering such complaints.
         </p>
-        <h2 className="empathy-sub-heading">When you are not growing</h2>
-        <p className="empathy-para">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >When you are not growing</h2>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           In every business’ life, there comes a time when it hits a wall. When
           sales are steady, but not growing exponentially. This is the time to
           reach out to your customers, and re-establish their expectations. A
@@ -85,16 +124,25 @@ export default function Trendsection() {
           also partnered with Hewlett-Packard for a social media command center
           to get customer feedback in real time.
         </p>
-        <h2 className="empathy-sub-heading">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >
           When you want to reinvent your business{" "}
         </h2>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Until 2014, Swarovski had been known around the world (apart from
           crystals) for producing iconic designs in their range of chandeliers.
           With the rise of interface technology, the company felt an acute need
           to catch up with the changing tastes of its customers.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           With the help of a noted design company, Swarovski acted upon customer
           feedback. The company launched Infinite Aura, that infused the
           Internet of Things (IoT) into their lighting offerings with a mobile
@@ -102,16 +150,25 @@ export default function Trendsection() {
           time of day, occasion, etc. Listening to customers often helps your
           business reinvent, and diversify.
         </p>
-        <h2 className="empathy-sub-heading">
+        <h2
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-sub-heading"
+        >
           When you should not listen to your customers
         </h2>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           In 1909, Harry Gordon Selfridge said, "The customer is not always
           right." Listening to customers is great for growth, improvement, and
           reinvention, but it is often not advisable for innovation since most
           people are resistant to change.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           There may also be circumstances where the customers may not know what
           they want, for example, in far-off, remote areas where technology or
           modern means have not reached, you may come across a business idea
@@ -121,35 +178,62 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >
           The best ways to listen to your customers more fruitfully -{" "}
         </h1>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           #1: Go to where they are{" "}
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               Listen to your customers on their preferred channels, such as
               social media, DMs, or emails.{" "}
             </p>
           </div>
-          <p className="empathy-para"># 2 Find out the ‘how’</p>
+          <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        ># 2 Find out the ‘how’</p>
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               Don’t just listen to your customers, find out how a specific
               problem is affecting their lives.
             </p>
           </div>
-          <p className="empathy-para"># 3 Keep an open mind</p>
+          <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        ># 3 Keep an open mind</p>
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               You may have had lots of similar complaints or feedback earlier,
               yet it is vital to keep an open mind each time you are listening
               to a new set of customers.
             </p>
           </div>
-          <p className="empathy-para"># 4 Hire an agency</p>
+          <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        ># 4 Hire an agency</p>
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               If you think your team is too busy, hire a product development
               agency that would carry out surveys, research, and interviews on
               your behalf.

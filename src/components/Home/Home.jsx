@@ -40,9 +40,9 @@ export default function Home({ isDarkMode, toggleDarkMode }) {
       </header>
       <main ref={(el) => (fade = el)} className="home">
         <Hero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-        {/* <div className="mt-10"> */}
+
         <HomeAbout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-        {/* </div> */}
+
         <HomeServices isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <Testimonials isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <BlogHome isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />

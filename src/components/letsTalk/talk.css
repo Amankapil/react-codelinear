@@ -153,7 +153,7 @@ input:focus {
   font-size: 20px;
   line-height: 28px;
 }
-.tele::placeholder{
+.tele::placeholder {
   color: #848484;
 }
 .yourmsg {
@@ -260,7 +260,22 @@ input:focus {
   color: #848484;
   white-space: nowrap;
 }
-.phone-number::placeholder{
+.sub_button-contentdark {
+  font-family: "Graphik";
+  font-style: normal;
+  font-weight: 100;
+  font-size: 16px;
+  padding-bottom: 1px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 25px;
+  letter-spacing: 0em;
+  color: #848484;
+  white-space: nowrap;
+}
+.phone-number::placeholder {
   color: #848484;
 }
 input::-webkit-outer-spin-button,
@@ -270,7 +285,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
 .sub_btn:hover {
@@ -281,6 +296,9 @@ input[type=number] {
 }
 .sub_btn:hover .sub_button-content {
   color: black;
+}
+.sub_btn:hover .sub_button-contentdark {
+  color: #848484;
 }
 @media screen and (max-width: 1540px) and (min-width: 1441px) {
   .contact-hero {
@@ -315,7 +333,7 @@ input[type=number] {
   .first-name::placeholder {
     font-size: 16px;
   }
-  #form{
+  #form {
     gap: 35px;
   }
   .tele {
@@ -324,7 +342,7 @@ input[type=number] {
   .number {
     width: 290.36px;
   }
-  .tele::placeholder{
+  .tele::placeholder {
     font-size: 16px;
   }
   .phone-number::placeholder {
@@ -343,17 +361,17 @@ input[type=number] {
     left: 15%;
     top: 250px;
   }
-  .contact-hero-h1{
+  .contact-hero-h1 {
     font-size: 78px;
     line-height: 84px;
     width: 100%;
     height: auto;
     text-align: center;
   }
-  .contact-hero{
+  .contact-hero {
     height: 100vh;
   }
-  .contact-form{
+  .contact-form {
     justify-content: start;
     height: auto;
   }
@@ -363,7 +381,7 @@ input[type=number] {
   .contact-form {
     padding: 0;
   }
-  .address{
+  .address {
     height: auto;
   }
 }
@@ -374,7 +392,7 @@ input[type=number] {
   .first-name {
     width: 100%;
   }
-  .name-container{
+  .name-container {
     width: 100%;
   }
   .name-container {
@@ -388,10 +406,10 @@ input[type=number] {
     width: 100%;
     white-space: nowrap;
   }
-  .contact-form{
+  .contact-form {
     height: auto;
   }
-  .address{
+  .address {
     padding-top: 180px;
   }
 }
@@ -407,16 +425,16 @@ input[type=number] {
   .contact-container {
     width: 100%;
   }
-  .address-content{
+  .address-content {
     height: auto;
   }
-  .address-loc{
+  .address-loc {
     height: auto;
   }
-  .sub_button-content{
+  .sub_button-content {
     padding-bottom: 0;
   }
-  .address-p{
+  .address-p {
     height: auto;
   }
   .contact-hero-h1 {
@@ -485,7 +503,7 @@ input[type=number] {
   }
 }
 @media screen and (max-width: 428px) {
-  .contact-section{
+  .contact-section {
     top: 250px;
   }
   .contact-form-h1 {
@@ -532,7 +550,7 @@ input[type=number] {
   }
 }
 @media screen and (max-height: 650px) and (max-width: 428px) {
-    .contact-hero{
-      height: 670px;
-    } 
+  .contact-hero {
+    height: 670px;
+  }
 }

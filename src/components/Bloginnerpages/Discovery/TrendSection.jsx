@@ -1,22 +1,31 @@
-export default function Trendsection() {
+export default function Trendsection({ isDarkMode, toggleDarkMode }) {
   return (
     <section className="empathy-content-container">
       <div className="empathy-content">
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A noted health insurance company recognized the need to improve its
           member portal to provide a better user experience. To achieve this,
           the company engaged a web application development company to conduct a
           discovery workshop to understand the needs and preferences of its
           users.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           During the discovery workshop, the agency worked closely with
           insurance company’s stakeholders to define the project's objectives
           and identify key user groups. They also conducted research to
           understand the users' needs and preferences, which helped to inform
           the design and development of the new member portal.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           As a result, the company was able to launch a member portal that
           exceeded their users' expectations. The new portal provided a
           personalized experience for each user, with relevant information and
@@ -25,8 +34,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">What is a discovery workshop?</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >What is a discovery workshop?</h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A discovery workshop is a crucial part of the website or application
           development process. It is an opportunity for stakeholders, including
           clients, developers, designers, and project managers, to come together
@@ -40,10 +55,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-sub-heading">
+        <h1 
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}className="empathy-sub-heading">
           Clearer understanding of the project's goals and objectives
         </h1>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A discovery workshop provides an opportunity for stakeholders to
           discuss and agree upon the goals and objectives of the project. This
           ensures that everyone involved in the project is on the same page and
@@ -53,10 +72,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-sub-heading">
+        <h1 
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}className="empathy-sub-heading">
           Better understanding of user needs and requirements
         </h1>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           One of the primary benefits of a discovery workshop is that it
           provides an opportunity for stakeholders to discuss and analyze user
           needs and requirements. By understanding the needs and requirements of
@@ -66,10 +89,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-sub-heading">
+        <h1 
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}className="empathy-sub-heading">
           Improved communication and collaboration
         </h1>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A discovery workshop provides an opportunity for stakeholders to come
           together to discuss the project's requirements, goals, and objectives.
           This improves communication and collaboration between stakeholders and
@@ -79,10 +106,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-sub-heading">
+        <h1 
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}className="empathy-sub-heading">
           Identification of potential challenges and risks
         </h1>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A discovery workshop provides an opportunity for stakeholders to
           identify potential challenges and risks that may arise during the
           development process. This allows the project team to prepare for these
@@ -92,8 +123,12 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-sub-heading">Saves time and money</h1>
-        <p className="empathy-para">
+        <h1 
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}className="empathy-sub-heading">Saves time and money</h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Conducting a discovery workshop may seem like an additional cost, but
           it can actually save time and money in the long run. By identifying
           potential challenges and risks early on, the project team can develop
@@ -103,10 +138,16 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Skipping a discovery workshop can lead to several risks, including:
           <div className="points">
-              <p className="empathy-para">
+              <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
                 <strong className="opacity-70">1. Lack of understanding : </strong> The
                 primary purpose of a discovery workshop is to gain a deep
                 understanding of the project's goals, requirements, and
@@ -114,7 +155,10 @@ export default function Trendsection() {
                 understanding of these critical aspects, leading to
                 misunderstandings and miscommunication throughout the project.
               </p>
-              <p className="empathy-para">
+              <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
                 <strong className="opacity-70">
                   2. Misaligned expectations :
                 </strong>
@@ -124,7 +168,10 @@ export default function Trendsection() {
                 which may not align with the project team's vision and goals,
                 leading to conflicts.
               </p>
-              <p className="empathy-para">
+              <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
                 <strong className="opacity-70">
                   3. Inefficient use of resources :
                 </strong>
@@ -133,7 +180,10 @@ export default function Trendsection() {
                 leading to inefficient use of resources, including time, money,
                 and manpower.
               </p>
-              <p className="empathy-para">
+              <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
                 <strong className="opacity-70">
                   4. Missed opportunities :{" "}
                 </strong>{" "}
@@ -142,7 +192,10 @@ export default function Trendsection() {
                 missed opportunities for innovation and creative
                 problem-solving.
               </p>
-              <p className="empathy-para">
+              <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
                 <strong className="opacity-70">
                   5. Poor project outcomes :
                 </strong>
@@ -153,7 +206,10 @@ export default function Trendsection() {
               </p>
           </div>
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           At Codelinear, we actively pursue discovery workshops with all our
           clients, and this practice has helped our teams and our clients to
           collaborate on some of the most successful project outcomes.

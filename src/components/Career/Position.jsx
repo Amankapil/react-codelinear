@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 
-function Position() {
+function Position({ isDarkMode, toggleDarkMode }) {
   let positioncard = useRef(null);
   let applyingform = useRef(null);
   let jobdesc = useRef(null);
@@ -126,55 +126,140 @@ function Position() {
     <>
       <section className="position-container">
         <div className="position-content-container">
-          <h1 className="position-h1">Open Positions</h1>
+          <h1
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="position-h1"
+          >
+            Open Positions
+          </h1>
           <div className="open-pos" ref={(el) => (position = el)}>
-            <div className="positions" onClick={application}>
-              <h1 className="position-content-h1">Product Designer (UX/UI)</h1>
-              <span className="office">Bangalore (Remote)</span>
+            <div
+              className={isDarkMode ? "positionsdark" : "positions"}
+              onClick={application}
+            >
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="position-content-h1"
+              >
+                Product Designer (UX/UI)
+              </h1>
+              <span
+                style={{
+                  color: isDarkMode ? "#000000" : "#d8d6d6",
+                  fontWeight: 900,
+                }}
+                className="office"
+              >
+                Bangalore (Remote)
+              </span>
             </div>
             <hr className="pos-hr" />
-            <div className="positions" onClick={application1}>
-              <h1 className="position-content-h1">
+            <div
+              className={isDarkMode ? "positionsdark" : "positions"}
+              onClick={application1}
+            >
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="position-content-h1"
+              >
                 Software Development Engineer - Mobile Frontend
               </h1>
-              <span className="office">Bangalore (Remote)</span>
+              <span
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="office"
+              >
+                Bangalore (Remote)
+              </span>
             </div>
             <hr className="pos-hr" />
-            <div className="positions" onClick={application2}>
-              <h1 className="position-content-h1">
+            <div
+              className={isDarkMode ? "positionsdark" : "positions"}
+              onClick={application2}
+            >
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="position-content-h1"
+              >
                 Software Development Engineer - Web Frontend
               </h1>
-              <span className="office">Bangalore (Remote)</span>
+              <span
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="office"
+              >
+                Bangalore (Remote)
+              </span>
             </div>
             <hr className="pos-hr" />
-            <div className="positions" onClick={application3}>
-              <h1 className="position-content-h1">
+            <div
+              className={isDarkMode ? "positionsdark" : "positions"}
+              onClick={application3}
+            >
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="position-content-h1"
+              >
                 Software Development Engineer - Backend
               </h1>
-              <span className="office">Bangalore (Remote)</span>
+              <span
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="office"
+              >
+                Bangalore (Remote)
+              </span>
             </div>
             <hr className="pos-hr" />
-            <div className="positions" onClick={application4}>
-              <h1 className="position-content-h1">
+            <div
+              className={isDarkMode ? "positionsdark" : "positions"}
+              onClick={application4}
+            >
+              <h1
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="position-content-h1"
+              >
                 Software Development Engineer - CMS/E-Commerce
               </h1>
-              <span className="office">Bangalore (Remote)</span>
+              <span
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+                className="office"
+              >
+                Bangalore (Remote)
+              </span>
             </div>
             <hr className="pos-hr" />
           </div>
         </div>
       </section>
-      <div className="PD" ref={(el) => (positioncard = el)}>
-        <h1 className="job-pd-title">
+      <div
+        // className="PD"
+        className={isDarkMode ? "PDdark" : "PD"}
+        ref={(el) => (positioncard = el)}
+      >
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="job-pd-title"
+        >
           Product Designer (UI/UX)
           <div className="jobline" onClick={formhide}>
             <div className="close-line"></div>
           </div>
         </h1>
-        <p className="job-loc">Bangalore (Remote)</p>
-        <p className="job-loc">Experience Band: 3+ Yrs</p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Bangalore (Remote)
+        </p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Experience Band: 3+ Yrs
+        </p>
         <div className="job-description" ref={(el) => (jobdesc = el)}>
-          <p className="job-pd-desc job-loc">
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="job-pd-desc job-loc"
+          >
             At Codelinear, we are looking for people who are passionate and
             driven to be the "Propellers of Impact". As an experienced UI/ UX
             designer, you will contribute by having a working knowledge of tools
@@ -182,13 +267,35 @@ function Position() {
             collaborating with our Creative Director to design products that
             uplift brand values.
           </p>
-          <div className="job-req">
-            Figma | Wireframes <span className="and"> &</span> User Flows |
-            Prototypes UX Research | Personas | Design System
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="job-req"
+          >
+            Figma | Wireframes
+            <span
+              style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+              className="and"
+            >
+              &
+            </span>
+            User Flows | Prototypes UX Research | Personas | Design System
           </div>
-          <p className="apply">Feel like you’re a match?</p>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="apply"
+          >
+            Feel like you’re a match?
+          </p>
           <div className="apply_btn" onClick={applyNow}>
-            <p className="about_btn_content">apply now</p>
+            <p
+              // style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+              // className="about_btn_content"
+              className={
+                isDarkMode ? "about_btn_contentdark" : "about_btn_content"
+              }
+            >
+              apply now
+            </p>
           </div>
         </div>
         <div className="applying-form" ref={(el) => (applyingform = el)}>
@@ -240,17 +347,36 @@ function Position() {
           </div>
         </div>
       </div>
-      <div className="PD" ref={(el) => (positioncard1 = el)}>
-        <h1 className="job-pd-title">
+      <div
+        className={isDarkMode ? "PDdark" : "PD"}
+        ref={(el) => (positioncard1 = el)}
+      >
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="job-pd-title"
+        >
           Software Development Engineer - Mobile Frontend{" "}
           <div className="jobline" onClick={formhide1}>
             <div className="close-line"></div>
           </div>
         </h1>
-        <p className="job-loc">Bangalore (Remote)</p>
-        <p className="job-loc">Experience Band: 3+ Yrs</p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Bangalore (Remote)
+        </p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Experience Band: 3+ Yrs
+        </p>
         <div className="job-description" ref={(el) => (jobdesc1 = el)}>
-          <p className="job-pd-desc job-loc">
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="job-pd-desc job-loc"
+          >
             AAt Codelinear, we are looking for people who are passionate and
             driven to be the "Propellers of Impact". As a mobile front-end
             developer, you will work with our front-end experts to build
@@ -258,12 +384,26 @@ function Position() {
             interact with users. You will utilise your knowledge of various
             programming languages to build intuitive applications.
           </p>
-          <div className="job-req">
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="job-req"
+          >
             Android Java | Kotlin | Objective-C | Swift | React Native | Flutter
           </div>
-          <p className="apply">Feel like you’re a match?</p>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="apply"
+          >
+            Feel like you’re a match?
+          </p>
           <div className="apply_btn" onClick={applyNow1}>
-            <p className="about_btn_content">apply now</p>
+            <p
+              className={
+                isDarkMode ? "about_btn_contentdark" : "about_btn_content"
+              }
+            >
+              apply now
+            </p>
           </div>
         </div>
         <div className="applying-form" ref={(el) => (applyingform1 = el)}>
@@ -315,17 +455,36 @@ function Position() {
           </div>
         </div>
       </div>
-      <div className="PD" ref={(el) => (positioncard2 = el)}>
-        <h1 className="job-pd-title">
+      <div
+        className={isDarkMode ? "PDdark" : "PD"}
+        ref={(el) => (positioncard2 = el)}
+      >
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="job-pd-title"
+        >
           Software Development Engineer - Web Frontend{" "}
           <div className="jobline" onClick={formhide2}>
             <div className="close-line"></div>
           </div>
         </h1>
-        <p className="job-loc">Bangalore (Remote)</p>
-        <p className="job-loc">Experience Band: 3+ Yrs</p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Bangalore (Remote)
+        </p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Experience Band: 3+ Yrs
+        </p>
         <div className="job-description" ref={(el) => (jobdesc2 = el)}>
-          <p className="job-pd-desc job-loc">
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="job-pd-desc job-loc"
+          >
             At Codelinear, we are looking for people who are passionate and
             driven to be the "Propellers of Impact". As a web frontend
             developer, you will collaborate with designers to build
@@ -333,13 +492,27 @@ function Position() {
             site's layouts and build consistent web platforms that flawlessly
             interact with users, and are highly navigable.
           </p>
-          <div className="job-req">
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="job-req"
+          >
             HTML5 | CSS3 | jQuery | JavaScript | BootStrap | React.js Veu.js |
             Angular
           </div>
-          <p className="apply">Feel like you’re a match?</p>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="apply"
+          >
+            Feel like you’re a match?
+          </p>
           <div className="apply_btn" onClick={applyNow2}>
-            <p className="about_btn_content">apply now</p>
+            <p
+              className={
+                isDarkMode ? "about_btn_contentdark" : "about_btn_content"
+              }
+            >
+              apply now
+            </p>
           </div>
         </div>
         <div className="applying-form" ref={(el) => (applyingform2 = el)}>
@@ -391,17 +564,36 @@ function Position() {
           </div>
         </div>
       </div>
-      <div className="PD" ref={(el) => (positioncard3 = el)}>
-        <h1 className="job-pd-title">
+      <div
+        className={isDarkMode ? "PDdark" : "PD"}
+        ref={(el) => (positioncard3 = el)}
+      >
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="job-pd-title"
+        >
           Software Development Engineer - Backend{" "}
           <div className="jobline" onClick={formhide3}>
             <div className="close-line"></div>
           </div>
         </h1>
-        <p className="job-loc">Bangalore (Remote)</p>
-        <p className="job-loc">Experience Band: 3+ Yrs</p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Bangalore (Remote)
+        </p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Experience Band: 3+ Yrs
+        </p>
         <div className="job-description" ref={(el) => (jobdesc3 = el)}>
-          <p className="job-pd-desc job-loc">
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="job-pd-desc job-loc"
+          >
             At Codelinear, we are looking for people who are passionate and
             driven to be the "Propellers of Impact". As a backend developer, you
             will oversee the server side of the projects, including databases,
@@ -409,12 +601,26 @@ function Position() {
             applications. You will ensure that the applications perform in
             congruity with the front-end aspects of the products.
           </p>
-          <div className="job-req">
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="job-req"
+          >
             Php | Node.js | Python | Java | Ruby On Rails | Golang
           </div>
-          <p className="apply">Feel like you’re a match?</p>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="apply"
+          >
+            Feel like you’re a match?
+          </p>
           <div className="apply_btn" onClick={applyNow3}>
-            <p className="about_btn_content">apply now</p>
+            <p
+              className={
+                isDarkMode ? "about_btn_contentdark" : "about_btn_content"
+              }
+            >
+              apply now
+            </p>
           </div>
         </div>
         <div className="applying-form" ref={(el) => (applyingform3 = el)}>
@@ -466,17 +672,36 @@ function Position() {
           </div>
         </div>
       </div>
-      <div className="PD" ref={(el) => (positioncard4 = el)}>
-        <h1 className="job-pd-title">
+      <div
+        className={isDarkMode ? "PDdark" : "PD"}
+        ref={(el) => (positioncard4 = el)}
+      >
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="job-pd-title"
+        >
           Software Development Engineer - CMS/E-Commerce
           <div className="jobline" onClick={formhide4}>
             <div className="close-line"></div>
           </div>
         </h1>
-        <p className="job-loc">Bangalore (Remote)</p>
-        <p className="job-loc">Experience Band: 3+ Yrs</p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Bangalore (Remote)
+        </p>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="job-loc"
+        >
+          Experience Band: 3+ Yrs
+        </p>
         <div className="job-description" ref={(el) => (jobdesc4 = el)}>
-          <p className="job-pd-desc job-loc">
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="job-pd-desc job-loc"
+          >
             At Codelinear, we are looking for people who are passionate and
             driven to be the "Propellers of Impact". As a CMS developer, you
             will be a part of a cross-functional team and build high-quality
@@ -484,13 +709,27 @@ function Position() {
             clients to address their concerns and design websites that resolve
             those.
           </p>
-          <div className="job-req">
+          <div
+            style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+            className="job-req"
+          >
             WordPress | Shopify | Magento | HubSpot | WooCommerce BigCommerce |
             Drupal | Joomla | Wix | Squarespace Commerce
           </div>
-          <p className="apply">Feel like you’re a match?</p>
+          <p
+            style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+            className="apply"
+          >
+            Feel like you’re a match?
+          </p>
           <div className="apply_btn" onClick={applyNow4}>
-            <p className="about_btn_content">apply now</p>
+            <p
+              className={
+                isDarkMode ? "about_btn_contentdark" : "about_btn_content"
+              }
+            >
+              apply now
+            </p>
           </div>
         </div>
         <div className="applying-form" ref={(el) => (applyingform4 = el)}>

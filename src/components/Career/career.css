@@ -189,6 +189,16 @@
   width: 100%;
   height: 72px;
 }
+.positionsdark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 46px;
+  cursor: pointer;
+  width: 100%;
+  height: 72px;
+}
 .position-content-container {
   display: flex;
   flex-direction: column;
@@ -248,7 +258,14 @@
 .positions:hover {
   background-color: #1b1a1a;
 }
+.positionsdark:hover {
+  background-color: #c5bdbd;
+}
 .positions:hover .office {
+  text-shadow: 0px 0px 0px black;
+  transform: translateX(3px);
+}
+.positionsdark:hover .office {
   text-shadow: 0px 0px 0px black;
   transform: translateX(3px);
 }
@@ -262,6 +279,18 @@
   left: 0;
   z-index: 20;
   background-color: black;
+  padding: 153px 8px;
+}
+.PDdark {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background-color: #ffffff;
   padding: 153px 8px;
 }
 .job-pd-title {
@@ -287,7 +316,7 @@
   justify-content: center;
   align-items: center;
 }
-.close-line{
+.close-line {
   width: 60%;
   color: #ffcd05;
   height: 2px;
@@ -360,12 +389,11 @@
   padding: 7px 39px;
   transition: 0.3s;
 }
-.title{
+.title {
   color: #d8d6d6;
 }
-.brackets{
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-  sans-serif;
+.brackets {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #d8d6d6;
   font-weight: 100;
 }
@@ -378,7 +406,20 @@
   font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.03em;
-  color: #cecece;
+  color: #848484;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.about_btn_contentdark {
+  width: 92px;
+  height: 28px;
+  font-family: "Graphik";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: -0.03em;
+  color: #010101;
   transition: 0.3s;
   white-space: nowrap;
 }
@@ -388,7 +429,10 @@
   border: 1px solid #ffcd05;
 }
 .apply_btn:hover .about_btn_content {
-  color: black;
+  color: rgb(8, 8, 8);
+}
+.apply_btn:hover .about_btn_contentdark {
+  color: rgb(0, 0, 0);
 }
 .job-description {
   display: none;
@@ -429,8 +473,7 @@
   font-size: 20px;
 }
 .and {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 100;
   color: #d8d6d6;
 }
@@ -560,6 +603,17 @@
     padding-top: 5vh;
     background-color: black;
   }
+  .PDdark {
+    height: 100vh;
+    width: 100%;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 5vh;
+    background-color: #ffffff;
+  }
   .applying-form {
     margin-left: 0%;
   }
@@ -571,16 +625,16 @@
     font-size: 70px;
     line-height: 75px;
   }
-  .position-container{
+  .position-container {
     margin-left: 10.3%;
   }
-  .whyus-content-container{
+  .whyus-content-container {
     width: 350px;
   }
-  .no{
+  .no {
     height: 80px;
   }
-  .wucontainer-para{
+  .wucontainer-para {
     height: 160px;
   }
   .career-hero {
@@ -592,12 +646,12 @@
   .whyus {
     height: 1302px;
   }
-  .whyus-h1{
+  .whyus-h1 {
     font-size: 70px;
     line-height: 70px;
     height: auto;
   }
-  .life-h1{
+  .life-h1 {
     font-size: 70px;
     height: auto;
     line-height: 70px;
@@ -623,10 +677,10 @@
   .office {
     margin-left: 10px;
   }
-  .job-pd-title{
+  .job-pd-title {
     font-size: 45px;
   }
-  .applying-form{
+  .applying-form {
     margin-left: 7%;
   }
   .job-pd-desc {
@@ -637,7 +691,7 @@
     letter-spacing: 0.01em;
     height: auto;
   }
-  .job-req{
+  .job-req {
     margin-top: 30px;
     height: auto;
     font-size: 26px;
@@ -656,7 +710,10 @@
     width: 80%;
     margin: 30px 0px;
   }
-  .PD{
+  .PD {
+    padding-top: 15vh;
+  }
+  .PDdark {
     padding-top: 15vh;
   }
   .telephone {
@@ -676,10 +733,10 @@
     font-size: 70px;
     width: 83%;
   }
-  .whyus-container{
+  .whyus-container {
     width: 350px;
   }
-  .wucontainer-para{
+  .wucontainer-para {
     width: 330px;
   }
   .applying-form {
@@ -720,7 +777,10 @@
     width: 85%;
     height: auto;
   }
-  .PD{
+  .PD {
+    padding-top: 5px;
+  }
+  .PDdark {
     padding-top: 5px;
   }
   .position-content-container {
@@ -749,7 +809,7 @@
   }
 }
 @media screen and (max-width: 1224px) {
-  .whyus{
+  .whyus {
     height: 1872px;
   }
 }
@@ -760,10 +820,10 @@
     top: 200px;
     left: 6.7%;
   }
-  .life-container{
+  .life-container {
     margin-top: 0;
   }
-  .jobline{
+  .jobline {
     width: 120px;
   }
   .career-hero {
@@ -817,7 +877,10 @@
   .job-pd-desc {
     width: 90%;
   }
-  .PD{
+  .PD {
+    padding-top: 50px;
+  }
+  .PDdark {
     padding-top: 50px;
   }
   .job-req {
@@ -835,10 +898,10 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .jobline{
+  .jobline {
     width: 80px;
   }
-  .HS-img{
+  .HS-img {
     width: 400px;
     margin-bottom: 20px;
   }
@@ -865,23 +928,23 @@
   .applying-form {
     width: 100%;
   }
-  .card-imgs{
+  .card-imgs {
     width: 40%;
     padding: 0;
   }
-  .whyus-content-container{
+  .whyus-content-container {
     width: 280px;
   }
-  .wucontainer-para{
+  .wucontainer-para {
     width: 100%;
     height: auto;
     font-size: 15px;
     line-height: 25px;
   }
-  .no{
+  .no {
     height: auto;
   }
-  .whyus-container{
+  .whyus-container {
     width: 300px;
     gap: 20px;
   }
@@ -943,7 +1006,10 @@
     line-height: 23px;
     margin-top: 30px;
   }
-  .PD{
+  .PD {
+    padding-top: 18px;
+  }
+  .PDdark {
     padding-top: 18px;
   }
   .job-req {
@@ -971,6 +1037,12 @@
     display: flex;
     justify-content: center;
   }
+  .about_btn_contentdark {
+    color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   .form {
     gap: 28px;
   }
@@ -981,7 +1053,7 @@
   .submit_btn {
     width: 90%;
   }
-  .life-para{
+  .life-para {
     margin-top: 0;
   }
   .first-name::placeholder {
@@ -992,15 +1064,18 @@
     color: #848484;
     font-size: 12px;
   }
-  .phone-number::placeholder{
+  .phone-number::placeholder {
     font-size: 12px;
   }
-  .tele{
+  .tele {
     font-size: 12px;
   }
 }
 @media screen and (max-height: 650px) and (max-width: 428px) {
-  .PD{
+  .PD {
+    overflow-y: scroll;
+  }
+  .PDdark {
     overflow-y: scroll;
   }
 }

@@ -7,7 +7,7 @@ import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
 import Blogsection from "./Blogsection";
 
-export default function Blog() {
+export default function Blog({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -19,10 +19,10 @@ export default function Blog() {
   }, []);
   return (
     <main className="blog-page" ref={(el) => (fade = el)}>
-      <Navbar />
-      <Bloghero />
-      <Blogsection />
-      <Footer />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Bloghero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Blogsection isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </main>
   );
 }

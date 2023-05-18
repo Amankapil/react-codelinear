@@ -64,8 +64,11 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
               </Link>
             </li>
             <li className="nav_list-item flex items-center justify-center ">
-              <Toggle isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-
+              <Toggle
+                className=""
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
               <div className="menu mx-4" onClick={navSlide}></div>
             </li>
           </ul>

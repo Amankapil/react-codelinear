@@ -26,17 +26,19 @@ function Login() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:5000/code/login", { username, password })
+        .post("http://194.163.40.249:5000/code/login", { username, password })
         .then((response) => {
           console.log(response);
 
           if (response.status === 200) {
+            localStorage.setItem("jwt", username);
             alert(
               "logged in successfully please enter ok to visit the dash board page "
             );
-            navigate("/dash");
-          } else if (response.status === 404) {
-            alert(response.data.message);
+            window.location.reload();
+            navigate("/admin");
+          } else {
+            alert("Invalid email or password");
           }
         });
 
@@ -44,7 +46,7 @@ function Login() {
       // Do something with the token (e.g. store it in local storage or state)
       alert("loggged in");
     } catch (error) {
-      setError("Incorrect username or password");
+      // setError("Incorrect username or password");
     }
   };
   return (

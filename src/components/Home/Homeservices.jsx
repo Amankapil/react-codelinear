@@ -11,19 +11,11 @@ export default function Hero({ isDarkMode }) {
           <p style={{ color: isDarkMode ? "#00000099" : "#848484" }} id="srvp">
             Lead the new technological era with our extensive services.
           </p>
-          {/* <Link to={"/services"} id="svcbtn">
+          <Link to={"/services"} id="svcbtn">
             <p
-              style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
-              className="svcbtn_content"
-            >
-              explore more
-            </p>
-          </Link> */}
-
-          <Link to={"/services"} id="aboutbtn">
-            <p
-              style={{ color: isDarkMode ? "#000000" : "#848484" }}
-              className="aboutbtn_content"
+              // style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+              // className="svcbtn_content"
+              className={isDarkMode ? "dark" : "svcbtn_content"}
             >
               Explore More
             </p>

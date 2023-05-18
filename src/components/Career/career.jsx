@@ -9,8 +9,7 @@ import Whyus from "./Whyus";
 import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
 
-
-export default function Career() {
+export default function Career({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -22,15 +21,21 @@ export default function Career() {
 
   return (
     <>
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="career-page" ref={(el) => (fade = el)}>
-        <CareerHero />
-        <Horizontalanimation1 />
-        <Whyus />
-        <Horizontalanimation2 />
-        <Positions />
+        <CareerHero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Horizontalanimation1
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        <Whyus isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Horizontalanimation2
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        <Positions isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       </main>
-      <Footer />
+      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </>
   );
 }

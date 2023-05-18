@@ -1,15 +1,21 @@
-export default function Trendsection() {
+export default function Trendsection({ isDarkMode, toggleDarkMode }) {
   return (
     <section className="empathy-content-container">
       <div className="empathy-content">
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           The website redesign of the restaurant chain, Chili's, is a great case
           study in UX design using Gestalt Psychology. The company wanted to
           create a more modern and user-friendly website that would make it
           easier for customers to find information about their menu, locations,
           and promotions.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           The redesign incorporated several Gestalt psychology principles,
           including proximity, similarity, and closure. The menu items were
           grouped together based on their category, such as appetizers, entrees,
@@ -20,7 +26,10 @@ export default function Trendsection() {
           images, helped to provide closure and guide users through their
           journey on the website.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           In addition, the website's homepage featured a large image of Chili's
           famous Baby Back Ribs, which utilized the principle of figure-ground
           relationship by making the main content stand out against the
@@ -28,7 +37,10 @@ export default function Trendsection() {
           by using a horizontal scroll to display featured promotions, allowing
           users to easily navigate through the content.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           The result of the website redesign and development was a more visually
           appealing and user-friendly website that made it easier for customers
           to find information and navigate through the site. With the
@@ -38,20 +50,32 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">What is Gestalt psychology?</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >What is Gestalt psychology?</h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           As UX designers at Codelinear, our primary goal is to create a
           user-friendly and intuitive experience for the users of our clients.
           One way to achieve this goal is by using Gestalt psychology principles
           in UX design.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Gestalt psychology is a psychological theory that explains how humans
           perceive visual elements as a whole instead of individual parts. In
           this blog post, we will explore how Gestalt psychology can inform your
           UX design choices.
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">
                 1. Figure-Ground Relationship <span> </span>
               </strong>
@@ -64,7 +88,10 @@ export default function Trendsection() {
               application, making it easier for users to navigate and find the
               information they need.
             </p>
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">2. Proximity </strong>
               Proximity explains visual elements that are close to each other as
               related. In UX design, this principle can help you to group
@@ -74,7 +101,10 @@ export default function Trendsection() {
               close to each other in a photo editing app. In the case of Chilis,
               the menu items were regrouped based on category.
             </p>
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">3. Similarity </strong>
               The principle of similarity, as the name suggests, is about
               perceiving elements that share similar attributes, such as color,
@@ -84,7 +114,10 @@ export default function Trendsection() {
               can use the same color for all the buttons that have the same
               function, such as the "Add to Cart" buttons in an e-commerce app.
             </p>
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">4. Closure </strong> The closure
               principle explains how we see visual elements that are incomplete
               as complete. This principle helps you to simplify complex
@@ -93,7 +126,10 @@ export default function Trendsection() {
               a task is completed, giving them a sense of closure and a clear
               indication of how much work is left.
             </p>
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">5. Continuity </strong>
               The continuity principle describes how users perceive factors that
               are arranged in a continuous line or curve as related. This
@@ -103,7 +139,10 @@ export default function Trendsection() {
               to separate different sections of a webpage or an application,
               making it easier for users to navigate.
             </p>
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">6. Symmetry </strong>
               The symmetry principle is about how we perceive symmetrical
               elements as related. This principle helps designers to create a
@@ -116,8 +155,14 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">The take-away</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >The take-away</h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Gestalt psychology principles can inform your UX design choices by
           providing you with a deeper understanding of how users perceive visual
           elements as a whole. By using these principles in your design choices,

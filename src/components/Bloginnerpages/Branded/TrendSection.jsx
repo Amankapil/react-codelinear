@@ -1,8 +1,11 @@
-export default function Trendsection() {
+export default function Trendsection({ isDarkMode, toggleDarkMode }) {
   return (
     <section className="empathy-content-container">
       <div className="empathy-content">
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Ever walked into Nike's flagship store in New York City? The store is
           designed to be a "shrine" to the brand's values and products, with
           interactive displays, cutting-edge technology, and immersive
@@ -12,7 +15,10 @@ export default function Trendsection() {
           powerful emotional connection with consumers, making them feel part of
           the Nike brand.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           If you are thinking, how's that walk-in store relevant in a
           post-pandemic world where virtual experiences are more conveniently
           available, then consider why a conglomerate like Apple takes the pains
@@ -28,15 +34,26 @@ export default function Trendsection() {
           stores, that are a form of what’s termed as ‘branded environments’,
           apart from replicating such environments on its website.
         </p>
-        <p className="empathy-para">
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           One approach that has gained popularity in the field of marketing and
           digital marketing in recent years is branded environments, which
           create immersive experiences that engage and captivate consumers.
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">What are branded environments?</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >
+          What are branded environments?
+        </h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Branded environments are physical spaces that are designed to immerse
           consumers in a brand's story, values, and personality. These spaces
           can range from retail stores and showrooms to corporate offices, and
@@ -47,14 +64,25 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">The art of disruptive branding</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >
+          The art of disruptive branding
+        </h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           Branded environments are not just for large corporations with huge
           budgets. Any business can create a branded environment that engages
           and captivates consumers. Here are a few key takeaways for businesses
           looking to implement a branded environment strategy:
           <div className="points">
-            <p className="empathy-para">
+            <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
               <strong className="opacity-70">1. Know your brand :</strong>{" "}
               Before you can create a branded environment, you need to have a
               clear understanding of your brand's values, personality, and
@@ -62,19 +90,28 @@ export default function Trendsection() {
               store that reinforces your brand and creates an emotional
               connection with consumers.
             </p>
-            <p className="empathy-para">
+            <p
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="empathy-para"
+            >
               <strong className="opacity-70">2. Think outside the box :</strong>{" "}
               Branded environments should be unexpected and memorable. Don't be
               afraid to push the boundaries of traditional branding and create
               experiences that are disruptive and emotionally impactful.
             </p>
-            <p className="empathy-para">
+            <p
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="empathy-para"
+            >
               <strong className="opacity-70">3. Engage all the senses :</strong>{" "}
               Branded environments should engage all the senses, not just sight.
               Consider how sound, touch, smell, and taste can be used to
               reinforce your brand's identity and create a memorable experience.
             </p>
-            <p className="empathy-para">
+            <p
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="empathy-para"
+            >
               <strong className="opacity-70">4. Be authentic : </strong> Branded
               environments should be authentic and true to your brand's values
               and personality. Don't create an experience that is out of sync
@@ -83,7 +120,10 @@ export default function Trendsection() {
               managed to create an aura that just by engaging with the brand
               online, its consumers find the experience fulfilling.
             </p>
-            <p className="empathy-para">
+            <p
+              style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+              className="empathy-para"
+            >
               <strong className="opacity-70">5. Measure your success : </strong>
               Branded environments should be designed with specific goals and
               metrics in mind. Be sure to measure the success of your branded
@@ -93,8 +133,16 @@ export default function Trendsection() {
         </p>
       </div>
       <div className="empathy-content">
-        <h1 className="empathy-h1">Final thoughts</h1>
-        <p className="empathy-para">
+        <h1
+          style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+          className="empathy-h1"
+        >
+          Final thoughts
+        </h1>
+        <p
+          style={{ color: isDarkMode ? "#00000099" : "#848484" }}
+          className="empathy-para"
+        >
           A branded environment is a powerful tool for disruptive branding that
           can help companies stand out from the competition and create emotional
           connections with consumers. An integral part of creating such

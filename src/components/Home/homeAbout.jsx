@@ -43,12 +43,12 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   });
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/code/").then((response) => {
-  //     setarray(response.data.homeAbout);
-  //     // console.log(response.data);
-  //   });
-  // }, []);
+  useEffect(() => {
+    axios.get("http://194.163.40.249:5000/code/homeAbout").then((response) => {
+      setarray(response.data.homeAbout);
+      // console.log(response.data);
+    });
+  }, []);
   return (
     <>
       <section id="about" className=" agency mt-16 max-sm:mt-0">
@@ -60,7 +60,8 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
         <div id="abtcnt">
           <div className="header1">
             <h1 style={{ color: isDarkMode ? "#000" : "#d8d6d6" }} id="abth1">
-              We Help Our Clients Define And Shape The Future.
+              {/* We Help Our Clients Define And Shape The Future. */}
+              {array}
             </h1>
             <p
               style={{ color: isDarkMode ? "#00000099" : "#848484" }}
@@ -90,8 +91,9 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
           </div>
           <Link to={"/work"} className="allwork CTAButton">
             <p
-              style={{ color: isDarkMode ? "#000000" : "#848484" }}
-              className="workbt_content"
+              // style={{ color: isDarkMode ? "#000000" : "#848484" }}
+              // className="workbt_content"
+              className={isDarkMode ? "dark" : "workbt_content"}
             >
               All Works
             </p>

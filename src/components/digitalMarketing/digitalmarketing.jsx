@@ -8,7 +8,7 @@ import Navbar from "../navigationBar/Nav";
 import Animation from "../consultingAndStrategy/animation";
 import Parent from "../consultingAndStrategy/Scrooll";
 
-export default function Digitalmarketing() {
+export default function Digitalmarketing({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -19,20 +19,21 @@ export default function Digitalmarketing() {
   }, []);
   return (
     <main className="serviceinnerpage" ref={(el) => (fade = el)}>
-      <Navbar />
+      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
       <main>
         <section className="otherservices">
-          <h1 className="inner-service-h1">
+          <h1                         style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+className="inner-service-h1">
             Traversing You Closer To Your Users.
           </h1>
         </section>
         {/* <Animation /> */}
-        <Parent />
+        <Parent isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
         <div className="slide-container">
-          <Servicesslide />
+          <Servicesslide isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
         </div>
       </main>
-      <Footer />
+      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
     </main>
   );
 }

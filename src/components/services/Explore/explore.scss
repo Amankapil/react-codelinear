@@ -99,8 +99,21 @@
   margin-left: 0px;
   z-index: 2;
   opacity: 1;
+  color: #000000;
+}
+.namelight {
+  margin-left: 0px;
+  z-index: 2;
+  opacity: 1;
+  color: #d8d6d6;
 }
 .card1:hover .name {
+  text-shadow: #fff 0px 0px 25px;
+  transition: 0.5s ease-in-out;
+  color: rgb(255, 252, 252);
+  opacity: 1;
+}
+.card1:hover .namelight {
   text-shadow: #fff 0px 0px 25px;
   transition: 0.5s ease-in-out;
   color: white;
@@ -109,6 +122,10 @@
 
 @media (max-width: 768px) {
   .name {
+    margin-left: 25px;
+    opacity: 1;
+  }
+  .namelight {
     margin-left: 25px;
     opacity: 1;
   }

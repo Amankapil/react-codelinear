@@ -5,6 +5,21 @@ import React, { useState, useEffect } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+import Mascot from "../images/Screenshot 2023-04-09 144546 1.svg";
+import Dashimg from "../images/dash.svg";
+import Home from "../images/home.svg";
+import About from "../images/about.svg";
+import Blog from "../images/blog.svg";
+import Setting from "../images/settings.svg";
+import Contact from "../images/contact.svg";
+import Case from "../images/case.svg";
+import view from "../images/view.svg";
+import edit from "../images/edit.svg";
+import close from "../images/close.svg";
+import Search from "../images/scg.svg";
+import Add from "../images/add.svg";
+import gsap from "gsap";
+
 const Crewbox = () => {
   const [editMode, setEditMode] = useState(false);
   const [vision_pera, setvision_pera] = useState(false);
@@ -27,6 +42,16 @@ const Crewbox = () => {
 
   const [error, setError] = useState("");
 
+  const [showservice, setShowservices] = useState(false);
+
+  const showinputservices = () => {
+    if (!showservice) {
+      setShowservices(true);
+    } else {
+      setShowservices(false);
+    }
+  };
+
   const handleEditClickServices = () => {
     if (editModeServices === false) {
       seteditModeServices(true);
@@ -39,7 +64,7 @@ const Crewbox = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:5000/code/addaboutcrew_box", {
+        .post("http://194.163.40.249:5000/code/addaboutcrew_box", {
           Design,
           Strategists,
           Tech_Experts,
@@ -60,115 +85,122 @@ const Crewbox = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/code/aboutcrew_box").then((response) => {
-      setServicesarray(response.data.Design);
-      setAboutarray(response.data.Strategists);
-      setarray(response.data.Tech_Experts);
-      setguiding_pera(response.data.Delivery_Managers);
-
-      console.log(response.data);
-    });
+    axios
+      .get("http://194.163.40.249:5000/code/aboutcrew_box")
+      .then((response) => {
+        setServicesarray(response.data.Design);
+        setAboutarray(response.data.Strategists);
+        setarray(response.data.Tech_Experts);
+        setguiding_pera(response.data.Delivery_Managers);
+        console.log(response.data);
+      });
   }, []);
 
   return (
-    <div className="main">
-      <h1 className="title">About Page</h1>
-      <div className="section">
-        <h2 className="sub-title">Hero Section</h2>
-        <div className="section mt-10">
-          <div className="section mt-0">
-            {editModeServices ? (
-              <>
-                <div className="w-full flex justify-end">
-                  <EditIcon
-                    onClick={handleEditClickServices}
-                    className="w-36 h-10 rounded-lg bg-black"
+    <div className="about-page-dash-panel">
+      {showservice ? (
+        <>
+          <div className="container-dash">
+            <p className="para-container">
+              <div className="images-container">
+                <img src={view} alt="" className="view" />
+                <img
+                  onClick={showinputservices}
+                  src={edit}
+                  alt=""
+                  className="view"
+                />
+                <img src={close} alt="" className="view" />
+              </div>
+              <div className="input">
+                <div className="w-full flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={Design}
+                    onChange={(e) => setDesign(e.target.value)}
+                    placeholder={Aboutarray}
                   />
                 </div>
 
-                <div className="login-container">
-                  <form onSubmit={handleSubmitServices}>
-                    <h2>Title of pagas</h2>
-                    {/* ?/                 kjlkjb                 ;;;;;;;;;;;;;;;;;;;;;;;;;; */}
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={Design}
-                      onChange={(e) => {
-                        setDesign(e.target.value);
-                      }}
-                    />
-
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={Strategists}
-                      onChange={(e) => {
-                        setStrategists(e.target.value);
-                      }}
-                    />
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={Tech_Experts}
-                      onChange={(e) => {
-                        setTech_Experts(e.target.value);
-                      }}
-                    />
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={Delivery_Managers}
-                      onChange={(e) => {
-                        setDelivery_Managers(e.target.value);
-                      }}
-                    />
-
-                    <br />
-                    <br />
-                    {error && <div className="error">{error}</div>}
-                    <button className="bg-black" type="submit">
-                      Post
-                    </button>
-                  </form>
+                <div className="w-full my-5 flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={Strategists}
+                    onChange={(e) => setStrategists(e.target.value)}
+                    placeholder={array}
+                  />
                 </div>
-              </>
-            ) : (
-              <>
-                <div className="section mt-1">
-                  <div className="w-full flex justify-end">
-                    {/* <h1 className="text-black text-5xl">{Aboutarray}</h1> */}
-                    <EditIcon
-                      onClick={handleEditClickServices}
-                      className="w-36 mx-2 h-10 rounded-lg bg-black"
-                    />
-                    <DeleteIcon
-                      onClick={handleEditClickServices}
-                      className="w-36 h-10 rounded-lg bg-black"
-                    />
-                  </div>
 
-                  <div className="w-ful flex flex-col justify-between ">
-                    {/* <h2 className="sub-title">Home Hero</h2> */}
-                    <h2 className="sub-title text-4xl">{Servicesarray}</h2>
-
-                    <h2 className="sub-title text-4xl">{Aboutarray}</h2>
-
-                    <h2 className="sub-title text-4xl">{array}</h2>
-
-                    <h2 className="sub-title text-4xl">{guiding_pera}</h2>
-                  </div>
+                <div className="w-full flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={Tech_Experts}
+                    onChange={(e) => setTech_Experts(e.target.value)}
+                    placeholder={Servicesarray}
+                  />
                 </div>
-              </>
-            )}
+                <div className="w-full flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={Delivery_Managers}
+                    onChange={(e) => setDelivery_Managers(e.target.value)}
+                    placeholder={Servicesarray}
+                  />
+                </div>
+
+                <div className="hh w-full flex justify-center items-center my-10">
+                  <button
+                    onClick={handleSubmitServices}
+                    className="w-[20%] h-9 bg-black text-white"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+
+              {/* {array} */}
+            </p>
+            <br />
           </div>
-        </div>
-      </div>
-      {/* <h1 className="title">vision pera</h1> */}
+        </>
+      ) : (
+        <>
+          <div className="container-dash">
+            <p className="para-container">
+              <div className="images-container">
+                <img src={view} alt="" className="view" />
+                <img
+                  onClick={showinputservices}
+                  src={edit}
+                  alt=""
+                  className="view"
+                />
+                <img src={close} alt="" className="view" />
+              </div>
+
+              <h1 className="title-container">Meet section</h1>
+              <br />
+              <h1 className="title-container">Title : </h1>
+
+              {Servicesarray}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {Aboutarray}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {array}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {guiding_pera}
+            </p>
+            <br />
+          </div>
+        </>
+      )}
     </div>
   );
 };

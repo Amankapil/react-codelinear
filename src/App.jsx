@@ -26,10 +26,12 @@ import UX from "./components/userExperience/UX";
 import DM from "./components/digitalMarketing/digitalmarketing";
 import PD from "./components/productDevelopment/productdevelopment";
 import AnimatedCursor from "react-animated-cursor";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Dash from "./components/Dashboard/dash";
 import Login from "./components/Dashboard/Login";
 import { useState } from "react";
+import NotFound from "./components/NotFound";
+import { useEffect } from "react";
 
 function App() {
   window.scroll({
@@ -37,6 +39,16 @@ function App() {
   });
 
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [user, setUser] = useState(false);
+  useEffect(() => {
+    const data = localStorage.getItem("jwt");
+
+    if (data) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  },[]);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
@@ -58,6 +70,7 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
+          {/* <Switch> */}
           <Route
             exact
             path="/"
@@ -65,7 +78,7 @@ function App() {
               <Home isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
-          <Route exact path="/admin" element={<Dash />} />
+          <Route exact path="/admin" element={ user ? <Dash/> : <Login/> } />
           <Route exact path="/login" element={<Login />} />
           <Route
             exact
@@ -156,21 +169,110 @@ function App() {
           <Route
             exact
             path="/digital-marketing-trends-2023"
-            element={<Trend />}
+            element={
+              <Trend isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
           />
-          <Route exact path="/bing-vs-google" element={<Bing />} />
-          <Route exact path="/Branded" element={<Brand />} />
-          <Route exact path="/changing" element={<Change />} />
-          <Route exact path="/Discovery" element={<Discovery />} />
-          <Route exact path="/Gestalt" element={<Gesalt />} />
-          <Route exact path="/Listening" element={<Listen />} />
-          <Route exact path="/minimum-viable-product" element={<MVP />} />
-          <Route exact path="/No-code-revolution" element={<NCR />} />
-          <Route exact path="/react-vs-flutter" element={<Reactblog />} />
-          <Route exact path="/Design" element={<Design />} />
-          <Route exact path="/shopify-vs-magento" element={<SVM />} />
-          <Route exact path="/Story" element={<Story />} />
-          <Route exact path="/UX" element={<UXblog />} />
+          <Route
+            exact
+            path="/bing-vs-google"
+            element={
+              <Bing isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/Branded"
+            element={
+              <Brand isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/changing"
+            element={
+              <Change isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/Discovery"
+            element={
+              <Discovery
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/Gestalt"
+            element={
+              <Gesalt isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/Listening"
+            element={
+              <Listen isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/minimum-viable-product"
+            element={
+              <MVP isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/No-code-revolution"
+            element={
+              <NCR isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/react-vs-flutter"
+            element={
+              <Reactblog
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
+            }
+          />
+          <Route
+            exact
+            path="/Design"
+            element={
+              <Design isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/shopify-vs-magento"
+            element={
+              <SVM isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/Story"
+            element={
+              <Story isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          <Route
+            exact
+            path="/UX"
+            element={
+              <UXblog isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+            }
+          />
+          \
+          <Route element={NotFound} />
+          {/* </Switch> */}
         </Routes>
       </BrowserRouter>
       {/* </Cursor> */}

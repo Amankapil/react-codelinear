@@ -5,6 +5,21 @@ import React, { useState, useEffect } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+import Mascot from "../images/Screenshot 2023-04-09 144546 1.svg";
+import Dashimg from "../images/dash.svg";
+import Home from "../images/home.svg";
+import About from "../images/about.svg";
+import Blog from "../images/blog.svg";
+import Setting from "../images/settings.svg";
+import Contact from "../images/contact.svg";
+import Case from "../images/case.svg";
+import view from "../images/view.svg";
+import edit from "../images/edit.svg";
+import close from "../images/close.svg";
+import Search from "../images/scg.svg";
+import Add from "../images/add.svg";
+import gsap from "gsap";
+
 const Meet = () => {
   const [editMode, setEditMode] = useState(false);
   const [vision_pera, setvision_pera] = useState(false);
@@ -18,9 +33,24 @@ const Meet = () => {
   const [Servicesarray, setServicesarray] = useState();
 
   const [crew, setcrew] = useState("");
+
   const [crew_pera, setcrew_pera] = useState("");
+  const [Design, setDesign] = useState("");
+  const [Strategists, setStrategists] = useState("");
+  const [Tech_Experts, setTech_Experts] = useState("");
+  const [Delivery_Managers, setDelivery_Managers] = useState("");
 
   const [error, setError] = useState("");
+
+  const [showservice, setShowservices] = useState(false);
+
+  const showinputservices = () => {
+    if (!showservice) {
+      setShowservices(true);
+    } else {
+      setShowservices(false);
+    }
+  };
 
   const handleEditClickServices = () => {
     if (editModeServices === false) {
@@ -29,15 +59,12 @@ const Meet = () => {
       seteditModeServices(false);
     }
   };
-  const handleUsernameChange = (event) => {
-    setvision_pera(event.target.value);
-  };
 
   const handleSubmitServices = async (event) => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:5000/code/addaboutcrew", {
+        .post("http://194.163.40.249:5000/code/addaboutcrew", {
           crew,
           crew_pera,
         })
@@ -54,68 +81,12 @@ const Meet = () => {
       setError(error.response.data.message);
     }
   };
-  const handleEditClick = () => {
-    if (editMode === false) {
-      setEditMode(true);
-    } else {
-      setEditMode(false);
-    }
-  };
 
-  const handleEditClickAbout = () => {
-    if (editModeAbout === false) {
-      setEditModeAbout(true);
-    } else {
-      setEditModeAbout(false);
-    }
-  };
-  const handleSubmit = async (event) => {
-    setEditMode(false);
-    event.preventDefault();
-    try {
-      const response = await axios
-        .post("http://localhost:5000/code/addaboutvision", {
-          vision_pera,
-        })
-        .then((response) => {
-          console.log(response);
-
-          if (response.status === 200) {
-            alert("data post successfully");
-          } else {
-            alert(response.data.message);
-          }
-        });
-    } catch (error) {
-      setError(error.response.data.message);
-    }
-  };
   // ?/////////////////////////////////////
   // ?/////////////////////////////////////handleSubmitAbout/ ////////////////////////////////////////////
-  const handleSubmitAbout = async (event) => {
-    event.preventDefault();
-    try {
-      const response = await axios
-        .post("http://localhost:5000/code/addaboutguiding", {
-          guiding_pera,
-        })
-        .then((response) => {
-          console.log(response);
-
-          if (response.status === 200) {
-            alert("data post successfully");
-            window.refresh();
-          } else {
-            alert(response.data.message);
-          }
-        });
-    } catch (error) {
-      setError(error.response.data.message);
-    }
-  };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/code/aboutcrew").then((response) => {
+    axios.get("http://194.163.40.249:5000/code/aboutcrew").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.crew);
       setAboutarray(response.data.crew_pera);
@@ -125,81 +96,88 @@ const Meet = () => {
   }, []);
 
   return (
-    <div className="main">
-      <h1 className="title">About Page</h1>
-      <div className="section">
-        <h2 className="sub-title">Hero Section</h2>
-        <div className="section mt-10">
-          <div className="section mt-0">
-            {editModeServices ? (
-              <>
-                <div className="w-full flex justify-end">
-                  <EditIcon
-                    onClick={handleEditClickServices}
-                    className="w-36 h-10 rounded-lg bg-black"
+    <div className="about-page-dash-panel">
+      {showservice ? (
+        <>
+          <div className="container-dash">
+            <p className="para-container">
+              <div className="images-container">
+                <img src={view} alt="" className="view" />
+                <img
+                  onClick={showinputservices}
+                  src={edit}
+                  alt=""
+                  className="view"
+                />
+                <img src={close} alt="" className="view" />
+              </div>
+              <div className="input">
+                <div className="w-full flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={crew}
+                    onChange={(e) => setcrew(e.target.value)}
+                    placeholder={Aboutarray}
                   />
                 </div>
 
-                <div className="login-container">
-                  <form onSubmit={handleSubmitServices}>
-                    <h2>Title of pagas</h2>
-
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={crew}
-                      onChange={(e) => {
-                        setcrew(e.target.value);
-                      }}
-                    />
-                    <input
-                      className="text-black w-full bg-back border-2 border-red-400"
-                      placeholder={Servicesarray}
-                      type="text w-[70%]"
-                      value={crew_pera}
-                      onChange={(e) => {
-                        setcrew_pera(e.target.value);
-                      }}
-                    />
-
-                    <br />
-                    <br />
-                    {error && <div className="error">{error}</div>}
-                    <button className="bg-black" type="submit">
-                      Post
-                    </button>
-                  </form>
+                <div className="w-full my-5 flex justify-center items-center">
+                  <input
+                    className="w-[60%] h-12 text-slate-950 border-red-600 border-2"
+                    type="text"
+                    value={crew_pera}
+                    onChange={(e) => setcrew_pera(e.target.value)}
+                    placeholder={array}
+                  />
                 </div>
-              </>
-            ) : (
-              <>
-                <div className="section mt-1">
-                  <div className="w-full flex justify-end">
-                    {/* <h1 className="text-black text-5xl">{Aboutarray}</h1> */}
-                    <EditIcon
-                      onClick={handleEditClickServices}
-                      className="w-36 mx-2 h-10 rounded-lg bg-black"
-                    />
-                    <DeleteIcon
-                      onClick={handleEditClickServices}
-                      className="w-36 h-10 rounded-lg bg-black"
-                    />
-                  </div>
 
-                  <div className="w-ful flex flex-col justify-between ">
-                    {/* <h2 className="sub-title">Home Hero</h2> */}
-                    <h2 className="sub-title text-4xl">{Servicesarray}</h2>
-
-                    <h2 className="sub-title text-4xl">{Aboutarray}</h2>
-                  </div>
+                <div className="hh w-full flex justify-center items-center my-10">
+                  <button
+                    onClick={handleSubmitServices}
+                    className="w-[20%] h-9 bg-black text-white"
+                  >
+                    Submit
+                  </button>
                 </div>
-              </>
-            )}
+              </div>
+
+              {/* {array} */}
+            </p>
+            <br />
           </div>
-        </div>
-      </div>
-      <h1 className="title">vision pera</h1>
+        </>
+      ) : (
+        <>
+          <div className="container-dash">
+            <p className="para-container">
+              <div className="images-container">
+                <img src={view} alt="" className="view" />
+                <img
+                  onClick={showinputservices}
+                  src={edit}
+                  alt=""
+                  className="view"
+                />
+                <img src={close} alt="" className="view" />
+              </div>
+              <h1 className="title-container">Title : </h1>
+
+              {Servicesarray}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {Aboutarray}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {array}
+              <br />
+              <h1 className="title-container">Title : </h1>
+              {guiding_pera}
+            </p>
+            <br />
+          </div>
+        </>
+      )}
     </div>
   );
 };

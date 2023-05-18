@@ -31,7 +31,7 @@ const ContactHero = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://localhost:5000/code/addcontact", {
+        .post("http://194.163.40.249:5000/code/addcontact", {
           heading,
           pera,
         })
@@ -50,7 +50,7 @@ const ContactHero = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:5000/code/contact").then((response) => {
+    axios.get("http://194.163.40.249:5000/code/contact").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.heading);
       setAboutarray(response.data.pera);

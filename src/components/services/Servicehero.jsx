@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper";
 import React, { useState, useEffect, useRef } from "react";
 
-export default function Serviceshero() {
+export default function Serviceshero({ isDarkMode }) {
   const [Widht, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
@@ -27,13 +27,10 @@ export default function Serviceshero() {
       <section id="hero_services">
         <div className="vision w-full mb-52  flex justify-center h-full relative  items-center">
           <div className="wthh max-md:flex-col  max-sm:ml-0   ml0 max-2xl:ml-0 max-xl:ml-0  max-md:ml-5 max-md:p-0  w-9/10 flex relative">
-           
             <div className=" mt max-xl:ml-12 max-sm:ml-2 flex w-full max-md:ml-0  max-sm:flex-col">
               <h1
                 className="text-6xl mt6 ml-4 max-2xl:ml-0 max-xl:mb-5 max-md:text-3xl font-extrabold text-white"
-                style={{
-                  color: "#d8d6d6",
-                }}
+                style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               >
                 Leading The Way From
               </h1>
@@ -52,9 +49,8 @@ export default function Serviceshero() {
                 <SwiperSlide className="">
                   <h1
                     className="text-6xl  mt16 ml-8 max-xl:ml-5 max-md:text-3xl font-extrabold"
-                    style={{
-                      color: "#d8d6d6",
-                    }}
+                    style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+
                   >
                     Strategy To Execution
                   </h1>
@@ -62,9 +58,8 @@ export default function Serviceshero() {
                 <SwiperSlide className="-ml">
                   <h1
                     className="text-6xl  mt16 ml-8 max-xl:ml-5 max-md:text-3xl font-extrabold"
-                    style={{
-                      color: "#d8d6d6",
-                    }}
+                    style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+
                   >
                     Design To Execution
                   </h1>
@@ -72,9 +67,8 @@ export default function Serviceshero() {
                 <SwiperSlide className="">
                   <h1
                     className="text-6xl  mt16 ml-8 max-xl:ml-5 max-md:text-3xl font-extrabold"
-                    style={{
-                      color: "#d8d6d6",
-                    }}
+                    style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+
                   >
                     Marketing to Success
                   </h1>
