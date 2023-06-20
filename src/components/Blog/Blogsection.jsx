@@ -1,10 +1,10 @@
 
-import image1 from "./Images/Frame 43.svg";
-import image2 from "./Images/Frame 44.svg";
-import image3 from "./Images/Frame 46.svg";
-import image4 from "./Images/Frame 472.svg";
-import image5 from "./Images/Frame 45.svg";
-import image6 from "./Images/Frame 47.svg";
+import image1 from "./Images/Frame 43.png";
+import image2 from "./Images/Frame 44.png";
+import image3 from "./Images/Frame 46.png";
+import image4 from "./Images/Frame 472.png";
+import image5 from "./Images/Frame 45.png";
+import image6 from "./Images/Frame 47.png";
 import discovery from "./Images/Frame 58.png";
 import story from "./Images/Frame 60.png";
 import brand from "./Images/Frame 61.png";

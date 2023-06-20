@@ -1,4 +1,4 @@
-import empathy from "../../Blog/Images/Frame 472.svg";
+import empathy from "../../Blog/Images/Frame 472.png";
 import cheese from "./images/Ellipse 19.png";
 
 export default function Trendhero({ isDarkMode, toggleDarkMode }) {

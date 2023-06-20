@@ -7,12 +7,12 @@ import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper";
 import React, { useState, useEffect, useRef } from "react";
 
-import image2 from "./images/Frame 43.svg";
-import image3 from "./images/Frame 44.svg";
-import image4 from "./images/Frame 472.svg";
-import image5 from "../Blog/Images/Frame 45.svg";
-import image6 from "../Blog/Images/Frame 47.svg";
-import image7 from "../Blog/Images/Frame 46.svg";
+import image2 from "./images/Frame 43.png";
+import image3 from "./images/Frame 44.png";
+import image4 from "./images/Frame 472.png";
+import image5 from "../Blog/Images/Frame 45.png";
+import image6 from "../Blog/Images/Frame 47.png";
+import image7 from "../Blog/Images/Frame 46.png";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -281,6 +281,7 @@ const BlogHome = ({ isDarkMode }) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="cass flex justify-center items-center">
+              
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
                     <Link to={"/design"}>
@@ -320,6 +321,7 @@ const BlogHome = ({ isDarkMode }) => {
                 </div>
               </SwiperSlide>
             </Swiper>
+          
             <div className=" flex justify-center items-center mt-4 -ml-0">
               <button className="exp_btn ">
                 <Link

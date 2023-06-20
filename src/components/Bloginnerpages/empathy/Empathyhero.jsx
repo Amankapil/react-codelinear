@@ -1,4 +1,4 @@
-import empathy from "../../Blog/Images/Frame 43.svg";
+import empathy from "../../Blog/Images/Frame 43.png";
 
 export default function Empathyhero({ isDarkMode, toggleDarkMode }) {
   return (
