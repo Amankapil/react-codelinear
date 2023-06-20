@@ -1,17 +1,18 @@
+
 import image1 from "./Images/Frame 43.svg";
 import image2 from "./Images/Frame 44.svg";
 import image3 from "./Images/Frame 46.svg";
 import image4 from "./Images/Frame 472.svg";
 import image5 from "./Images/Frame 45.svg";
 import image6 from "./Images/Frame 47.svg";
-import discovery from "./Images/Frame 48.svg";
-import story from "./Images/Frame 49.svg";
-import brand from "./Images/Frame 50.svg";
-import SEO from "./Images/Frame 51.svg";
-import UX from "./Images/Frame 52 (1).svg";
-import gestalt from "./Images/Frame 53.svg";
-import BVG from "./Images/Frame 54.svg";
-import listen from "./Images/Frame 56.svg";
+import discovery from "./Images/Frame 58.png";
+import story from "./Images/Frame 60.png";
+import brand from "./Images/Frame 61.png";
+import SEO from "./Images/Frame 64.png";
+import UX from "./Images/Frame 57.png";
+import gestalt from "./Images/Frame 62.png";
+import BVG from "./Images/Frame 59.png";
+import listen from "./Images/Frame 63.png";
 import reactimg from "./Images/Frame 4.svg";
 import { useRef } from "react";
 import gsap from "gsap";

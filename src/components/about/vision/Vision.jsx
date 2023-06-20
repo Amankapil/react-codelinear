@@ -109,9 +109,9 @@ const Vision = ({ isDarkMode }) => {
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="vision-para"
           >
-            {/* To propel humanity forward by building digital products that uplift
-            our client's value proposition and enrich their users' lives. */}
-            {vision_peraGET}
+            To propel humanity forward by building digital products that uplift
+            our client's value proposition and enrich their users' lives.
+            {/* {vision_peraGET} */}
           </p>
         </div>
         <div className="core-guiding-container">
@@ -126,11 +126,11 @@ const Vision = ({ isDarkMode }) => {
               style={{ color: isDarkMode ? "#00000099" : "#848484" }}
               className="guiding-container-para"
             >
-              {/* Crafting ideal, innovative and impactful digital products are the
+              Crafting ideal, innovative and impactful digital products are the
               three core pillars around which each of our projects is centred.
               Our guiding principles enable us to adhere to our core and deliver
-              exceptional projects. */}
-              {guiding_peraGET}
+              exceptional projects.
+              {/* {guiding_peraGET} */}
             </p>
             <div className="skip-container">
               <div
@@ -168,13 +168,13 @@ const Vision = ({ isDarkMode }) => {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="subcontainer-para"
               >
-                {/* We understand the varying needs of our clients, and therefore
+                We understand the varying needs of our clients, and therefore
                 custom-tailor every product ideally suited to their
                 requirements. Our diverse team of designers, developers,
                 marketers, and strategists works in collaboration to deliver
                 competitive advantages and unparalleled solutions tailored to
-                your needs. */}
-                {Servicesarray}
+                your needs.
+                {/* {Servicesarray} */}
               </p>
             </div>
             <div className="subcontainer">
@@ -195,12 +195,12 @@ const Vision = ({ isDarkMode }) => {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="subcontainer-para"
               >
-                {/* We envision ourselves to be the trendsetters and strive to make
+                We envision ourselves to be the trendsetters and strive to make
                 our clients one too. When organisations across the world are on
                 the verge of transformation or running the risk of irrelevance,
                 we turn to innovation to stay ahead. We, therefore, go beyond
-                strategising and implement innovation into our projects. */}
-                {Aboutarray}
+                strategising and implement innovation into our projects.
+                {/* {Aboutarray} */}
               </p>
             </div>
             <div className="subcontainer">
@@ -221,12 +221,12 @@ const Vision = ({ isDarkMode }) => {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="subcontainer-para"
               >
-                {/* Driven by impact, our ultimate focus is to build digital
+                Driven by impact, our ultimate focus is to build digital
                 products that address real-world problems. Our team of industry
                 experts ascertains that in addition to crafting epitomes of
                 digital experiences, we create products that enrich lives and
-                create value. */}
-                {array}
+                create value.
+                {/* {array} */}
               </p>
             </div>
           </div>

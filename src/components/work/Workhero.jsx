@@ -20,8 +20,8 @@ export default function Workhero({ isDarkMode }) {
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           id="work_heading"
         >
-          {/* We're Proud To Show You Our Accomplishments */}
-          {Servicesarray}
+          We're Proud To Show You Our Accomplishments
+          {/* {Servicesarray} */}
         </h1>
       </div>
     </main>

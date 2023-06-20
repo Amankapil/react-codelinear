@@ -60,8 +60,8 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
         <div id="abtcnt">
           <div className="header1">
             <h1 style={{ color: isDarkMode ? "#000" : "#d8d6d6" }} id="abth1">
-              {/* We Help Our Clients Define And Shape The Future. */}
-              {array}
+              We Help Our Clients Define And Shape The Future.
+              {/* {array} */}
             </h1>
             <p
               style={{ color: isDarkMode ? "#00000099" : "#848484" }}

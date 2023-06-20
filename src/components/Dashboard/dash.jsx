@@ -38,6 +38,7 @@ import Life from "./CareerTab/Life";
 import HomeAbout from "../Home/homeAbout";
 import HeroAbout from "./aboutTab/HeroAbout";
 import Job from "./application/Job";
+import ChartrComponent, { Chartr } from "./application/Chart";
 
 export default function Dash() {
   // const navigate = useNavigate("/home");
@@ -279,7 +280,8 @@ export default function Dash() {
 
         <TabPanel>
           <div className="main" style={{ height: "100vh" }}>
-            <Job />
+            {/* <Job /> */}
+            <ChartrComponent />
           </div>
         </TabPanel>
 

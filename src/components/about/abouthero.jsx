@@ -18,9 +18,9 @@ const Abouthero = (isDarkMode) => {
         style={{ color: isDarkMode ? "#d8d6d6" : "#000000" }}
         className="about-hero-h1 text-white"
       >
-        {/* Welcome To The World Of Codelinear-
-        <br /> The World Of Impact */}
-        {heroaboutGET}
+        Welcome To The World Of Codelinear-
+        <br /> The World Of Impact
+        {/* {heroaboutGET} */}
       </h1>
     </section>
   );

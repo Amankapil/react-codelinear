@@ -68,3 +68,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+
+
+React Native Vs Flutter
+ Design System
+ Shopify Vs Magento
+ No Code Revolution
+Minimum Viable Product
+Digital Marketing Trends 2023
+Empathy In UX
+
+
+
+import image1 from "./Images/Frame 43.svg";
+import image2 from "./Images/Frame 44.svg";
+import image3 from "./Images/Frame 46.svg";
+import image4 from "./Images/Frame 472.svg";
+import image5 from "./Images/Frame 45.svg";
+import image6 from "./Images/Frame 47.svg";
+import discovery from "./Images/Frame 58.png";
+import story from "./Images/Frame 60.png";
+import brand from "./Images/Frame 61.png";
+import SEO from "./Images/Frame 64.png";
+import UX from "./Images/Frame 57.png";
+import gestalt from "./Images/Frame 62.png";
+import BVG from "./Images/Frame 59.png";
+import listen from "./Images/Frame 63.png";
+import reactimg from "./Images/Frame 4.svg";
+import { useRef } from "react";
+import gsap from "gsap";

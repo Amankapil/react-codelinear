@@ -80,10 +80,10 @@ export default function Crew({ isDarkMode }) {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="m-desc"
               >
-                {/* The Design Architects orchestrate the project development
+                The Design Architects orchestrate the project development
                 process. From capturing customer expectations to managing the
-                budget - they do it all. */}
-                {Servicesarray}
+                budget - they do it all.
+                {/* {Servicesarray} */}
               </p>
             </div>
             <div
@@ -108,10 +108,10 @@ export default function Crew({ isDarkMode }) {
                 style={{ color: isDarkMode ? "#00000099" : "#868484" }}
                 className="m-desc"
               >
-                {/* They are the geniuses responsible for formulating, documenting,
+                They are the geniuses responsible for formulating, documenting,
                 and implementing strategies that operate behind the scene to
-                drive results. */}
-                {Aboutarray}
+                drive results.
+                {/* {Aboutarray} */}
               </p>
             </div>
             <div
@@ -136,10 +136,10 @@ export default function Crew({ isDarkMode }) {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="m-desc"
               >
-                {/* Our Tech Experts devise the perfect strategy, prepare a detailed
+                Our Tech Experts devise the perfect strategy, prepare a detailed
                 roadmap, and leverage the right technology to help you achieve
-                your goals. */}
-                {array}
+                your goals.
+                {/* {array} */}
               </p>
             </div>
             <div
@@ -164,9 +164,9 @@ export default function Crew({ isDarkMode }) {
                 style={{ color: isDarkMode ? "#00000099" : "#848484" }}
                 className="m-desc"
               >
-                {/* Your point-of-contact with Codelinear, who keeps you apprised on
-                all the ins and outs of your project and its status. */}
-                {guiding_pera}
+                Your point-of-contact with Codelinear, who keeps you apprised on
+                all the ins and outs of your project and its status.
+                {/* {guiding_pera} */}
               </p>
             </div>
           </div>

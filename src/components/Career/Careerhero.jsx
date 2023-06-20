@@ -19,10 +19,10 @@ export default function Careerhero({ isDarkMode, toggleDarkMode }) {
         style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
         className="career-hero-h1"
       >
-        {/* We Are An Impact-Driven Firm,
+        We Are An Impact-Driven Firm,
 
-        <br /> Join Us And Be A Part Of The Impact */}
-        {Servicesarray}
+        <br /> Join Us And Be A Part Of The Impact
+        {/* {Servicesarray} */}
       </h1>
     </section>
   );

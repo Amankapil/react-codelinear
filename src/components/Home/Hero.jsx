@@ -37,8 +37,8 @@ export default function Hero({ isDarkMode, toggleDarkMode }) {
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="header"
           >
-            {/* Propelling The World, By Design */}
-            {array}
+            Propelling The World, By Design
+            {/* {array} */}
           </h1>
 
           <Link to={"/about"} id="aboutbtn">

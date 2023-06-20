@@ -61,17 +61,17 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           className="whyus-h1"
         >
-          {/* Why Us? */}
-          {Servicesarray}
+          Why Us?
+          {/* {Servicesarray} */}
         </h1>
         <p
           style={{ color: isDarkMode ? "#00000099" : "#848484" }}
           className="whyus-para"
         >
-          {/* We are a diverse blend of experts, young professionals, and even
+          We are a diverse blend of experts, young professionals, and even
           mentees. And though we may come from diverse backgrounds, our drive to
-          make a difference in society unites us. */}
-          {Aboutarray}
+          make a difference in society unites us.
+          {/* {Aboutarray} */}
 
           <p
             className="mt-5"
@@ -79,12 +79,12 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
               color: "#848484",
             }}
           >
-            {/* Our cohort comprises designers, developers, strategists, and
+            Our cohort comprises designers, developers, strategists, and
             marketers, and collectively we blend each of our expertise to
             innovate, to impact.
             <br />
-            If this sounds like you, we have a role for you! */}
-            {array}
+            If this sounds like you, we have a role for you!
+            {/* {array} */}
           </p>
         </p>
       </div>
@@ -92,15 +92,15 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
         <div className="whyus-container">
           <div className="whyus-content-container">
             <span className="no">
-              {/* COLLECTIVE GROWTH */}
-              {grothPera}
+              COLLECTIVE GROWTH
+              {/* {grothPera} */}
             </span>
             <p className="wucontainer-para">
-              {/* We ensure the collective growth and upliftment of our crew. We
+              We ensure the collective growth and upliftment of our crew. We
               organise several workshops, provide access to numerous skill
               development courses, and foster an environment of mentorship
-              within the firm. */}
-              {flex}
+              within the firm.
+              {/* {flex} */}
             </p>
           </div>
           <img src={image6} alt="" className="card-imgs" loading="lazy" />
@@ -109,10 +109,10 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           <div className="whyus-content-container">
             <span className="no">{flexPera}</span>
             <p className="wucontainer-para">
-              {/* We strive to provide our team with the most flexible and
+              We strive to provide our team with the most flexible and
               autonomous work arrangement, enabling them to drive maximum
-              productivity whilst maintaining work-life balance.{" "} */}
-              {guiding_pera}
+              productivity whilst maintaining work-life balance.{" "}
+              {/* {guiding_pera} */}
             </p>
           </div>
           <img src={image8} alt="" className="card-imgs" loading="lazy" />
@@ -121,11 +121,11 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           <div className="whyus-content-container">
             <span className="no">{vision_pera}</span>
             <p className="wucontainer-para">
-              {/* As a part of Codelinear, you will get the opportunity to hone your
+              As a part of Codelinear, you will get the opportunity to hone your
               skills as well as disposition by working on a diverse range of
               projects that actually create a tangible impact for clients and
-              society. */}
-              {editMode}
+              society.
+              {/* {editMode} */}
             </p>
           </div>
           <img src={image7} alt="" className="card-imgs" loading="lazy" />
@@ -136,19 +136,19 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           className="life-h1"
         >
-          {/* Life At Codelinear */}
-          {lifeHeading}
+          Life At Codelinear
+          {/* {lifeHeading} */}
         </h1>
         <p
           style={{ color: isDarkMode ? "#00000099" : "#848484" }}
           className="life-para"
         >
-          {/* We believe in actions over statements. When we say we are diverse, we
+          We believe in actions over statements. When we say we are diverse, we
           are inclusive and we are here to give back to the community, we mean
           it! We have painstakingly built an environment of "Community" within
           us, in which we uplift and empower one another, and we take immense
-          pride in it. */}
-          {lifePera}
+          pride in it.
+          {/* {lifePera} */}
         </p>
       </div>
     </section>

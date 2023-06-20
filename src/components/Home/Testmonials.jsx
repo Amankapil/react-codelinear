@@ -45,8 +45,8 @@ export default function Hero({ isDarkMode }) {
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="container-2_header"
           >
-            {/* We Are Defined By How Our Clients Perceive Us. */}
-            {array}
+            We Are Defined By How Our Clients Perceive Us.
+            {/* {array} */}
           </h1>
           <div id="container">
             <div className="test-content" ref={(el) => (testimonial = el)}>
