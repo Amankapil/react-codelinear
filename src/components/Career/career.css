@@ -170,6 +170,7 @@
   margin-bottom: 100px;
   width: 63.12%;
   height: 525px;
+  border-radius: 27px;
 }
 .position-container {
   display: flex;
