@@ -1,7 +1,10 @@
 import Footer from "../footer/footer";
 import Navbar from "../navigationBar/Nav";
 import Circles from "./circlesanimation";
+
 import Abouthero from "./Abouthero";
+
+
 import Crew from "./crew";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";

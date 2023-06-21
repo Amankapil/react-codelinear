@@ -1,6 +1,6 @@
-import image3 from "./images/slide-3.svg";
-import image4 from "./images/slide-4.svg";
-import image5 from "./images/slide-5.svg";
+import image3 from "./images/slide-3.jpg";
+import image4 from "./images/slide-4.jpg";
+import image5 from "./images/slide-5.jpg";
 import gsap from "gsap";
 
 import { useRef, useEffect } from "react";
