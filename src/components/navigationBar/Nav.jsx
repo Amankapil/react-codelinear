@@ -58,7 +58,7 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
         >
           <ul className="nav_list">
             <li className="nav_list-item">
-              <Link to={"/"} className="nav_logo">
+              <Link to={"/"} spy={true} smooth={true} offset={50} duration={500} className="nav_logo">
                 <img src={logo} alt="" className="logo" />
                 <span className="hyphen"></span>
               </Link>
@@ -80,32 +80,32 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
         </div>
         <ul className="slide_nav_list">
           <li className="slide_nav_list-item">
-            <Link to="/about" className="slide_nav_links" onClick={fade}>
+            <Link to="/about" spy={true} smooth={true} offset={-150} duration={500} className="slide_nav_links" onClick={fade}>
               About
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/services" className="slide_nav_links" onClick={fade}>
+            <Link to="/services" spy={true} smooth={true} offset={-150} duration={500}  className="slide_nav_links" onClick={fade}>
               Services
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/work" className="slide_nav_links" onClick={fade}>
+            <Link to="/work" spy={true} smooth={true} offset={-150} duration={500} className="slide_nav_links" onClick={fade}>
               Work
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/career" className="slide_nav_links" onClick={fade}>
+            <Link to="/career" spy={true} smooth={true} offset={-150} duration={500} className="slide_nav_links" onClick={fade}>
               Careers
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/blog" className="slide_nav_links" onClick={fade}>
+            <Link to="/blog" spy={true} smooth={true} offset={-150} duration={500} className="slide_nav_links" onClick={fade}>
               Ideas
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/let's_talk" className="slide_nav_links" onClick={fade}>
+            <Link to="/let's_talk" spy={true} smooth={true} offset={-150} duration={500} className="slide_nav_links" onClick={fade}>
               Let's Talk
             </Link>
           </li>
