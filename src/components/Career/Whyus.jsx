@@ -119,7 +119,11 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
         </div>
         <div className="whyus-container">
           <div className="whyus-content-container">
-            <span className="no">{vision_pera}</span>
+            <span className="no">
+            
+            {vision_pera}
+            
+            </span>
             <p className="wucontainer-para">
               As a part of Codelinear, you will get the opportunity to hone your
               skills as well as disposition by working on a diverse range of
