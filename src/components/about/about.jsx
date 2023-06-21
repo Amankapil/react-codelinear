@@ -1,7 +1,7 @@
 import Footer from "../footer/footer";
 import Navbar from "../navigationBar/Nav";
 import Circles from "./circlesanimation";
-import Abouthero from "./abouthero";
+import Abouthero from "./Abouthero";
 import Crew from "./crew";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -13,7 +13,6 @@ import BlogHome from "../Home/BlogHome";
 
 export default function About({ isDarkMode, toggleDarkMode }) {
   let fade = useRef(null);
-
   useEffect(() => {
     const tl = gsap.timeline({
       defaults: { duration: 1 },
