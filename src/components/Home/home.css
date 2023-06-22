@@ -573,7 +573,7 @@
   padding: 6.25% 0;
   margin-left: 19.9%;
   gap: 10px;
-  height: 1277.05px;
+  height: 577.05px;
   position: absolute;
   top: 4457px;
 }
@@ -1094,6 +1094,27 @@
     margin-left: 10.4%;
   }
 }
+
+@media screen and (max-width: 1640px) and (min-width: 1500px) {
+  #blog {
+    margin-left: 0%;
+    gap: 0px;
+    height: 1050.06px;
+    position: absolute;
+    top: calc(100vh + 3400px);
+    left: 14%;
+  }
+}
+@media screen and (max-width: 1500px) and (min-width: 1400px) {
+  #blog {
+    margin-left: 0%;
+    gap: 0px;
+    height: 1050.06px;
+    position: absolute;
+    top: calc(100vh + 3400px);
+    left: 9%;
+  }
+}
 @media screen and (max-width: 1540px) and (min-width: 1441px) {
   #hero {
     height: 105vh;
@@ -1177,7 +1198,7 @@
     top: 145px;
   }
   #imgs {
-    background-image: url("./images/image\ 5.png");
+    background-image: url("./images/image\ 5.svg");
     background-size: 1856.4px 1065.82px;
     background-position: -720px -120px;
     width: 100%;
@@ -1200,7 +1221,7 @@
     top: 570px;
   }
   #img2 {
-    background-image: url("./images/image 11.png");
+    background-image: url("./images/image\ 11.svg");
     background-size: 1356.4px 905.82px;
     background-position: -430px -20px;
     width: 100%;
@@ -1223,7 +1244,7 @@
     top: 1225px;
   }
   #img3 {
-    background-image: url("./images/image\ 4.png");
+    background-image: url("./images/image\ 4.svg") !important;
     background-size: 1356.4px 905.82px;
     background-position: -360px -20px;
     width: 100%;
@@ -1464,14 +1485,7 @@
     bottom: 0.82%;
     opacity: 0.5;
   }
-  #blog {
-    margin-left: 0%;
-    gap: 0px;
-    height: 1050.06px;
-    position: absolute;
-    top: calc(100vh + 3400px);
-    left: 15%;
-  }
+
   #blg {
     left: 11%;
   }

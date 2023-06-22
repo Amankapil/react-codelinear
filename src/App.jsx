@@ -32,6 +32,7 @@ import Login from "./components/Dashboard/Login";
 import { useState } from "react";
 import NotFound from "./components/NotFound";
 import { useEffect } from "react";
+import CustomCursor from "./CustomCursor";
 
 function App() {
   window.scroll({
@@ -55,7 +56,7 @@ function App() {
   };
   return (
     <div style={{ backgroundColor: isDarkMode ? "#FFFFFF" : "#090909" }}>
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={8}
         outerSize={0}
         color="255, 255, 255"
@@ -66,7 +67,9 @@ function App() {
         innerStyle={{
           mixBlendMode: "exclusion",
         }}
-      />
+      /> */}
+
+      <CustomCursor />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>

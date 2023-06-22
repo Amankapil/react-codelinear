@@ -2,7 +2,7 @@ import Footer from "../footer/footer";
 import Navbar from "../navigationBar/Nav";
 import Circles from "./circlesanimation";
 
-import Abouthero from "./AboutHero";
+import Abouthero from "./Abouthero";
 
 
 import Crew from "./crew";

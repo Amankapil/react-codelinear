@@ -26,3 +26,42 @@ body {
   background-color: #090909;
   overflow-x: hidden;
 }
+body {
+  cursor: none;
+}
+
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor.hovered {
+  transform: translate(-50%, -50%) scale(1.5); /* Enlarge the cursor on hover */
+}
+
+.cursor.hovered::after {
+  content: "View"; /* Text to be displayed */
+  position: absolute;
+  top: -20px;
+  left: 25px;
+  color: white;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* .custom-cursor.active {
+  opacity: 1;
+} */
+
+.cursor.outside {
+  opacity: 0;
+}
