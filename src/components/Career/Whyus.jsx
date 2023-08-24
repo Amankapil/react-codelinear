@@ -5,6 +5,9 @@ import image9 from "./images/Vector-3.svg";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
 
 export default function Whyus({ isDarkMode, toggleDarkMode }) {
   const [array, setarray] = useState("");
@@ -22,7 +25,7 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
   const [lifePera, setlifePera] = useState("");
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerwhyus")
+      .get("https://codelinear.in/code/careerwhyus")
       .then((response) => {
         setServicesarray(response.data.heading);
         setAboutarray(response.data.pera1);
@@ -33,7 +36,7 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerBoxes")
+      .get("https://codelinear.in/code/careerBoxes")
       .then((response) => {
         setgrothPera(response.data.grothHeading);
         setflex(response.data.grothPera);
@@ -47,16 +50,34 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerlifeat")
+      .get("https://codelinear.in/code/careerlifeat")
       .then((response) => {
         setlifeHeading(response.data.lifeHeading);
         setlifePera(response.data.lifePera);
         console.log(response.data);
       });
   }, []);
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   return (
-    <section className="whyus">
-      <div className="why-us-container">
+    <section className="whyus servicchomesection">
+      <div className="why-us-container servicchomesection">
         <h1
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           className="whyus-h1"
@@ -72,7 +93,6 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           mentees. And though we may come from diverse backgrounds, our drive to
           make a difference in society unites us.
           {/* {Aboutarray} */}
-
           <p
             className="mt-5"
             style={{
@@ -88,8 +108,8 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           </p>
         </p>
       </div>
-      <div className="main-container">
-        <div className="whyus-container">
+      <div className="main-container servicchomesection ">
+        <div className="whyus-container servicchomesection">
           <div className="whyus-content-container">
             <span className="no">
               COLLECTIVE GROWTH
@@ -105,7 +125,7 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           </div>
           <img src={image6} alt="" className="card-imgs" loading="lazy" />
         </div>
-        <div className="whyus-container">
+        <div className="whyus-container servicchomesection">
           <div className="whyus-content-container">
             <span className="no">{flexPera}</span>
             <p className="wucontainer-para">
@@ -117,13 +137,9 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           </div>
           <img src={image8} alt="" className="card-imgs" loading="lazy" />
         </div>
-        <div className="whyus-container">
+        <div className="whyus-container servicchomesection">
           <div className="whyus-content-container">
-            <span className="no">
-            
-            {vision_pera}
-            
-            </span>
+            <span className="no">{vision_pera}</span>
             <p className="wucontainer-para">
               As a part of Codelinear, you will get the opportunity to hone your
               skills as well as disposition by working on a diverse range of
@@ -135,7 +151,7 @@ export default function Whyus({ isDarkMode, toggleDarkMode }) {
           <img src={image7} alt="" className="card-imgs" loading="lazy" />
         </div>
       </div>
-      <div className="life-container max-xl:my-10">
+      <div className="life-container max-xl:my-10 servicchomesection">
         <h1
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           className="life-h1"

@@ -32,7 +32,7 @@ const Productdev = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addproductdev", {
+        .post("https://codelinear.in/code/addproductdev", {
           heading,
         })
         .then((response) => {
@@ -50,7 +50,7 @@ const Productdev = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/producdev").then((response) => {
+    axios.get("https://codelinear.in/code/producdev").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.heading);
 

@@ -4,7 +4,6 @@ import Circles from "./circlesanimation";
 
 import Abouthero from "./Abouthero";
 
-
 import Crew from "./crew";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
@@ -13,8 +12,14 @@ import image from "./images/ss.png";
 import "./about.css";
 import Vision from "./vision/Vision";
 import BlogHome from "../Home/BlogHome";
+import { Helmet } from "react-helmet";
 
-export default function About({ isDarkMode, toggleDarkMode }) {
+export default function About({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover,
+}) {
   let fade = useRef(null);
   useEffect(() => {
     const tl = gsap.timeline({
@@ -24,10 +29,14 @@ export default function About({ isDarkMode, toggleDarkMode }) {
   }, []);
 
   return (
-    <main className="aboutpage" ref={(el) => (fade = el)}>
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="iframe-container">
-        <iframe
+    <>
+      <Helmet>
+        <title>About | Codelinear</title>
+      </Helmet>
+      <main className="aboutpage" ref={(el) => (fade = el)}>
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <div className="iframe-container">
+          {/* <iframe
           className="iframe"
           src="https://my.spline.design/untitled-7e4e7fbe3d7aaedc118f34cadd85536b/"
           frameborder="0"
@@ -37,17 +46,38 @@ export default function About({ isDarkMode, toggleDarkMode }) {
           style={{
             position: "absolute",
           }}
-        ></iframe>
-      </div>
-      <Abouthero isDarkMode={isDarkMode} />
-      <Circles isDarkMode={isDarkMode} />
-      <img src={image} alt="" className="image" />
-      <Vision isDarkMode={isDarkMode} />
-      <Crew isDarkMode={isDarkMode} />
-      <div className="about-case">
-        <BlogHome isDarkMode={isDarkMode} />
-      </div>
-      <Footer isDarkMode={isDarkMode} />
-    </main>
+        ></iframe> */}
+        </div>
+        <Abouthero
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+        />
+        <Circles isDarkMode={isDarkMode} />
+        <img src={image} alt="" className="image" />
+        <Vision
+          handleimgHover={handleimgHover}
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+        />
+        <Crew
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+        />
+        <div className="about-case">
+          <BlogHome
+            handleButtonHover={handleButtonHover}
+            handleimgHover={handleimgHover}
+            isDarkMode={isDarkMode}
+          />
+        </div>
+        <Footer
+         handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+      </main>
+    </>
   );
 }

@@ -41,7 +41,7 @@ const Life = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addcareerlifeat", {
+        .post("https://codelinear.in/code/addcareerlifeat", {
           lifeHeading,
           lifePera,
         })
@@ -61,7 +61,7 @@ const Life = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerlifeat")
+      .get("https://codelinear.in/code/careerlifeat")
       .then((response) => {
         setServicesarray(response.data.lifeHeading);
         setAboutarray(response.data.lifePera);

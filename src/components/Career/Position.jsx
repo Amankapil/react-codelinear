@@ -1,8 +1,11 @@
-import gsap from "gsap";
 import { useRef, useEffect, useState } from "react";
 import axios from "axios";
 
-function Position({ isDarkMode, toggleDarkMode }) {
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
+
+function Position({ isDarkMode, toggleDarkMode, handleButtonHover }) {
   let positioncard = useRef(null);
   let applyingform = useRef(null);
   let jobdesc = useRef(null);
@@ -122,6 +125,31 @@ function Position({ isDarkMode, toggleDarkMode }) {
     gsap.to(applyingform4, 0.1, { css: { display: "block" } });
   };
 
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, y: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   return (
     <>
       <section className="position-container">
@@ -134,6 +162,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
           </h1>
           <div className="open-pos" ref={(el) => (position = el)}>
             <div
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               className={isDarkMode ? "positionsdark" : "positions"}
               onClick={application}
             >
@@ -155,6 +185,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
             <hr className="pos-hr" />
             <div
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               className={isDarkMode ? "positionsdark" : "positions"}
               onClick={application1}
             >
@@ -173,6 +205,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
             <hr className="pos-hr" />
             <div
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               className={isDarkMode ? "positionsdark" : "positions"}
               onClick={application2}
             >
@@ -191,6 +225,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
             <hr className="pos-hr" />
             <div
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               className={isDarkMode ? "positionsdark" : "positions"}
               onClick={application3}
             >
@@ -209,6 +245,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
             <hr className="pos-hr" />
             <div
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               className={isDarkMode ? "positionsdark" : "positions"}
               onClick={application4}
             >
@@ -286,10 +324,16 @@ function Position({ isDarkMode, toggleDarkMode }) {
           >
             Feel like you’re a match?
           </p>
-          <div className="apply_btn" onClick={applyNow}>
+          <div
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            className="apply_btn"
+            onClick={applyNow}
+          >
             <p
               // style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               // className="about_btn_content"
+
               className={
                 isDarkMode ? "about_btn_contentdark" : "about_btn_content"
               }
@@ -339,6 +383,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
 
             <button
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               onClick={handleSubmit}
               className="sub_btn-content submit_btn"
             >
@@ -396,7 +442,12 @@ function Position({ isDarkMode, toggleDarkMode }) {
           >
             Feel like you’re a match?
           </p>
-          <div className="apply_btn" onClick={applyNow1}>
+          <div
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            className="apply_btn"
+            onClick={applyNow1}
+          >
             <p
               className={
                 isDarkMode ? "about_btn_contentdark" : "about_btn_content"
@@ -447,6 +498,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
 
             <button
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               onClick={handleSubmit}
               className="sub_btn-content submit_btn"
             >
@@ -505,7 +558,12 @@ function Position({ isDarkMode, toggleDarkMode }) {
           >
             Feel like you’re a match?
           </p>
-          <div className="apply_btn" onClick={applyNow2}>
+          <div
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            className="apply_btn"
+            onClick={applyNow2}
+          >
             <p
               className={
                 isDarkMode ? "about_btn_contentdark" : "about_btn_content"
@@ -556,6 +614,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
 
             <button
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               onClick={handleSubmit}
               className="sub_btn-content submit_btn"
             >
@@ -613,7 +673,12 @@ function Position({ isDarkMode, toggleDarkMode }) {
           >
             Feel like you’re a match?
           </p>
-          <div className="apply_btn" onClick={applyNow3}>
+          <div
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            className="apply_btn"
+            onClick={applyNow3}
+          >
             <p
               className={
                 isDarkMode ? "about_btn_contentdark" : "about_btn_content"
@@ -664,6 +729,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
 
             <button
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               onClick={handleSubmit}
               className="sub_btn-content submit_btn"
             >
@@ -722,7 +789,12 @@ function Position({ isDarkMode, toggleDarkMode }) {
           >
             Feel like you’re a match?
           </p>
-          <div className="apply_btn" onClick={applyNow4}>
+          <div
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            className="apply_btn"
+            onClick={applyNow4}
+          >
             <p
               className={
                 isDarkMode ? "about_btn_contentdark" : "about_btn_content"
@@ -773,6 +845,8 @@ function Position({ isDarkMode, toggleDarkMode }) {
             </div>
 
             <button
+              onMouseEnter={handleButtonMouseEnter}
+              onMouseLeave={handleButtonMouseLeave}
               onClick={handleSubmit}
               className="sub_btn-content submit_btn"
             >

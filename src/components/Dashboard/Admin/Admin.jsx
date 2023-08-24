@@ -22,7 +22,7 @@ function Admin() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/add", { title, content })
+        .post("https://codelinear.in/code/add", { title, content })
         .then((response) => {
           console.log(response);
 

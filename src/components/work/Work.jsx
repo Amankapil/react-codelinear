@@ -5,9 +5,18 @@ import Footer from "../footer/footer";
 import Card from "./card/Card";
 import Card2 from "./card/Card2";
 import { useRef, useEffect } from "react";
-import gsap from "gsap";
 
-export default function Work({ isDarkMode, toggleDarkMode }) {
+import { Helmet } from "react-helmet";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
+
+export default function Work({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover,
+}) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -17,15 +26,50 @@ export default function Work({ isDarkMode, toggleDarkMode }) {
     tl.fromTo(fade, { opacity: "0" }, { opacity: "1" });
   }, []);
 
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".herosection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, y: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   return (
-    <main className="aboutpage" ref={(el) => (fade = el)}>
-      <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-      <Workhero isDarkMode={isDarkMode} />
-      <Card isDarkMode={isDarkMode} />
-      {/* <Card2 /  > */}
-      <section className="z-0 ">
-        <Footer isDarkMode={isDarkMode} />
-      </section>
-    </main>
+    <>
+      <Helmet>
+        <title>Work | Codelinear</title>
+      </Helmet>
+      <main className="aboutpage" ref={(el) => (fade = el)}>
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Workhero
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+        />
+        <Card
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+        />
+        {/* <Card2 /  > */}
+        <section className="">
+          <Footer
+            handleButtonHover={handleButtonHover}
+            isDarkMode={isDarkMode}
+            handleimgHover={handleimgHover}
+            toggleDarkMode={toggleDarkMode}
+          />
+        </section>
+      </main>
+    </>
   );
 }

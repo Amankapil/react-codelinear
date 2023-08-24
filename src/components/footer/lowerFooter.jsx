@@ -13,7 +13,11 @@ import { Link } from "react-router-dom";
 import { gsap, Bounce } from "gsap";
 import { useRef, useEffect } from "react";
 
-export default function Lowerfooter({ isDarkMode }) {
+import ScrollMagic from "scrollmagic";
+// import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
+
+export default function Lowerfooter({ isDarkMode, handleButtonHover }) {
   let footeranimation = useRef(null);
   let footeranimationwidth = useRef(null);
   let footerScroll = useRef(null);
@@ -43,6 +47,47 @@ export default function Lowerfooter({ isDarkMode }) {
     tl.fromTo(footeranimationwidth, 0.4, { width: 102 }, { width: 235 });
     tl.fromTo(footeranimationwidth, 1, { width: 235 }, { width: 235 });
   }, []);
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesectionlinks");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".headingsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
   return (
     <section className="lower-footer">
       <div className="lower-footer-container">
@@ -55,7 +100,7 @@ export default function Lowerfooter({ isDarkMode }) {
       </div>
       <div id="lower-footer">
         <div className="footer-column">
-          <div className="column">
+          <div className="column headingsection">
             <Link
               className={!isDarkMode ? "footerlink" : "footerlinklight"}
               // style={{ color: isDarkMode ? "#000000" : "#959595" }}
@@ -73,7 +118,7 @@ export default function Lowerfooter({ isDarkMode }) {
               Services
             </Link>
           </div>
-          <div className="column">
+          <div className="column ">
             <Link
               className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/work"}
@@ -91,7 +136,7 @@ export default function Lowerfooter({ isDarkMode }) {
               Careers
             </Link>
           </div>
-          <div className="column">
+          <div className="column servicchomesectionlinks">
             <Link
               className={!isDarkMode ? "footerlink" : "footerlinklight"}
               to={"/blog"}
@@ -126,12 +171,16 @@ export default function Lowerfooter({ isDarkMode }) {
         </div>
         <div id="socials">
           <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             target="blank"
             to="https://www.linkedin.com/company/codelinear/mycompany/?viewAsMember=true"
           >
             {!isDarkMode ? <LinkedInIcon /> : <img src={Linked} alt="ju" />}
           </Link>
           <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#000000" : "#959595" }}
             target="blank"
             to="https://www.instagram.com/codelinear_"
@@ -139,6 +188,8 @@ export default function Lowerfooter({ isDarkMode }) {
             {!isDarkMode ? <InstagramIcon /> : <img src={Insta} alt="ju" />}
           </Link>
           <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#000000" : "#959595" }}
             target="blank"
             to="https://twitter.com/Codelinear_"
@@ -146,6 +197,8 @@ export default function Lowerfooter({ isDarkMode }) {
             {!isDarkMode ? <TwitterIcon /> : <img src={Twet} alt="ju" />}
           </Link>
           <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#000000" : "#959595" }}
             target="blank"
             to="https://medium.com/@codelinear_"

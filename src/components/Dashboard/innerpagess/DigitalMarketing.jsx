@@ -32,7 +32,7 @@ const DigitalMarketing = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/adddigitalmark", {
+        .post("https://codelinear.in/code/adddigitalmark", {
           heading,
         })
         .then((response) => {
@@ -51,7 +51,7 @@ const DigitalMarketing = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/digitalmarketing")
+      .get("https://codelinear.in/code/digitalmarketing")
       .then((response) => {
         // setarray(response.data.homeHero);
         setServicesarray(response.data.heading);

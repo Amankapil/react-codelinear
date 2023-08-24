@@ -141,7 +141,7 @@ export default function Dash() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/add", {
+        .post("https://codelinear.in/code/add", {
           homeHero,
         })
         .then((response) => {
@@ -161,7 +161,7 @@ export default function Dash() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addAbout", {
+        .post("https://codelinear.in/code/addAbout", {
           homeAbout,
         })
         .then((response) => {
@@ -182,7 +182,7 @@ export default function Dash() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addServices", {
+        .post("https://codelinear.in/code/addServices", {
           homeServices,
         })
         .then((response) => {
@@ -199,13 +199,13 @@ export default function Dash() {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code").then((response) => {
+    axios.get("https://codelinear.in/code").then((response) => {
       setarray(response.data.homeHero);
       console.log(response.data);
     });
   }, []);
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/homeAbout").then((response) => {
+    axios.get("https://codelinear.in/code/homeAbout").then((response) => {
       // setarray(response.data.homeHero);
       setAboutarray(response.data.homeAbout);
       console.log(response.data);
@@ -213,7 +213,7 @@ export default function Dash() {
   }, []);
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/homeServices")
+      .get("https://codelinear.in/code/homeServices")
       .then((response) => {
         setServicesarray(response.data.homeServices);
         console.log(response.data);

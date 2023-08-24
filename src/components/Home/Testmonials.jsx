@@ -2,20 +2,22 @@ import left_arrow from "./images/Frame 7.png";
 import right_arrow from "./images/Frame 8.png";
 import Client from "./client";
 import { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
+
 import axios from "axios";
+import { TweenMax } from "gsap";
+// import { useEffect } from "react";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
 
 export default function Hero({ isDarkMode }) {
   let testimonial = useRef(null);
   const [array, setarray] = useState();
 
   useEffect(() => {
-    axios
-      .get("http://194.163.40.249:5000/code/homeServices")
-      .then((response) => {
-        setarray(response.data.homeServices);
-        // console.log(response.data);
-      });
+    axios.get("https://codelinear.in/code/homeServices").then((response) => {
+      setarray(response.data.homeServices);
+      // console.log(response.data);
+    });
   }, []);
 
   useEffect(() => {
@@ -37,6 +39,25 @@ export default function Hero({ isDarkMode }) {
     tl.fromTo(testimonial, 3, { translateY: "-80%" }, { translateY: "-80%" });
   }, []);
 
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".testimonialsection");
+    const sectionspera = document.querySelectorAll(".testimonialsectionperas");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1,
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+          TweenMax.to(sectionspera, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   return (
     <section id="testimonials">
       <div className="test-main-container">
@@ -44,11 +65,12 @@ export default function Hero({ isDarkMode }) {
           <h1
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="container-2_header"
+            className="testimonialsection"
           >
             We Are Defined By How Our Clients Perceive Us.
             {/* {array} */}
           </h1>
-          <div id="container">
+          <div id="container" className="testimonialsectionperas">
             <div className="test-content" ref={(el) => (testimonial = el)}>
               <p
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}

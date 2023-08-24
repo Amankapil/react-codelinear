@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper";
 import "./card.scss";
-import { gsap } from "gsap";
+import { gsap, Power2 } from 'gsap';
 import arrow from "../../services/images/downarrow.svg";
 
 const Card2 = () => {

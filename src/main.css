@@ -21,41 +21,113 @@
 *::-webkit-scrollbar {
   display: none;
 }
+button {
+  cursor: none;
+}
 body {
   font-family: graphikthin;
   background-color: #090909;
   overflow-x: hidden;
+  cursor: none;
 }
-body {
+html,
+body,
+div {
+  scroll-behavior: smooth;
+}
+
+a {
   cursor: none;
 }
 
 .cursor {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
+  width: 10px;
+  height: 10px;
+  /* border: 2px solid white; */
   background: #fff;
   border-radius: 50%;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999999999999999999999999999999999999999999999999999;
   mix-blend-mode: difference;
   transition: transform 0.15s ease;
   transform: translate(-50%, -50%);
 }
 
-.cursor.hovered {
-  transform: translate(-50%, -50%) scale(1.5); /* Enlarge the cursor on hover */
+.cursor.button-hovered {
+  width: 60px;
+  height: 60px;
+  border: 2px solid ffcd05;
+  background: #ffcd05;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999999999999999999999999999999999999999999999999999;
+  /* mix-blend-mode: difference; */
+
+  /* mix-blend-mode: normal; */
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out; 
+}
+.cursor.img-hovered {
+  width: 80px;
+  height: 80px;
+  /* border: 2px solid white; */
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  /* mix-blend-mode: difference; */
+  z-index: 9999;
+  mix-blend-mode: normal;
+  /* transition: 0.1s ease-in-out; */
+  transition: height 0.25s ease-out, width 0.25s ease-out; 
+}
+.cursor.dragg {
+  width: 80px;
+  height: 80px;
+  /* border: 2px solid white; */
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  /* mix-blend-mode: difference; */
+  z-index: 9999;
+  mix-blend-mode: normal;
+  /* transition: 0.1s ease-in-out; */
+  transition: height 0.25s ease-out, width 0.25s ease-out; 
 }
 
-.cursor.hovered::after {
-  content: "View"; /* Text to be displayed */
+
+.cursor.img-hovered::after {
+  content: "View";
   position: absolute;
-  top: -20px;
-  left: 25px;
-  color: white;
+  /* top: 28px;
+  left: 25px; */
+  top: 35%;
+  left:33%;
+  /* bottom:50%;
+  right:50%; */
+  color: rgb(0, 0, 0);
+  transform: translate(50% 50%);
+  font-weight: 900;
   font-size: 14px;
   pointer-events: none;
+  /* mix-blend-mode: difference; */
+  transition: none;
+}
+.cursor.dragg::after {
+  content: "Drag";
+  position: absolute;
+  /* top: 28px;
+  left: 25px; */
+  top: 35%;
+  left:33%;
+ 
+  /* inset:0; */
+  transform: translate(50% 50%);
+
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 /* .custom-cursor.active {

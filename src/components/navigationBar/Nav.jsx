@@ -10,7 +10,12 @@ import { Link } from "react-router-dom";
 import { gsap, Power3 } from "gsap/gsap-core";
 import { useRef, useState, useEffect } from "react";
 import Toggle from "../../Toggle";
-export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
+export default function Navigation_bar({
+  isDarkMode,
+  toggleDarkMode,
+  scrollToSection,
+  handleButtonHover,
+}) {
   let slide = useRef(null);
 
   const navSlide = () => {
@@ -41,6 +46,14 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos, visible]);
 
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
   return (
     <>
       <header>
@@ -58,9 +71,9 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
         >
           <ul className="nav_list">
             <li className="nav_list-item">
-              <Link to={"/"} className="nav_logo">
+              <Link to={"/"} className="nav_logo" >
                 <img src={logo} alt="" className="logo" />
-                <span className="hyphen"></span>
+                {/* <span className="hyphen"></span> */}
               </Link>
             </li>
             <li className="nav_list-item flex items-center justify-center ">
@@ -69,43 +82,51 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
                 isDarkMode={isDarkMode}
                 toggleDarkMode={toggleDarkMode}
               />
-              <div className="menu mx-4" onClick={navSlide}></div>
+              <div   onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} className="menu mx-4" onClick={navSlide}></div>
             </li>
           </ul>
         </nav>
       </header>
       <section id="navigation-slide" ref={(el) => (slide = el)}>
-        <div className="nav-menu" onClick={navSlidesBack}>
+        <div  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} className="nav-menu" onClick={navSlidesBack}>
           <div className="line-nav"></div>
         </div>
         <ul className="slide_nav_list">
           <li className="slide_nav_list-item">
-            <Link to="/about"  className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/about" className="slide_nav_links" onClick={fade} >
               About
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/services"   className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/services" className="slide_nav_links" onClick={fade}>
               Services
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/work" className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/work" className="slide_nav_links" onClick={fade}>
               Work
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/career"  className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/career" className="slide_nav_links" onClick={fade}>
               Careers
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/blog" className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/blog" className="slide_nav_links" onClick={fade}>
               Ideas
             </Link>
           </li>
           <li className="slide_nav_list-item">
-            <Link to="/let's_talk" className="slide_nav_links" onClick={fade}>
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} to="/let's_talk" className="slide_nav_links" onClick={fade}>
               Let's Talk
             </Link>
           </li>
@@ -113,18 +134,23 @@ export default function Navigation_bar({ isDarkMode, toggleDarkMode }) {
         <div className="details">
           <div className="socials">
             <Link
+             onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
               target="blank"
               to="https://www.linkedin.com/company/codelinear/mycompany/?viewAsMember=true"
             >
               <img src={linkedin} className="icons" loading="lazy" />
             </Link>{" "}
-            <Link target="blank" to="https://www.instagram.com/codelinear_">
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} target="blank" to="https://www.instagram.com/codelinear_">
               <img src={facebook} alt="" className="icons" loading="lazy" />
             </Link>
-            <Link target="blank" to="https://twitter.com/Codelinear_">
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} target="blank" to="https://twitter.com/Codelinear_">
               <img src={instagram} alt="" className="icons" loading="lazy" />
             </Link>
-            <Link target="blank" to="https://medium.com/@codelinear_">
+            <Link  onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave} target="blank" to="https://medium.com/@codelinear_">
               <img src={Vectorr} className="icons" loading="lazy" />
             </Link>
           </div>

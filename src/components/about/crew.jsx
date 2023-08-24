@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from 'gsap';
+import { TweenMax } from "gsap";
 
 // Hostinger / Hosting	syedsaif018@gmail.com 	Codelinear@CLSS123
 
-export default function Crew({ isDarkMode }) {
+export default function Crew({ isDarkMode, handleButtonHover }) {
   // const [array, setarray] = useState();
   const [content, setContent] = useState();
 
@@ -17,7 +20,7 @@ export default function Crew({ isDarkMode }) {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutcrew_box")
+      .get("https://codelinear.in/code/aboutcrew_box")
       .then((response) => {
         setServicesarray(response.data.Design);
         setAboutarray(response.data.Strategists);
@@ -26,9 +29,82 @@ export default function Crew({ isDarkMode }) {
         console.log(response.data);
       });
   }, []);
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".aboutsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, y: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".leftanimter");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, y: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".about-crew-left");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, x: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".about-crew-right");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, x: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
   return (
     <>
-      <div className=" produc crewclass">
+      <div className=" produc crewclass  ">
         <h2
           style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
           className="text-7xl max-xl:text-5xl max-xl:p-5 leading-sng font-extrabold ml max-md:p-0 max-md:ml-5 max-md:text-4xl"
@@ -46,7 +122,12 @@ export default function Crew({ isDarkMode }) {
           collectively make a difference for our clients and the world around
           them.
         </p>
-        <Link to={"/career"} className="career-crew-btn">
+        <Link
+          onMouseEnter={handleButtonMouseEnter}
+          onMouseLeave={handleButtonMouseLeave}
+          to={"/career"}
+          className="career-crew-btn"
+        >
           <p
             style={{ color: isDarkMode ? "#000000" : "#848484" }}
             className="career-crew-content"
@@ -60,7 +141,7 @@ export default function Crew({ isDarkMode }) {
           <div className="crew-model-container">
             <div
               style={{ backgroundColor: isDarkMode ? "#F6F6F2" : "#11111" }}
-              className="c-container"
+              className="c-container about-crew-left"
             >
               <h1 className="m-title">
                 <p
@@ -88,7 +169,7 @@ export default function Crew({ isDarkMode }) {
             </div>
             <div
               style={{ backgroundColor: isDarkMode ? "#F6F6F2" : "#11111" }}
-              className="c-container"
+              className="c-container about-crew-right"
             >
               <h1 className="m-title">
                 <p
@@ -116,7 +197,7 @@ export default function Crew({ isDarkMode }) {
             </div>
             <div
               style={{ backgroundColor: isDarkMode ? "#F6F6F2" : "#11111" }}
-              className="c-container"
+              className="c-container about-crew-left"
             >
               <h1 className="m-title">
                 <p
@@ -144,7 +225,7 @@ export default function Crew({ isDarkMode }) {
             </div>
             <div
               style={{ backgroundColor: isDarkMode ? "#F6F6F2" : "#11111" }}
-              className="c-container"
+              className="c-container about-crew-right"
             >
               <h1 className="m-title">
                 <p

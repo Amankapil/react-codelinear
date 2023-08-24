@@ -38,7 +38,7 @@ const Servicedo = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addservicedo", {
+        .post("https://codelinear.in/code/addservicedo", {
           heading,
           do_pera,
         })
@@ -57,7 +57,7 @@ const Servicedo = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/servicedo").then((response) => {
+    axios.get("https://codelinear.in/code/servicedo").then((response) => {
       setServicesarray(response.data.heading);
       setAboutarray(response.data.do_pera);
 

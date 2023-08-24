@@ -61,7 +61,7 @@ const AboutTab = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutHero", {
+        .post("https://codelinear.in/code/addaboutHero", {
           vision_pera,
         })
         .then((response) => {
@@ -97,7 +97,7 @@ const AboutTab = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutvision", {
+        .post("https://codelinear.in/code/addaboutvision", {
           vision_pera,
         })
         .then((response) => {
@@ -119,7 +119,7 @@ const AboutTab = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutguiding", {
+        .post("https://codelinear.in/code/addaboutguiding", {
           guiding_pera,
         })
         .then((response) => {
@@ -138,14 +138,14 @@ const AboutTab = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/aboutHero").then((response) => {
+    axios.get("https://codelinear.in/code/aboutHero").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.aboutHeading);
       console.log(response.data);
     });
   }, []);
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/aboutvision").then((response) => {
+    axios.get("https://codelinear.in/code/aboutvision").then((response) => {
       setarray(response.data.vision_pera);
       // setAboutarray(response.data.homeAbout);
       console.log(response.data);
@@ -153,7 +153,7 @@ const AboutTab = () => {
   }, []);
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/aboutguiding").then((response) => {
+    axios.get("https://codelinear.in/code/aboutguiding").then((response) => {
       setAboutarray(response.data.guiding_pera);
       // setAboutarray(response.data.homeAbout);
       console.log(response.data);

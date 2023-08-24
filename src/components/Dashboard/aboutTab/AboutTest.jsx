@@ -84,7 +84,7 @@ const AboutTest = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addabouttest", {
+        .post("https://codelinear.in/code/addabouttest", {
           idea,
           innovate,
           imp,
@@ -106,7 +106,7 @@ const AboutTest = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutHero", {
+        .post("https://codelinear.in/code/addaboutHero", {
           aboutHeading,
         })
         .then((response) => {
@@ -126,7 +126,7 @@ const AboutTest = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutvision", {
+        .post("https://codelinear.in/code/addaboutvision", {
           vision_pera,
         })
         .then((response) => {
@@ -148,7 +148,7 @@ const AboutTest = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutguiding", {
+        .post("https://codelinear.in/code/addaboutguiding", {
           guiding_pera,
         })
         .then((response) => {
@@ -167,7 +167,7 @@ const AboutTest = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/abouttest").then((response) => {
+    axios.get("https://codelinear.in/code/abouttest").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.idea);
       setAboutarray(response.data.innovate);
@@ -177,7 +177,7 @@ const AboutTest = () => {
   }, []);
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutguiding")
+      .get("https://codelinear.in/code/aboutguiding")
       .then((response) => {
         // setarray(response.data.homeHero);
         setguiding_peraGET(response.data.guiding_pera);
@@ -185,7 +185,7 @@ const AboutTest = () => {
       });
   }, []);
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/aboutHero").then((response) => {
+    axios.get("https://codelinear.in/code/aboutHero").then((response) => {
       // setarray(response.data.homeHero);
       setHeroAboutGET(response.data.aboutHeading);
       console.log(response.data);
@@ -194,7 +194,7 @@ const AboutTest = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutvision")
+      .get("https://codelinear.in/code/aboutvision")
       .then((response) => {
         // setarray(response.data.homeHero);
         setvision_peraGET(response.data.vision_pera);

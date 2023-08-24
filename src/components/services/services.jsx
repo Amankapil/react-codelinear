@@ -10,8 +10,18 @@ import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
 import axios from "axios";
 import { useState } from "react";
+import ScrollMagic from "scrollmagic";
+import { Power2 } from "gsap";
+import { TweenMax } from "gsap";
+import { Helmet } from "react-helmet";
 
-export default function Services({ isDarkMode, toggleDarkMode }) {
+export default function Services({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover,
+  handledrag,
+}) {
   let fade = useRef(null);
   const [Aboutarray, setAboutarray] = useState();
   const [Servicesarray, setServicesarray] = useState();
@@ -26,7 +36,7 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
   const [array, setarray] = useState("");
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/servicedo").then((response) => {
+    axios.get("https://codelinear.in/code/servicedo").then((response) => {
       setServicesarray(response.data.heading);
       setAboutarray(response.data.do_pera);
       console.log(response.data);
@@ -35,7 +45,7 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/serviceability")
+      .get("https://codelinear.in/code/serviceability")
       .then((response) => {
         // setarray(response.data.homeHero);
         sepatron_pera(response.data.problem_solve);
@@ -55,13 +65,56 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
     });
     tl.fromTo(fade, { opacity: "0" }, { opacity: "1" });
   }, []);
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".about-crew-left");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, x: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+
+    const sectionsRight = document.querySelectorAll(".about-crew-right");
+    sectionsRight.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, x: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    
+  }, []);
   return (
     <>
+      <Helmet>
+        <title>Services | Codelinear</title>
+      </Helmet>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="services" ref={(el) => (fade = el)}>
-        <Servicehero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Servicehero
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
         <section className="wedo max-md:mt-0 max-sm:mt-0">
-          <div className="wedo-container">
+          <div className="wedo-container about-crew-left">
             <h1
               style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               className="wedo-h1"
@@ -89,8 +142,8 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
               </div>
             </div>
           </div>
-          <div className="accordian-container">
-            <div className="accordian">
+          <div className="accordian-container ">
+            <div className="accordian about-crew-right">
               <h1
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
                 className="accordian-h1"
@@ -108,10 +161,10 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
                 perspective. Equipped with this wide arena of experience, we
                 devise solution that enable you to leverage the adversities,
                 converting challenges into opportunities.
-                {leader}
+                {/* {leader} */}
               </p>
             </div>
-            <div className="accordian">
+            <div className="accordian about-crew-right">
               <h1
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
                 className="accordian-h1"
@@ -131,7 +184,7 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
                 {/* {vision_pera} */}
               </p>
             </div>
-            <div className="accordian">
+            <div className="accordian about-crew-right">
               <h1
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
                 className="accordian-h1"
@@ -153,11 +206,21 @@ export default function Services({ isDarkMode, toggleDarkMode }) {
           </div>
         </section>
         <div className="slide-container">
-          <Explore isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+          <Explore
+            handleButtonHover={handleButtonHover}
+            handleimgHover={handleimgHover}
+            handledrag={handledrag}
+            isDarkMode={isDarkMode}
+            toggleDarkMode={toggleDarkMode}
+          />
         </div>
         {/* <Model /> */}
       </main>
-      <Footer isDarkMode={isDarkMode} />
+      <Footer
+        handleButtonHover={handleButtonHover}
+        handleimgHover={handleimgHover}
+        isDarkMode={isDarkMode}
+      />
     </>
   );
 }

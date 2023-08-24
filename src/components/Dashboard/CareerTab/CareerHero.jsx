@@ -43,7 +43,7 @@ const CareerHero = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addcareer", {
+        .post("https://codelinear.in/code/addcareer", {
           careerHero,
         })
         .then((response) => {
@@ -61,7 +61,7 @@ const CareerHero = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/career").then((response) => {
+    axios.get("https://codelinear.in/code/career").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.careerHero);
 

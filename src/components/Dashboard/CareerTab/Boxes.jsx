@@ -56,7 +56,7 @@ const Boxes = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addcareerwhyusBoxes", {
+        .post("https://codelinear.in/code/addcareerwhyusBoxes", {
           grothHeading,
           grothPera,
           flex,
@@ -80,7 +80,7 @@ const Boxes = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerBoxes")
+      .get("https://codelinear.in/code/careerBoxes")
       .then((response) => {
         setServicesarray(response.data.grothHeading);
         setAboutarray(response.data.grothPera);

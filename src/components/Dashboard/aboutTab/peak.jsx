@@ -43,7 +43,7 @@ const Peak = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutcaseStudy", {
+        .post("https://codelinear.in/code/addaboutcaseStudy", {
           peak,
           peakPera,
         })
@@ -80,7 +80,7 @@ const Peak = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutcaseStudy", {
+        .post("https://codelinear.in/code/addaboutcaseStudy", {
           vision_pera,
         })
         .then((response) => {
@@ -102,7 +102,7 @@ const Peak = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutguiding", {
+        .post("https://codelinear.in/code/addaboutguiding", {
           guiding_pera,
         })
         .then((response) => {
@@ -122,7 +122,7 @@ const Peak = () => {
 
   useEffect(() => {
     // update the get -> url 
-    axios.get("http://194.163.40.249:5000/code/aboutcaseStudy").then((response) => {
+    axios.get("https://codelinear.in/code/aboutcaseStudy").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.peak);
       setAboutarray(response.data.peakPera);

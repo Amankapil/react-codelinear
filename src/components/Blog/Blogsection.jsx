@@ -1,4 +1,3 @@
-
 import image1 from "./Images/Frame 43.png";
 import image2 from "./Images/Frame 44.png";
 import image3 from "./Images/Frame 46.png";
@@ -15,11 +14,18 @@ import BVG from "./Images/Frame 59.png";
 import listen from "./Images/Frame 63.png";
 import reactimg from "./Images/Frame 4.svg";
 import { useRef } from "react";
-import gsap from "gsap";
-
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function Blogsection({ isDarkMode, toggleDarkMode }) {
+export default function Blogsection({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover
+}) {
   let empathy = useRef(null);
   let db = useRef(null);
   let digitalmarketing = useRef(null);
@@ -208,11 +214,47 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
     gsap.to(RVF, 0, { display: "none" });
     gsap.to(Bg, 0, { display: "none" });
   };
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  const handleimgMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleimgMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, y: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   return (
     <>
-      <section className="blog-content-section">
-        <div className="blog-btns">
+      <section className="blog-content-section servicchomesection">
+        <div className="blog-btns  servicchomesection">
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort2}
@@ -220,6 +262,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             Branding
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort3}
@@ -227,6 +271,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             UI/UX Design
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort4}
@@ -234,6 +280,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             SEO
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort5}
@@ -241,6 +289,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             Social Media
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort6}
@@ -248,6 +298,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             Product Development
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort7}
@@ -255,6 +307,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             Digital Marketing
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort8}
@@ -262,6 +316,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             eCommerce
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
             className="blog-btn-content"
             onClick={onClickSort9}
@@ -269,6 +325,8 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
             No Code
           </p>
           <p
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
             style={{
               color: isDarkMode ? "#00000099" : "#848484",
               visibility: "hidden",
@@ -282,7 +340,10 @@ export default function Blogsection({ isDarkMode, toggleDarkMode }) {
         </div>
       </section>
       <section className="blog-section" ref={(el) => (sec = el)}>
-        <Link to={"/Branded"} className="link-imgs">
+        <Link
+        
+        onMouseEnter={handleimgMouseEnter}
+            onMouseLeave={handleimgMouseLeave} to={"/Branded"} className="link-imgs">
           <div className="blog-containers" ref={(el) => (db = el)}>
             <img src={brand} alt="" className="blog-imgs" />
             <div className="blog-container-content">

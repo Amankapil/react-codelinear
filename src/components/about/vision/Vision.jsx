@@ -4,12 +4,14 @@ import svg1 from "../images/svgs/Vector-1.svg";
 import svg2 from "../images/svgs/Vector-2.svg";
 import svg3 from "../images/svgs/Vector.svg";
 import { useRef, useEffect } from "react";
-import { gsap, Power0 } from "gsap";
 
 import arrowdown from "../../services/images/Vector.svg";
 import whitedownarrow from "../../services/images/downarrow.svg";
 import axios from "axios";
 import { useState } from "react";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
 
 const Vision = ({ isDarkMode }) => {
   let arrows = useRef(null);
@@ -59,7 +61,7 @@ const Vision = ({ isDarkMode }) => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutvision")
+      .get("https://codelinear.in/code/aboutvision")
       .then((response) => {
         // setarray(response.data.homeHero);
         setvision_peraGET(response.data.vision_pera);
@@ -70,7 +72,7 @@ const Vision = ({ isDarkMode }) => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutguiding")
+      .get("https://codelinear.in/code/aboutguiding")
       .then((response) => {
         // setarray(response.data.homeHero);
         setguiding_peraGET(response.data.guiding_pera);
@@ -78,7 +80,7 @@ const Vision = ({ isDarkMode }) => {
       });
   }, []);
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/abouttest").then((response) => {
+    axios.get("https://codelinear.in/code/abouttest").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.idea);
       setAboutarray(response.data.innovate);
@@ -86,9 +88,26 @@ const Vision = ({ isDarkMode }) => {
       console.log(response.data);
     });
   }, []);
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".aboutsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, y: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
   return (
     <>
-      <section className="core-container">
+      <section className="core-container aboutsection">
         <p
           style={{ color: isDarkMode ? "#00000099" : "#848484" }}
           className="core-para"
@@ -98,24 +117,24 @@ const Vision = ({ isDarkMode }) => {
           conscience to build digital products that provide end-user with the
           finest experience.
         </p>
-        <div className="vision-container">
+        <div className="vision-container aboutsection">
           <h2
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
-            className="visionh1"
+            className="visionh1 about-crew-left"
           >
             Our Vision
           </h2>
           <p
             style={{ color: isDarkMode ? "#00000099" : "#848484" }}
-            className="vision-para"
+            className="vision-para about-crew-right"
           >
             To propel humanity forward by building digital products that uplift
             our client's value proposition and enrich their users' lives.
             {/* {vision_peraGET} */}
           </p>
         </div>
-        <div className="core-guiding-container">
-          <div className="guiding-container">
+        <div className="core-guiding-container about-crew-left ">
+          <div className="guiding-container  aboutsection">
             <h2
               style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
               className="guiding-container-h1"
@@ -150,7 +169,7 @@ const Vision = ({ isDarkMode }) => {
             </div>
           </div>
           <div className="guiding-subcontainer">
-            <div className="subcontainer">
+            <div className="subcontainer about-crew-right">
               <img
                 className="subcontainer-img"
                 src={svg1}
@@ -177,7 +196,7 @@ const Vision = ({ isDarkMode }) => {
                 {/* {Servicesarray} */}
               </p>
             </div>
-            <div className="subcontainer">
+            <div className="subcontainer about-crew-right">
               <img
                 className="subcontainer-img"
                 src={svg3}
@@ -203,7 +222,7 @@ const Vision = ({ isDarkMode }) => {
                 {/* {Aboutarray} */}
               </p>
             </div>
-            <div className="subcontainer">
+            <div className="subcontainer about-crew-right">
               <img
                 className="subcontainer-img"
                 src={svg2}

@@ -260,6 +260,11 @@ input:focus {
   color: #848484;
   white-space: nowrap;
 }
+
+.first-name:focus {
+  background-color: black !important;
+}
+
 .sub_button-contentdark {
   font-family: "Graphik";
   font-style: normal;

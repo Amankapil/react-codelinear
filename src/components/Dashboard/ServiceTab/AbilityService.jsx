@@ -47,7 +47,7 @@ const AbilityService = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addserviceability", {
+        .post("https://codelinear.in/code/addserviceability", {
           problem_solve,
           problem_pera,
           leader,
@@ -71,7 +71,7 @@ const AbilityService = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/serviceability")
+      .get("https://codelinear.in/code/serviceability")
       .then((response) => {
         // setarray(response.data.homeHero);
         setServicesarray(response.data.problem_solve);

@@ -6,6 +6,9 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, FreeMode, Pagination, Navigation } from "swiper";
 import React, { useState, useEffect, useRef } from "react";
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
 
 import image2 from "./images/Frame 43.png";
 import image3 from "./images/Frame 44.png";
@@ -16,29 +19,83 @@ import image7 from "../Blog/Images/Frame 46.png";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const BlogHome = ({ isDarkMode }) => {
+const BlogHome = ({ isDarkMode, handleimgHover, handleButtonHover }) => {
   const url = useLocation();
 
   const [Widht, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   });
+  const handleimgMouseEnter = () => {
+    // handleimgHover(true);
+    handleButtonHover(true);
+  };
+
+  const handleimgMouseLeave = () => {
+    // handleimgHover(false);
+    handleButtonHover(false);
+  };
+
+  const handleButtonMouseEnter = () => {
+    // handleButtonHover(true);
+    handleimgHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    // handleButtonHover(false);
+    handleimgHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".headingsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, y: 0, ease: "bounce.out" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesectionlinks");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, y: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+
   const swiperRef = useRef(null);
   if (url.pathname === "/") {
     return (
       <>
-        <div id="blog">
+        <div className="headingsection" id="blog">
           <div
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="blog_heading"
-            className="-ml20"
+            className="-ml20 headingsection"
           >
             We Pen Down Our Brightest Ideas
           </div>
           <div
             onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
             onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
-            className="max-w[100%] w-[100%] mt-40 homeidea -ml-[6%] max-2xl:ml-8 max-xl:ml-8 max-sm:ml-0 max-sm:mt-5"
+            className="max-w[100%] w-[100%] mt-40 homeidea -ml-[6%] max-2xl:ml-8 max-xl:ml-8 max-sm:ml-0 max-sm:mt-5 servicchomesectionlinks"
           >
             <Swiper
               ref={swiperRef}
@@ -84,7 +141,11 @@ const BlogHome = ({ isDarkMode }) => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/minimum-viable-product"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/minimum-viable-product"}
+                    >
                       <img
                         src={image7}
                         alt=""
@@ -124,7 +185,11 @@ const BlogHome = ({ isDarkMode }) => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/digital-marketing-trends-2023"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/digital-marketing-trends-2023"}
+                    >
                       <img
                         src={image3}
                         alt=""
@@ -163,7 +228,11 @@ const BlogHome = ({ isDarkMode }) => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/empathy-in-UX"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/empathy-in-UX"}
+                    >
                       <img
                         src={image2}
                         alt=""
@@ -203,7 +272,11 @@ const BlogHome = ({ isDarkMode }) => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/shopify-vs-magento"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/shopify-vs-magento"}
+                    >
                       <img
                         src={image6}
                         alt=""
@@ -243,7 +316,11 @@ const BlogHome = ({ isDarkMode }) => {
               <SwiperSlide className="cass flex justify-center items-center">
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/no-code-revolution"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/no-code-revolution"}
+                    >
                       <img
                         src={image5}
                         alt=""
@@ -281,10 +358,13 @@ const BlogHome = ({ isDarkMode }) => {
                 </div>
               </SwiperSlide>
               <SwiperSlide className="cass flex justify-center items-center">
-              
                 <div className="cardh    mx-4 items-center">
                   <div className="img max-md:flex  max-md:justify-center">
-                    <Link to={"/design"}>
+                    <Link
+                      onMouseEnter={handleButtonMouseEnter}
+                      onMouseLeave={handleButtonMouseLeave}
+                      to={"/design"}
+                    >
                       <img
                         src={image4}
                         alt=""
@@ -321,12 +401,14 @@ const BlogHome = ({ isDarkMode }) => {
                 </div>
               </SwiperSlide>
             </Swiper>
-          
+
             <div className=" flex justify-center items-center mt-4 -ml-0">
               <button className="exp_btn ">
                 <Link
                   // style={{ color: isDarkMode ? "#000000" : "#848484" }}
                   to="/blog"
+                  onMouseEnter={handleimgMouseEnter}
+                  onMouseLeave={handleimgMouseLeave}
                   // className="exp_btn-content"
                   className={isDarkMode ? "darkexplore" : "exp_btn-content"}
                 >
@@ -342,7 +424,7 @@ const BlogHome = ({ isDarkMode }) => {
     return (
       <>
         <>
-          <div id="blg">
+          <div id="blg" className="servicchomesectionlinks">
             <div className="flex justify-center flex-col items-center w-full">
               <h1
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
@@ -365,7 +447,7 @@ const BlogHome = ({ isDarkMode }) => {
             <div
               onMouseEnter={() => swiperRef.current.swiper.autoplay.stop()}
               onMouseLeave={() => swiperRef.current.swiper.autoplay.start()}
-              className="max-w[100%] w-[100%] homeidea -ml-[0%] max-2xl:ml-8 max-sm:ml-0 mt-5"
+              className="max-w[100%] w-[100%] homeidea -ml-[0%] max-2xl:ml-8 max-sm:ml-0 mt-5 "
             >
               <Swiper
                 ref={swiperRef}
@@ -410,7 +492,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/minimum-viable-product"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/minimum-viable-product"}
+                      >
                         <img
                           src={image7}
                           alt=""
@@ -450,7 +536,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/digital-marketing-trends-2023"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/digital-marketing-trends-2023"}
+                      >
                         <img
                           src={image3}
                           alt=""
@@ -490,7 +580,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/empathy-in-UX"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/empathy-in-UX"}
+                      >
                         <img
                           src={image2}
                           alt=""
@@ -530,7 +624,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/shopify-vs-magento"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/shopify-vs-magento"}
+                      >
                         <img
                           src={image6}
                           alt=""
@@ -570,7 +668,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/no-code-revolution"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/no-code-revolution"}
+                      >
                         <img
                           src={image5}
                           alt=""
@@ -609,7 +711,11 @@ const BlogHome = ({ isDarkMode }) => {
                 <SwiperSlide className="cass flex justify-center items-center mt-20">
                   <div className="cardh    mx-4 items-center">
                     <div className="img max-md:flex  max-md:justify-center">
-                      <Link to={"/design"}>
+                      <Link
+                        onMouseEnter={handleButtonMouseEnter}
+                        onMouseLeave={handleButtonMouseLeave}
+                        to={"/design"}
+                      >
                         <img
                           src={image4}
                           alt=""

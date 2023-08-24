@@ -9,9 +9,12 @@ import { Autoplay, FreeMode, Pagination, Navigation } from "swiper";
 import "./styles/agency.scss";
 import React, { useState, useEffect, useRef } from "react";
 import arrow from "../services/images/downarrow.svg";
-import { gsap } from "gsap";
 
-const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
+import ScrollMagic from "scrollmagic";
+import { gsap, Power2 } from "gsap";
+import { TweenMax } from "gsap";
+
+const HomeAbout = ({ isDarkMode, toggleDarkMode, handleButtonHover }) => {
   const [array, setarray] = useState();
 
   let arrowswipe = useRef(null);
@@ -23,35 +26,62 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
     tl.fromTo(arrowswipe, 1.5, { x: "-30px" }, { x: "50px" });
   }, []);
 
-  const breakpoints = {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-      containerClass: "half-image-container",
-    },
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    768: {
-      slidesPerView: 1,
-      spaceBetween: 0,
-    },
-  };
   const [Widht, setWidth] = useState(window.innerWidth);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   });
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/homeAbout").then((response) => {
+    axios.get("https://codelinear.in/code/homeAbout").then((response) => {
       setarray(response.data.homeAbout);
       // console.log(response.data);
     });
   }, []);
+  // curser button
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".headingsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesectionlinks");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
+    });
+  }, []);
   return (
     <>
-      <section id="about" className=" agency mt-16 max-sm:mt-0">
+      <section id="about" className=" agency mt-16 max-sm:mt-0 headingsection">
         <div
           style={{ backgroundColor: isDarkMode ? "#fff" : "#090909" }}
           id="rectangle"
@@ -66,6 +96,7 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
             <p
               style={{ color: isDarkMode ? "#00000099" : "#848484" }}
               id="abtdmycnt"
+              className="servicchomesectionlinks"
             >
               We are a design-led development firm operating at the intersection
               of human touch, data-driven analytics and cutting-edge technology.
@@ -89,7 +120,12 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
               />
             </div>
           </div>
-          <Link to={"/work"} className="allwork CTAButton">
+          <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            to={"/work"}
+            className="allwork CTAButton"
+          >
             <p
               // style={{ color: isDarkMode ? "#000000" : "#848484" }}
               // className="workbt_content"
@@ -105,8 +141,8 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
         {Widht > 428 ? (
           <>
             <div className="bg-container">
-              <div className="bg-mini-1">
-                <div id="img2"></div>
+              <div className="bg-mini-1 headingsection ">
+                <div className="" id="img2"></div>
                 <div id="imgs2">
                   <h1 style={{ color: isDarkMode ? "#00000090" : "#d8d6d6" }}>
                     MANGO
@@ -119,7 +155,7 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
                   </p>
                 </div>
               </div>
-              <div className="bg-mini-4">
+              <div className="bg-mini-4  headingsection">
                 <div id="imgs4">
                   <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
                     Lyra Health
@@ -133,7 +169,7 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
                 </div>
                 <div id="img4"></div>
               </div>
-              <div className="bg-mini-2">
+              <div className="bg-mini-2  headingsection">
                 <div id="imgs"></div>
                 <div id="imgs1">
                   <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
@@ -147,7 +183,7 @@ const HomeAbout = ({ isDarkMode, toggleDarkMode }) => {
                   </p>
                 </div>
               </div>
-              <div className="bg-mini-3">
+              <div className="bg-mini-3 headingsection">
                 <div id="imgs3">
                   <h1 style={{ color: isDarkMode ? "#00000099" : "#d8d6d6" }}>
                     WILLAIM ABRAHAM

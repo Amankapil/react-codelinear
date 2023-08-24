@@ -1,5 +1,5 @@
 import "./home.css";
-import { gsap } from "gsap";
+import { gsap, Power2 } from "gsap";
 import { useRef, useEffect, useState } from "react";
 import BlogHome from "./BlogHome";
 
@@ -10,7 +10,18 @@ import Testimonials from "./Testmonials";
 import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
 
-export default function Home({ isDarkMode, toggleDarkMode }) {
+import { Helmet } from "react-helmet";
+import { Element } from "react-scroll";
+import { Link } from "react-scroll";
+
+import ScrollReveal from "scrollreveal";
+
+export default function Home({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover,
+}) {
   let fade = useRef(null);
 
   const [scrollY, setScrollY] = useState(0);
@@ -33,23 +44,61 @@ export default function Home({ isDarkMode, toggleDarkMode }) {
     tl.fromTo(fade, { opacity: "0" }, { opacity: "1" });
   }, []);
 
+  useEffect(() => {
+    ScrollReveal().reveal(".tagline", { delay: 500 });
+
+    // ScrollReveal().reveal( {
+    //   // ScrollReveal options and configuration here
+    //   // See documentation for available options: https://scrollrevealjs.org/api/reveal.html
+    // });
+  }, []);
+  
+ 
   return (
-    <>
+    <div className="tagline">
+      <Helmet>
+        <title>Codelinear</title>
+      </Helmet>
       <header className="App-header" style={{ top: scrollY }}>
-        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} handleButtonHover={handleButtonHover}/>
       </header>
       <main ref={(el) => (fade = el)} className="home">
-        <Hero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Hero
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+       
 
-        <HomeAbout isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <HomeAbout
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+        {/* </Element> */}
 
-        <HomeServices isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <HomeServices
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
+
         <Testimonials isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
-        <BlogHome isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+
+        <BlogHome
+          handleButtonHover={handleButtonHover}
+          handleimgHover={handleimgHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </main>
       <footer className="App-footer" style={{ bottom: -scrollY }}>
-        <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Footer
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </footer>
-    </>
+    </div>
   );
 }

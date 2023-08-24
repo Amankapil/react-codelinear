@@ -1,8 +1,11 @@
-import { gsap } from "gsap";
-import { useRef } from "react";
+import { gsap, Power2 } from 'gsap';
 import graphintersect from "./images/Intersect.svg";
 import grapharrow from "./images/Group 28.svg";
 import grapharroww from "./images/PSST.svg";
+import ScrollMagic from "scrollmagic";
+
+import { TweenMax } from "gsap";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function Circles({ isDarkMode }) {
   let circle1 = useRef(null);
@@ -28,10 +31,25 @@ export default function Circles({ isDarkMode }) {
     gsap.to(circle3, { opacity: 0, y: 0, x: 0, scale: 1 });
     gsap.to(circle4, { opacity: 0, y: 0, scale: 1 });
   };
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
 
+    const sections = document.querySelectorAll(".aboutsection");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, y: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
+  }, []);
   return (
     <div
-      className="circles-animation"
+      className="circles-animation aboutsection"
       onMouseOver={mouseOverAnimation}
       onMouseOut={mouseOutAnimation}
     >
@@ -58,28 +76,28 @@ export default function Circles({ isDarkMode }) {
       )}
 
       <div
-        style={{ color: isDarkMode ? "#000000" : "#d8d6d6" , fontWeight:900}}
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight: 900 }}
         className="circle11"
         ref={(el) => (circle1 = el)}
       >
         Codelinear
       </div>
       <div
-        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight:800 }}
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight: 800 }}
         className="circle20 circle21"
         ref={(el) => (circle2 = el)}
       >
         Market
       </div>
       <div
-        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight:800 }}
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight: 800 }}
         className="circle20 circle22"
         ref={(el) => (circle3 = el)}
       >
         Develop
       </div>
       <div
-        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight:800 }}
+        style={{ color: isDarkMode ? "#000000" : "#d8d6d6", fontWeight: 800 }}
         className="circle20 circle23"
         ref={(el) => (circle4 = el)}
       >

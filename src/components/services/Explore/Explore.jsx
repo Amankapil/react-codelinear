@@ -8,12 +8,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { gsap } from "gsap";
+import { gsap, Power2 } from "gsap";
 import { useEffect, useRef } from "react";
 
 import { FreeMode, Pagination } from "swiper";
+import ScrollMagic from "scrollmagic";
 
-const Explore = ({ isDarkMode }) => {
+import { TweenMax } from "gsap";
+
+const Explore = ({ isDarkMode, handledrag }) => {
   const url = useLocation();
   let arrowswipe = useRef(null);
 
@@ -23,6 +26,31 @@ const Explore = ({ isDarkMode }) => {
     });
     tl.fromTo(arrowswipe, 1, { x: "-10px" }, { x: "10px" });
     tl.fromTo(arrowswipe, 1, { x: "10px" }, { x: "10px" });
+  }, []);
+
+  const handleButtonMouseEnter = () => {
+    handledrag(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handledrag(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".about-crew-left");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, {  opacity: 1, x: 0, ease: "easeOut"  });
+        })
+        .addTo(controller);
+    });
   }, []);
 
   if (url.pathname === "/consultingandstrategy") {
@@ -71,7 +99,8 @@ const Explore = ({ isDarkMode }) => {
                 className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/userexperience" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/userexperience" className="px20 cursor-grab">
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -86,7 +115,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/productdevelopment" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/productdevelopment" className="px20 cursor-grab">
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -101,7 +131,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/digitalmarketing" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/digitalmarketing" className="px20 cursor-grab">
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -169,6 +200,8 @@ const Explore = ({ isDarkMode }) => {
               >
                 <SwiperSlide className="flex justify-center items-center">
                   <Link
+                   onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave} 
                     to="/consultingandstrategy"
                     className="px20 cursor-grab z-10"
                   >
@@ -187,7 +220,9 @@ const Explore = ({ isDarkMode }) => {
                 </SwiperSlide>
 
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/productdevelopment" className="px20 cursor-grab">
+                  <Link
+                   onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/productdevelopment" className="px20 cursor-grab">
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -202,7 +237,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/digitalmarketing" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/digitalmarketing" className="px20 cursor-grab">
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -268,7 +304,9 @@ const Explore = ({ isDarkMode }) => {
                 className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link
+                  <Link 
+                   onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave} 
                     to="/consultingandstrategy"
                     className="px20 cursor-grab z-10"
                   >
@@ -286,7 +324,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/userexperience" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/userexperience" className="px20 cursor-grab">
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -302,7 +341,8 @@ const Explore = ({ isDarkMode }) => {
                 </SwiperSlide>
 
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/digitalmarketing" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/digitalmarketing" className="px20 cursor-grab">
                     <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -368,7 +408,8 @@ const Explore = ({ isDarkMode }) => {
                 className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
               >
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave} 
                     to="/consultingandstrategy"
                     className="px20 cursor-grab z-10"
                   >
@@ -386,7 +427,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/userexperience" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/userexperience" className="px20 cursor-grab">
                     <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -401,7 +443,8 @@ const Explore = ({ isDarkMode }) => {
                   </Link>
                 </SwiperSlide>
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/productdevelopment" className="px20 cursor-grab">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/productdevelopment" className="px20 cursor-grab">
                     <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
@@ -424,12 +467,14 @@ const Explore = ({ isDarkMode }) => {
   } else {
     return (
       <>
-        <div className="lead flex mt-40 justify-center h-full relative  items-center">
+        <div className="lead flex mt-40 justify-center h-full relative  items-center  about-crew-left">
           <div className="width w-full flex-col min n h-full  relative">
             <div className="headifn flex justify-start items-start w-full">
               <h1
                 className="text-7xl w-2/3  max-lg:text-5xl max-lg:w-full font-extrabold max-xl:p-5"
                 style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
+
+               
               >
                 Explore Our Services
               </h1>
@@ -447,7 +492,7 @@ const Explore = ({ isDarkMode }) => {
                 <div className="ball" ref={(el) => (arrowswipe = el)}></div>
               </div>
             </div>
-            <div className="cards tett p-10  w-ful max-lg:p-0">
+            <div  className="cards tett p-10  w-ful max-lg:p-0">
               <Swiper
                 slidesPerView={2}
                 slidesPerGroup={1}
@@ -477,15 +522,17 @@ const Explore = ({ isDarkMode }) => {
                   },
                 }}
                 modules={[FreeMode, Pagination]}
-                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursor-grab"
+                className="mySwiper h-full  w-[115%] p-5 -ml-28 max-sm:-ml-10 max-lg:w-[100%] max-lg:ml-0 cursorgrab"
+              
               >
                 <SwiperSlide className="flex justify-center items-center">
-                  <Link
-                    to="/consultingandstrategy"
-                    className="px20 cursor-grab z-10"
-                  >
-                    <div className="card1  z-10 mx-4 max-md:mx-0 hideee relative cursor-grab">
-                      <div className="img1 z-10 ml-10  ma\  -top-0"></div>
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}   to="/consultingandstrategy" className="px20 cursrab z0">
+                    <div
+                     
+                      className="card1   z10 mx-4 max-md:mx-0 hideee relative cursorrab"
+                    >
+                      <div className="img1 z10 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100 z-50">
                         <p
                           // style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
@@ -502,9 +549,10 @@ const Explore = ({ isDarkMode }) => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/userexperience" className="px20 cursor-grab">
-                    <div className="card1 m48 max-md:mx-0 hideee relative cursor-grab">
+                <SwiperSlide className="flex justify-center items-center ">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/userexperience" className="px20 cursorgrab">
+                    <div className="card1 m48 max-md:mx-0 hideee relative cursorgrab">
                       <div className="img22 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p
@@ -517,9 +565,10 @@ const Explore = ({ isDarkMode }) => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/productdevelopment" className="px20 cursor-grab">
-                    <div className="card1 mx48 max-md:mx-0 hideee relative cursor-grab">
+                <SwiperSlide className="flex justify-center items-center ">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/productdevelopment" className="px20 cursorgrab">
+                    <div className="card1 mx48 max-md:mx-0 hideee relative cursorgrab">
                       <div className="img3 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p
@@ -532,9 +581,10 @@ const Explore = ({ isDarkMode }) => {
                     </div>
                   </Link>
                 </SwiperSlide>
-                <SwiperSlide className="flex justify-center items-center">
-                  <Link to="/digitalmarketing" className="px20 cursor-grab">
-                    <div className="card1 ml48 max-md:mx-0 hideee relative cursor-grab">
+                <SwiperSlide className="flex justify-center items-center ">
+                  <Link  onMouseEnter={handleButtonMouseEnter}
+                onMouseLeave={handleButtonMouseLeave}  to="/digitalmarketing" className="px20 cursorgrab">
+                    <div className="card1 ml48 max-md:mx-0 hideee relative cursorgrab">
                       <div className="img4 ml-10  ma\  -top-0"></div>
                       <div className="opacity-60 name absolute max-xl:-mt-60 top-56 bottom-10 w-full flex justify-center items-end coloo max-lg:opacity-100">
                         <p

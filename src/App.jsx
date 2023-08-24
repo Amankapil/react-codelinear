@@ -49,27 +49,40 @@ function App() {
     } else {
       setUser(false);
     }
-  },[]);
+  }, []);
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
   };
+
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
+
+  const handleButtonHover = (isHovered) => {
+    setIsButtonHovered(isHovered);
+  };
+
+  const [isimgHovered, setIsimgHovered] = useState(false);
+
+  const handleimgHover = (isHoveredimg) => {
+    setIsimgHovered(isHoveredimg);
+  };
+
+  const [isdrag, setIsdrag] = useState(false);
+
+  const handledrag = (isdragg) => {
+    setIsdrag(isdragg);
+  };
+
   return (
     <div style={{ backgroundColor: isDarkMode ? "#FFFFFF" : "#090909" }}>
-      {/* <AnimatedCursor
-        innerSize={8}
-        outerSize={0}
-        color="255, 255, 255"
-        outerAlpha={0}
-        innerScale={1.2}
-        outerScale={5}
-        hasBlendMode={true}
-        innerStyle={{
-          mixBlendMode: "exclusion",
-        }}
-      /> */}
-
-      <CustomCursor />
+      <CustomCursor
+        isButtonHovered={isButtonHovered}
+        isimgHovered={isimgHovered}
+        isdrag={isdrag}
+        handleimgHover={handleimgHover}
+        handleButtonHover={handleButtonHover}
+        handledrag = {handledrag}
+      />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
@@ -78,37 +91,50 @@ function App() {
             exact
             path="/"
             element={
-              <Home isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <Home
+                handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover}
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
             }
           />
-          <Route exact path="/admin" element={ user ? <Dash/> : <Login/> } />
-          <Route exact path="/login" element={<Login />} />
+          <Route exact path="/admin" element={user ? <Dash /> : <Login />} />
+          {/* <Route exact path="/login" element={<Login />} /> */}
           <Route
             exact
             path="/about"
             element={
-              <About isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <About
+                handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover}
+                isDarkMode={isDarkMode}
+                toggleDarkMode={toggleDarkMode}
+              />
             }
           />
           <Route
             exact
             path="/work"
             element={
-              <Work isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <Work handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
           <Route
             exact
             path="/career"
             element={
-              <Career isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <Career handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
           <Route
             exact
             path="/blog"
             element={
-              <Blog isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <Blog handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
           <Route
@@ -116,6 +142,9 @@ function App() {
             path="/services"
             element={
               <Services
+                handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover}
+                handledrag={handledrag}
                 isDarkMode={isDarkMode}
                 toggleDarkMode={toggleDarkMode}
               />
@@ -125,7 +154,8 @@ function App() {
             exact
             path="/consultingandstrategy"
             element={
-              <Consulting
+              <Consulting handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover}
                 isDarkMode={isDarkMode}
                 toggleDarkMode={toggleDarkMode}
               />
@@ -135,7 +165,8 @@ function App() {
             exact
             path="/userexperience"
             element={
-              <UX isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <UX  handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
           <Route
@@ -156,7 +187,8 @@ function App() {
             exact
             path="/let's_talk"
             element={
-              <Talk isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+              <Talk handleimgHover={handleimgHover}
+                handleButtonHover={handleButtonHover} isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
             }
           />
           <Route

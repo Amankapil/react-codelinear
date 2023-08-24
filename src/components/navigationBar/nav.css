@@ -15,7 +15,7 @@
   left: 0;
   height: 3em;
   width: 100%;
-  z-index: 9;
+  z-index: 9988;
 }
 .logo {
   margin-right: 0%;
@@ -37,7 +37,7 @@
 .menu {
   border-top: 2.38998px solid #ffcd05;
   border-bottom: 2.38998px solid #ffcd05;
-  cursor: pointer;
+   
   width: 62.9px;
   height: 18px;
   margin-top: 20px;
@@ -46,7 +46,7 @@
 .nav_logo {
   transition: 0.5s;
 }
-.nav_logo::after {
+/* .nav_logo::after {
   content: "we're all ears!";
   width: 102px;
   height: 2px;
@@ -86,7 +86,7 @@
 }
 .nav_logo:hover .hyphen {
   opacity: 1;
-}
+} */
 .nav-menu {
   float: right;
   align-items: center;
@@ -94,7 +94,7 @@
   margin-top: 0px;
   width: 78.9px;
   height: 92px;
-  cursor: pointer;
+   
 }
 #navigation-slide {
   position: fixed;
@@ -109,7 +109,8 @@
   bottom: 150vh;
   width: 100%;
   height: 100vh;
-  z-index: 10;
+  z-index: 99999;
+
   backdrop-filter: blur(15px);
 }
 .slide_nav_list-item {
@@ -262,9 +263,9 @@ sup {
     top: 28px;
     left: 154px;
   }
-  .nav_logo:hover .logo {
+  /* .nav_logo:hover .logo {
     margin-left: 9px;
-  }
+  } */
   .nav-menu {
     padding: 48px 155px 30px;
     width: 49px;
@@ -454,7 +455,7 @@ sup {
     height: 33px;
     display: none;
   }
-  .nav_logo:hover .logo{
+  .nav_logo:hover .logo {
     transform: scale(1);
     margin-left: 0;
   }
@@ -465,7 +466,7 @@ sup {
     left: 9.47%;
     top: 1.82px;
   }
-  .nav_logo:hover .logo{
+  .nav_logo:hover .logo {
     transform: scale(1);
   }
   .menu {
@@ -501,7 +502,7 @@ sup {
     left: 16.3%;
     top: 17vh;
   }
-  .slide_nav_links{
+  .slide_nav_links {
     font-size: 35px;
   }
   .details {

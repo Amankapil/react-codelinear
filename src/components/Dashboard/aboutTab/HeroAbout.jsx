@@ -44,7 +44,7 @@ const HeroAbout = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutHero", {
+        .post("https://codelinear.in/code/addaboutHero", {
           heroabout,
         })
         .then((response) => {
@@ -65,7 +65,7 @@ const HeroAbout = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutHero", {
+        .post("https://codelinear.in/code/addaboutHero", {
           heroabout,
         })
         .then((response) => {
@@ -83,7 +83,7 @@ const HeroAbout = () => {
   };
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code/aboutHero").then((response) => {
+    axios.get("https://codelinear.in/code/aboutHero").then((response) => {
       // setarray(response.data.homeHero);
       setServicesarray(response.data.careerHero);
 

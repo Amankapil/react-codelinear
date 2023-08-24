@@ -44,7 +44,7 @@ const WhyUS = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addcareerwhyus", {
+        .post("https://codelinear.in/code/addcareerwhyus", {
           heading,
           pera1,
           pera2,
@@ -65,7 +65,7 @@ const WhyUS = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/careerwhyus")
+      .get("https://codelinear.in/code/careerwhyus")
       .then((response) => {
         setServicesarray(response.data.heading);
         setAboutarray(response.data.pera1);

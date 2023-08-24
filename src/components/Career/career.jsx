@@ -8,8 +8,14 @@ import Positions from "./Position";
 import Whyus from "./Whyus";
 import Navbar from "../navigationBar/Nav";
 import Footer from "../footer/footer";
+import { Helmet } from "react-helmet";
 
-export default function Career({ isDarkMode, toggleDarkMode }) {
+export default function Career({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+  handleimgHover,
+}) {
   let fade = useRef(null);
 
   useEffect(() => {
@@ -21,21 +27,44 @@ export default function Career({ isDarkMode, toggleDarkMode }) {
 
   return (
     <>
+      <Helmet>
+        <title>Career | Codelinear</title>
+      </Helmet>
       <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <main className="career-page" ref={(el) => (fade = el)}>
-        <CareerHero isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <CareerHero
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
         <Horizontalanimation1
+        handleimgHover={handleimgHover}
+          handleButtonHover={handleButtonHover}
           isDarkMode={isDarkMode}
           toggleDarkMode={toggleDarkMode}
         />
-        <Whyus isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Whyus
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
         <Horizontalanimation2
+          handleButtonHover={handleButtonHover}
           isDarkMode={isDarkMode}
           toggleDarkMode={toggleDarkMode}
         />
-        <Positions isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+        <Positions
+          handleButtonHover={handleButtonHover}
+          isDarkMode={isDarkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
       </main>
-      <Footer isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+
+      <Footer
+        handleButtonHover={handleButtonHover}
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
+      />
     </>
   );
 }

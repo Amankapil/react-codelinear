@@ -1,5 +1,5 @@
 .about-hero {
-  height: 100vh;
+  height: 80vh;
 }
 .about-hero-h1 {
   display: flex;
@@ -59,6 +59,7 @@
   justify-content: center;
   height: 300px;
   align-items: center;
+  margin: 60px 0 120px 0;
 }
 .crewclass {
   margin-left: 9.6%;
@@ -386,10 +387,10 @@
 .container-dash:hover .view {
   visibility: visible;
 }
-.about-page-dash-txt:hover{
-  border-top: 3px solid #ffcd05
+.about-page-dash-txt:hover {
+  border-top: 3px solid #ffcd05;
 }
-.about-page-dash-txt{
+.about-page-dash-txt {
   border-top: 3px solid transparent;
   transition: 0.3s;
 }

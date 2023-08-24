@@ -26,7 +26,7 @@ function Login() {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/login", { username, password })
+        .post("https://codelinear.in/code/login", { username, password })
         .then((response) => {
           console.log(response);
 

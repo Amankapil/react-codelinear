@@ -64,7 +64,7 @@ const Crewbox = () => {
     event.preventDefault();
     try {
       const response = await axios
-        .post("http://194.163.40.249:5000/code/addaboutcrew_box", {
+        .post("https://codelinear.in/code/addaboutcrew_box", {
           Design,
           Strategists,
           Tech_Experts,
@@ -86,7 +86,7 @@ const Crewbox = () => {
 
   useEffect(() => {
     axios
-      .get("http://194.163.40.249:5000/code/aboutcrew_box")
+      .get("https://codelinear.in/code/aboutcrew_box")
       .then((response) => {
         setServicesarray(response.data.Design);
         setAboutarray(response.data.Strategists);

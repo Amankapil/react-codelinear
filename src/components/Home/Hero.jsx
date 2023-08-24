@@ -3,15 +3,47 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import ScrollMagic from "scrollmagic";
+import { TweenMax } from "gsap";
 
-export default function Hero({ isDarkMode, toggleDarkMode }) {
+import { Bounce } from "gsap/all";
+
+export default function Hero({
+  isDarkMode,
+  toggleDarkMode,
+  handleButtonHover,
+}) {
   const [array, setarray] = useState();
-  const [content, setContent] = useState();
 
   useEffect(() => {
-    axios.get("http://194.163.40.249:5000/code").then((response) => {
+    axios.get("https://codelinear.in/code").then((response) => {
       setarray(response.data.homeHero);
       console.log(response.data);
+    });
+  }, []);
+
+  const handleButtonMouseEnter = () => {
+    handleButtonHover(true);
+  };
+
+  const handleButtonMouseLeave = () => {
+    handleButtonHover(false);
+  };
+
+  useEffect(() => {
+    const controller = new ScrollMagic.Controller();
+
+    const sections = document.querySelectorAll(".servicchomesectionlinks");
+    sections.forEach((section) => {
+      new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 1, // Adjust this value to control when the animation starts
+        reverse: false,
+      })
+        .on("enter", () => {
+          TweenMax.to(section, 0, { opacity: 1, x: 0, ease: "easeOut" });
+        })
+        .addTo(controller);
     });
   }, []);
   return (
@@ -19,6 +51,7 @@ export default function Hero({ isDarkMode, toggleDarkMode }) {
       <section
         style={{ backgroundColor: isDarkMode ? "white" : "#000" }}
         id="hero"
+        className="servicchomesectionlinks"
       >
         <div className="bgi">
           <video
@@ -37,11 +70,16 @@ export default function Hero({ isDarkMode, toggleDarkMode }) {
             style={{ color: isDarkMode ? "#000000" : "#d8d6d6" }}
             id="header"
           >
-            {/* Propelling The World, By Design */}
-            {array}
+            Propelling The World, By Design
+            {/* {array} */}
           </h1>
 
-          <Link to={"/about"} id="aboutbtn">
+          <Link
+            onMouseEnter={handleButtonMouseEnter}
+            onMouseLeave={handleButtonMouseLeave}
+            to={"/about"}
+            id="aboutbtn"
+          >
             <p className={isDarkMode ? "dark" : "aboutbtn_content"}>About Us</p>
           </Link>
         </section>

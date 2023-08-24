@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import { gsap, Power2 } from 'gsap';
 import { useRef, useEffect } from "react";
 import Servicesslide from "../services/Explore/Explore";
 
